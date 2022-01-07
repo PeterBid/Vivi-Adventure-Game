@@ -1,2 +1,2 @@
-# SE1-Project-1
+# Vivi-Adventure-Game
 Video-Game
