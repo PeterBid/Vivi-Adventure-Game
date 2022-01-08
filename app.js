@@ -14,7 +14,7 @@ function init() {
   let viviCurrentPosition = 94 //vivi’s current position refers to an index
 
   //global variables for Cactus Obstacle
-  const cactusClass ='cactus' 
+  const cactusClass = 'cactus'
   const cactusStartPosition = 89 //this starting position refers to an index
   let cactusCurrentPosition = 89 //cactuars current position refers to an index
 
@@ -73,7 +73,7 @@ function init() {
   }
 
   //--Adding and Removing Obstacles From Grid--//
-  
+
   //adding Cactus Obstacle to the grid
   function addCactus(position) {
     console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
@@ -113,8 +113,22 @@ function init() {
     addVivi(viviCurrentPosition)
   }
 
-  //moving Cactus Obstacle
-  
+
+  //moving Cactus Obstacle left
+  function moveCatusLeft() {
+    //console.log(‘Position For Cactus Before Redefining —>’, cactusCurrentPosition)
+    removeCactus(cactusCurrentPosition) //remove Cactus from current position
+
+    if ((cactusCurrentPosition % width !== 0)) { // If Cactus is not on the left edge
+      cactusCurrentPosition-- //moves Cactus left on the Grid
+    } else if (cactusCurrentPosition = 80) { //if Cactus position is 80
+      cactusCurrentPosition = cactusCurrentPosition + 9 //add 9 to Catcus position to move it, to his starting position of 89
+    } else {
+      //console.log(‘cactus not working’)
+    }
+    // console.log(‘Position For Cactus After Redefining —>’, cactusCurrentPosition)
+    addCactus(cactusCurrentPosition) //adds Cactus to the new position in accordance with the if statement
+  }
 
 
   //Calling Event Listeners
@@ -122,7 +136,7 @@ function init() {
 
   //Calling Functions
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
-
+  setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
 
 }
 
