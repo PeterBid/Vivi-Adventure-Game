@@ -1,5 +1,7 @@
 function init() {
 
+  //---GlOBAL VARIABLES---//
+
   //global variables for grid
   const grid = document.querySelector('.grid')
   const width = 10
@@ -11,6 +13,33 @@ function init() {
   const viviStartPosition = 94 //this starting position refers to an index
   let viviCurrentPosition = 94 //vivi’s current position refers to an index
 
+  //global variables for Topbar
+  let score = 0
+  let lives = 3
+  let highScore = 0
+  let level = 1
+
+  //global variables for time
+
+  //--ELEMENT SELECTORS--//
+
+  //element selectors for Topbar
+
+  const selectReset = document.querySelector('#reset')
+  const selectLives = document.querySelector('#lives')
+  const selectScore = document.querySelector('#score')
+  const selectHighScore = document.querySelector('#highscore')
+  const selectLevel = document.querySelector('#level')
+
+  //--UPDATING PARAMETERS--//
+
+  //updating the parameters in the Topbar
+  selectLives.innerHTML = `Lives: ${lives}`
+  selectScore.innerHTML = `Score: ${score}`
+  selectHighScore.innerHTML = `HighScore: ${highScore}`
+  selectLevel.innerHTML = `Level: ${level}`
+
+  //--GRID--//  
 
   //making the grid
   function createGrid(viviStartPosition) {
@@ -22,6 +51,8 @@ function init() {
     }
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
   }
+
+  //--VIVI--//
 
   //adding Vivi to the grid
   function addVivi(position) { // this function is reusable for different positions
@@ -60,15 +91,17 @@ function init() {
     addVivi(viviCurrentPosition)
   }
 
-    //Calling Event Listeners
-    document.addEventListener('keydown', handleKeyDown)
-    //Calling Functions
-    createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
 
-    
-  }
+  //Calling Event Listeners
+  document.addEventListener('keydown', handleKeyDown)
 
+  //Calling Functions
+  createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
 
 
+}
 
-  window.addEventListener('DOMContentLoaded', init)
+
+
+
+window.addEventListener('DOMContentLoaded', init)
