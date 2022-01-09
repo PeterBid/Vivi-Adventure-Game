@@ -98,14 +98,14 @@ function init() {
     console.log('Position For Vivi Before Redefining --->', viviCurrentPosition)
     removeVivi(viviCurrentPosition)
 
-    if (key === right && viviCurrentPosition % width !== width - 1) {
-      viviCurrentPosition++
-    } else if (key === left && viviCurrentPosition % width !== 0) {
-      viviCurrentPosition--
-    } else if (key === up && viviCurrentPosition >= width) {
-      viviCurrentPosition -= width
-    } else if (key === down && viviCurrentPosition + width <= cellCount - 1) {
-      viviCurrentPosition += width
+    if (key === right && viviCurrentPosition % width !== width - 1) { // if the right arrow key is pressed and the Vivi is not on the right edge
+      viviCurrentPosition++ // redefine Vivi’s position index to be previous position plus 1 - moves Vivi right on the Grid
+    } else if (key === left && viviCurrentPosition % width !== 0) { // if the left arrow is pressed and the Vivi is not on the left edge
+      viviCurrentPosition-- // redefine Vivi’s position index to be previous position minus 1 - moves Vivi left on the Grid
+    } else if (key === up && viviCurrentPosition >= width) { // if the up arrow is pressed and the Vivi is not on the top row
+      viviCurrentPosition -= width // redefine Vivi’s position index to be previous position minus width - position goes down an entire width value on the Grid - moves Vivi up on the Grid
+    } else if (key === down && viviCurrentPosition + width <= cellCount - 1) { // if the down arrow is pressed and Vivi is not on the bottom row
+      viviCurrentPosition += width // redefine Vivi’s position index to be previous position plus width - position goes up an entire width value on the Grid - moves Vivi down on the Grid
     } else {
       console.log('Invalid Key')
     }
