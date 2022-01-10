@@ -13,7 +13,7 @@ function init() {
   const viviStartPosition = 94 //this starting position refers to an index
   let viviCurrentPosition = 94 //vivi’s current position refers to an index
 
-  //global variables for Cactus Obstacle
+  //global variables for Cactus Obstacles
   const cactusClass = 'cactus'
   const cactusStartPosition = 89 //this starting position refers to an index
   let cactusCurrentPosition = 89 //cactuars current position refers to an index
@@ -115,6 +115,8 @@ function init() {
     addVivi(viviCurrentPosition)
     }
 
+  //--Moving Cactus--//
+
 
   //moving Cactus Obstacle left
   function moveCatusLeft() {
@@ -132,6 +134,8 @@ function init() {
     addCactus(cactusCurrentPosition) //adds Cactus to the new position in accordance with the if statement
     Collision()
   }
+
+  //--Collision Function--//
   
   function Collision() {
     if (viviCurrentPosition === cactusCurrentPosition) {
