@@ -75,6 +75,13 @@ h1{
   cursor: pointer;
 }
 
+.grid div.tomberry {
+  background-image: url(assets/TomberryCat.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .time-progress {
   justify-content: center;
   align-items: center;

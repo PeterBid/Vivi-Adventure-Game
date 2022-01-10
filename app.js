@@ -22,6 +22,13 @@ function init() {
   const cactus2StartPosition = 87 //this starting position refers to an index
   let cactus2CurrentPosition = 87 //cactus2 current position refers to an index
 
+  //global variables for Tomberry Obstacles
+  const tomberryClass = 'tomberry'
+  const tomberryStartPosition = 71 //this starting position refers to an index
+  let tomberryCurrentPosition = 71 //cactus current position refers to an index
+
+
+
 
   //global variables for Topbar
   let score = 0
@@ -61,6 +68,7 @@ function init() {
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
+    addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
   }
 
   //--Adding and Removing Vivi From Grid--//
@@ -92,6 +100,17 @@ function init() {
     cells[position].classList.remove(cactusClass)
   }
 
+  //adding Cactus Obstacles to the grid
+  function addTomberry(position) {
+    //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(tomberryClass)
+  }
+
+  //removing Cactuar Obstacles from the grid
+  function removeTomberry(position) {
+    cells[position].classList.remove(tomberryClass)
+  }
+
 
   //--Movment On The Grid--//
 
@@ -118,7 +137,7 @@ function init() {
     }
     Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
     addVivi(viviCurrentPosition)
-    }
+  }
 
   //--Moving Cactus--//
 
@@ -131,7 +150,7 @@ function init() {
     if ((cactusCurrentPosition % width !== 0)) { // If Cactus is not on the left edge
       cactusCurrentPosition-- //moves Cactus left on the Grid
     } else if (cactusCurrentPosition = 80) { //if Cactus position is 80
-      cactusCurrentPosition = cactusCurrentPosition + 9 //add 9 to Catcus position to move it, to his starting position of 89
+      cactusCurrentPosition = cactusCurrentPosition + 9 //add 9 to Catcus position to move it, to make it position of 89
     } else {
       //console.log(‘cactus not working’)
     }
@@ -147,7 +166,7 @@ function init() {
     if ((cactus2CurrentPosition % width !== 0)) { // If Cactus2 is not on the left edge
       cactus2CurrentPosition-- //moves Cactus2 left on the Grid
     } else if (cactus2CurrentPosition = 80) { //if Cactus2 position is 80
-      cactus2CurrentPosition = cactus2CurrentPosition + 9 //add 9 to Catcus2 position to move it, to his starting position of 89
+      cactus2CurrentPosition = cactus2CurrentPosition + 9 //add 9 to Catcus2 position to move it, to make it position of 89
     } else {
       //console.log(‘cactus2 not working’)
     }
@@ -157,11 +176,33 @@ function init() {
   }
 
 
+  //--Moving Tomberry--//
+
+  function moveTomberryRight() {
+    //console.log(‘Position For Tomberry Before Redefining —>’, tomberryCurrentPosition)
+    removeTomberry(tomberryCurrentPosition) //remove Tomberry from current position
+
+    if ((tomberryCurrentPosition % width !== width - 1)) { // If Tomberry is not on the right edge
+      tomberryCurrentPosition++ //moves Tomberry right on the Grid
+    } else if (tomberryCurrentPosition = 79) { //if Tomberry position is 79
+      tomberryCurrentPosition = tomberryCurrentPosition - 9 // -9 to Tomberry position to move it, to make it position of 70
+    } else {
+      //console.log(‘tomberry not working’)
+    }
+
+    addTomberry(tomberryCurrentPosition) //adds Tomberry to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Tomberry - For When Tomberry moves in Vivi
+  }
+
+
 
   //--Collision Function--//
-  
+
+  //Adding Or || onto the the if Statement with everything Vivi Collides with.
+
   function Collision() {
-    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition) { 
+    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition || 
+    viviCurrentPosition === tomberryCurrentPosition) {
       console.log('Collision Is Triggered')
       removeVivi(viviCurrentPosition)
       console.log('Vivi Removed')
@@ -180,6 +221,7 @@ function init() {
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveTomberryRight, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
 }
 
 
