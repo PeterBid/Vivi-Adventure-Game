@@ -25,7 +25,12 @@ function init() {
   //global variables for Tomberry Obstacles
   const tomberryClass = 'tomberry'
   const tomberryStartPosition = 71 //this starting position refers to an index
-  let tomberryCurrentPosition = 71 //cactus current position refers to an index
+  let tomberryCurrentPosition = 71 //tomberry current position refers to an index
+
+  const tomberry2Class = 'tomberry'
+  const tomberry2StartPosition = 73 //this starting position refers to an index
+  let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
+
 
 
 
@@ -69,6 +74,7 @@ function init() {
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
+    addTomberry(tomberry2StartPosition) // call the function to add the Tomberry at the starting position
   }
 
   //--Adding and Removing Vivi From Grid--//
@@ -100,13 +106,13 @@ function init() {
     cells[position].classList.remove(cactusClass)
   }
 
-  //adding Cactus Obstacles to the grid
+  //adding Tomberry Obstacles to the grid
   function addTomberry(position) {
     //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
     cells[position].classList.add(tomberryClass)
   }
 
-  //removing Cactuar Obstacles from the grid
+  //removing Tomberry Obstacles from the grid
   function removeTomberry(position) {
     cells[position].classList.remove(tomberryClass)
   }
@@ -176,7 +182,7 @@ function init() {
   }
 
 
-  //--Moving Tomberry--//
+  //--Moving Tomberrys--//
 
   function moveTomberryRight() {
     //console.log(‘Position For Tomberry Before Redefining —>’, tomberryCurrentPosition)
@@ -194,6 +200,22 @@ function init() {
     Collision() //adds Collision Function to the Tomberry - For When Tomberry moves in Vivi
   }
 
+  function moveTomberry2Right() {
+    //console.log(‘Position For Tomberry Before Redefining —>’, tomberryCurrentPosition)
+    removeTomberry(tomberry2CurrentPosition) //remove Tomberry from current position
+
+    if ((tomberry2CurrentPosition % width !== width - 1)) { // If Tomberry is not on the right edge
+      tomberry2CurrentPosition++ //moves Tomberry right on the Grid
+    } else if (tomberry2CurrentPosition = 79) { //if Tomberry position is 79
+      tomberry2CurrentPosition = tomberry2CurrentPosition - 9 // -9 to Tomberry position to move it, to make it position of 70
+    } else {
+      //console.log(‘tomberry not working’)
+    }
+
+    addTomberry(tomberry2CurrentPosition) //adds Tomberry to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Tomberry - For When Tomberry moves in Vivi
+  }
+
 
 
   //--Collision Function--//
@@ -202,7 +224,7 @@ function init() {
 
   function Collision() {
     if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition || 
-    viviCurrentPosition === tomberryCurrentPosition) {
+    viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition) {
       console.log('Collision Is Triggered')
       removeVivi(viviCurrentPosition)
       console.log('Vivi Removed')
@@ -222,7 +244,9 @@ function init() {
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberryRight, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveTomberry2Right, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
 }
+
 
 
 
