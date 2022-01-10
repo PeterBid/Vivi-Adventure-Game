@@ -34,7 +34,7 @@ function init() {
   //global variables for Bird Obstacles
   const birdClass = 'bird'
   const birdStartPosition = 30 //this starting position refers to an index
-  let birdCurrentPosition = 30 //tomberry2 current position refers to an index
+  let birdCurrentPosition = 30 //bird current position refers to an index
 
   //global variables for Riding Obstacles
   let ridingBirdClass = 'riding'
@@ -306,11 +306,11 @@ function init() {
     if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition) {
       console.log('Collision Is Triggered')
-      removeVivi(viviCurrentPosition)
+      removeVivi(viviCurrentPosition) //remove Vivi from his current position
       console.log('Vivi Removed')
-      viviCurrentPosition = viviStartPosition
+      viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
       console.log('Vivi current position checked')
-      addVivi(viviCurrentPosition)
+      addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
     }
   }
