@@ -31,6 +31,10 @@ function init() {
   const tomberry2StartPosition = 73 //this starting position refers to an index
   let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
 
+  //global variables for Bird Obstacles
+  const birdClass = 'bird'
+  const birdStartPosition = 29 //this starting position refers to an index
+  let birdCurrentPosition = 29 //tomberry2 current position refers to an index
 
 
 
@@ -74,7 +78,8 @@ function init() {
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
-    addTomberry(tomberry2StartPosition) // call the function to add the Tomberry at the starting position
+    addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
+    addBird(birdStartPosition) // call the function to add the Bird at the starting position
   }
 
   //--Adding and Removing Vivi From Grid--//
@@ -115,6 +120,17 @@ function init() {
   //removing Tomberry Obstacles from the grid
   function removeTomberry(position) {
     cells[position].classList.remove(tomberryClass)
+  }
+
+  //adding bird Obstacles to the grid
+  function addBird(position) {
+    //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(birdClass)
+  }
+
+  //removing Bird Obstacles from the grid
+  function removeBird(position) {
+    cells[position].classList.remove(birdClass)
   }
 
 
@@ -216,6 +232,26 @@ function init() {
     Collision() //adds Collision Function to the Tomberry - For When Tomberry moves in Vivi
   }
 
+  //--Moving Birds--//
+
+
+  //moving Bird Obstacles left
+  function moveBirdLeft() {
+    //console.log(‘Position For Bird Before Redefining —>’, birdCurrentPosition)
+    removeBird(birdCurrentPosition) //remove Bird from current position
+
+    if ((birdCurrentPosition % width !== 0)) { // If Bird is not on the left edge
+      birdCurrentPosition-- //moves Bird left on the Grid
+    } else if (birdCurrentPosition = 20) { //if Bird position is 20
+      birdCurrentPosition = birdCurrentPosition + 9 //add 9 to Bird position to move it, to make it position of 29
+    } else {
+      //console.log(‘bird not working’)
+    }
+    // console.log(‘Position For Bird After Redefining —>’, birdCurrentPosition)
+    addBird(birdCurrentPosition) //adds Bird to the new position in accordance with the if statement
+    
+  }
+
 
 
   //--Collision Function--//
@@ -245,6 +281,7 @@ function init() {
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberryRight, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveBirdLeft, 1000) //Calling the function to move bird left at a set interval of 1 seconds
 }
 
 
