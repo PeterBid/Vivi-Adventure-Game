@@ -89,6 +89,13 @@ h1{
   cursor: pointer;
 }
 
+.grid div.riding {
+  background-image: url(assets/RidingChocobo1.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .time-progress {
   justify-content: center;
   align-items: center;

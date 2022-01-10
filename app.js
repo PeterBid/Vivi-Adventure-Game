@@ -36,6 +36,9 @@ function init() {
   const birdStartPosition = 29 //this starting position refers to an index
   let birdCurrentPosition = 29 //tomberry2 current position refers to an index
 
+  //global variables for Riding Obstacles
+  let ridingBirdClass = 'riding'
+
 
 
 
@@ -80,6 +83,8 @@ function init() {
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
     addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
     addBird(birdStartPosition) // call the function to add the Bird at the starting position
+
+    moveBird()
   }
 
   //--Adding and Removing Vivi From Grid--//
@@ -133,6 +138,20 @@ function init() {
     cells[position].classList.remove(birdClass)
   }
 
+  //--Adding and Removing Riding Obstacles From Grid--//
+
+  function addRidingBird(position) {
+    //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(ridingBirdClass)
+  }
+
+  //removing Bird Obstacles from the grid
+  function removeRidingBird(position) {
+    cells[position].classList.remove(ridingBirdClass)
+  }
+
+
+
 
   //--Movment On The Grid--//
 
@@ -158,6 +177,7 @@ function init() {
       console.log('invalid key used')
     }
     Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
+    //riding()
     addVivi(viviCurrentPosition)
   }
 
@@ -200,6 +220,7 @@ function init() {
 
   //--Moving Tomberrys--//
 
+  //moving Tomberrys Obstacles Right
   function moveTomberryRight() {
     //console.log(‘Position For Tomberry Before Redefining —>’, tomberryCurrentPosition)
     removeTomberry(tomberryCurrentPosition) //remove Tomberry from current position
@@ -235,22 +256,44 @@ function init() {
   //--Moving Birds--//
 
 
-  //moving Bird Obstacles left
-  function moveBirdLeft() {
-    //console.log(‘Position For Bird Before Redefining —>’, birdCurrentPosition)
-    removeBird(birdCurrentPosition) //remove Bird from current position
+  //moving Bird Obstacles 
+  function moveBird() {
+    addBird(birdStartPosition)
+    setInterval(function () {
+      removeBird(birdCurrentPosition)
+      if (viviCurrentPosition !== birdCurrentPosition) {
+        cells.forEach(cell => cell.classList.remove('riding'))
+      }
+      if (viviCurrentPosition === birdCurrentPosition) {
+        console.log('same position')
+        removeBird(birdCurrentPosition)
 
-    if ((birdCurrentPosition % width !== 0)) { // If Bird is not on the left edge
-      birdCurrentPosition-- //moves Bird left on the Grid
-    } else if (birdCurrentPosition = 20) { //if Bird position is 20
-      birdCurrentPosition = birdCurrentPosition + 9 //add 9 to Bird position to move it, to make it position of 29
-    } else {
-      //console.log(‘bird not working’)
-    }
-    // console.log(‘Position For Bird After Redefining —>’, birdCurrentPosition)
-    addBird(birdCurrentPosition) //adds Bird to the new position in accordance with the if statement
-    
+        addRidingBird(birdCurrentPosition)
+        score += 100
+        removeVivi(viviCurrentPosition)
+        console.log('add Vivi')
+        removeRidingBird(birdCurrentPosition)
+
+        if (viviCurrentPosition === 20) {
+          removeRidingBird(viviCurrentPosition)
+          viviCurrentPosition = birdStartPosition
+          removeRidingBird(viviCurrentPosition)
+        }
+        viviCurrentPosition--
+        addRidingBird(viviCurrentPosition)
+      }
+      if (birdCurrentPosition === 20) {
+        removeBird(birdCurrentPosition)
+        birdCurrentPosition = birdStartPosition
+        removeBird(birdCurrentPosition)
+      }
+      birdCurrentPosition--
+      addBird(birdCurrentPosition)
+    }, 1000);
+
+
   }
+
 
 
 
@@ -259,8 +302,8 @@ function init() {
   //Adding Or || onto the the if Statement with everything Vivi Collides with.
 
   function Collision() {
-    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition || 
-    viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition) {
+    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
+      viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition) {
       console.log('Collision Is Triggered')
       removeVivi(viviCurrentPosition)
       console.log('Vivi Removed')
@@ -272,6 +315,9 @@ function init() {
   }
 
 
+
+
+
   //Calling Event Listeners
   document.addEventListener('keydown', handleKeyDown)
 
@@ -281,7 +327,7 @@ function init() {
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberryRight, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  setInterval(moveBirdLeft, 1000) //Calling the function to move bird left at a set interval of 1 seconds
+  //setInterval(moveBirdLeft, 1000) //Calling the function to move bird left at a set interval of 1 seconds
 }
 
 
