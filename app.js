@@ -16,7 +16,11 @@ function init() {
   //global variables for Cactus Obstacles
   const cactusClass = 'cactus'
   const cactusStartPosition = 89 //this starting position refers to an index
-  let cactusCurrentPosition = 89 //cactuars current position refers to an index
+  let cactusCurrentPosition = 89 //cactus current position refers to an index
+
+  const cactus2Class = 'cactus'
+  const cactus2StartPosition = 87 //this starting position refers to an index
+  let cactus2CurrentPosition = 87 //cactus2 current position refers to an index
 
 
   //global variables for Topbar
@@ -56,6 +60,7 @@ function init() {
     }
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
+    addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
   }
 
   //--Adding and Removing Vivi From Grid--//
@@ -76,13 +81,13 @@ function init() {
 
   //--Adding and Removing Obstacles From Grid--//
 
-  //adding Cactus Obstacle to the grid
+  //adding Cactus Obstacles to the grid
   function addCactus(position) {
     //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
     cells[position].classList.add(cactusClass)
   }
 
-  //removing Cactuar Obstacle from the grid
+  //removing Cactuar Obstacles from the grid
   function removeCactus(position) {
     cells[position].classList.remove(cactusClass)
   }
@@ -111,14 +116,14 @@ function init() {
     } else {
       console.log('invalid key used')
     }
-    Collision()
+    Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
     addVivi(viviCurrentPosition)
     }
 
   //--Moving Cactus--//
 
 
-  //moving Cactus Obstacle left
+  //moving Cactus Obstacles left
   function moveCatusLeft() {
     //console.log(‘Position For Cactus Before Redefining —>’, cactusCurrentPosition)
     removeCactus(cactusCurrentPosition) //remove Cactus from current position
@@ -132,13 +137,31 @@ function init() {
     }
     // console.log(‘Position For Cactus After Redefining —>’, cactusCurrentPosition)
     addCactus(cactusCurrentPosition) //adds Cactus to the new position in accordance with the if statement
-    Collision()
+    Collision() //adds Collision Function to the Cactus - For When Cactus moves in Vivi
   }
+
+  function moveCatus2Left() {
+    //console.log(‘Position For Cactus2 Before Redefining —>’, cactusCurrentPosition)
+    removeCactus(cactus2CurrentPosition) //remove Cactus2 from current position
+
+    if ((cactus2CurrentPosition % width !== 0)) { // If Cactus2 is not on the left edge
+      cactus2CurrentPosition-- //moves Cactus2 left on the Grid
+    } else if (cactus2CurrentPosition = 80) { //if Cactus2 position is 80
+      cactus2CurrentPosition = cactus2CurrentPosition + 9 //add 9 to Catcus2 position to move it, to his starting position of 89
+    } else {
+      //console.log(‘cactus2 not working’)
+    }
+    // console.log(‘Position For Cactus2 After Redefining —>’, cactusCurrentPosition)
+    addCactus(cactus2CurrentPosition) //adds Cactus2 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Cactus2 - For When Cactus2 moves in Vivi
+  }
+
+
 
   //--Collision Function--//
   
   function Collision() {
-    if (viviCurrentPosition === cactusCurrentPosition) {
+    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition) { 
       console.log('Collision Is Triggered')
       removeVivi(viviCurrentPosition)
       console.log('Vivi Removed')
@@ -156,7 +179,7 @@ function init() {
   //Calling Functions
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
-
+  setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
 }
 
 
