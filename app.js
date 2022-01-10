@@ -33,8 +33,8 @@ function init() {
 
   //global variables for Bird Obstacles
   const birdClass = 'bird'
-  const birdStartPosition = 29 //this starting position refers to an index
-  let birdCurrentPosition = 29 //tomberry2 current position refers to an index
+  const birdStartPosition = 30 //this starting position refers to an index
+  let birdCurrentPosition = 30 //tomberry2 current position refers to an index
 
   //global variables for Riding Obstacles
   let ridingBirdClass = 'riding'
@@ -257,39 +257,40 @@ function init() {
 
 
   //moving Bird Obstacles 
+
+  //This function combines moving the Bird Left with Vivi riding the bird
   function moveBird() {
-    addBird(birdStartPosition)
-    setInterval(function () {
-      removeBird(birdCurrentPosition)
-      if (viviCurrentPosition !== birdCurrentPosition) {
-        cells.forEach(cell => cell.classList.remove('riding'))
+    addBird(birdStartPosition) //adding the bird in a start position
+    setInterval(function () { //creating a Set Interval
+      removeBird(birdCurrentPosition) //remove the bird for movement
+      if (viviCurrentPosition !== birdCurrentPosition) {  //if Vivi's position is not the Same as the Bird's remove Riding class
+        cells.forEach(cell => cell.classList.remove('riding')) //remove Riding Class at whatever point it is at, remove it from all cells
       }
-      if (viviCurrentPosition === birdCurrentPosition) {
-        console.log('same position')
-        removeBird(birdCurrentPosition)
+      if (viviCurrentPosition === birdCurrentPosition) { ///if Vivi's position  is the same as the Bird
+        //console.log('same position')
+        removeBird(birdCurrentPosition) //remove the Bird class picture
 
-        addRidingBird(birdCurrentPosition)
-        score += 100
-        removeVivi(viviCurrentPosition)
-        console.log('add Vivi')
-        removeRidingBird(birdCurrentPosition)
+        addRidingBird(birdCurrentPosition) //add the Riding class picture
+        removeVivi(viviCurrentPosition) //remove Vivi class picture
+        //console.log('add remove Vivi')
+        removeRidingBird(birdCurrentPosition) //Remove the Riding Class for movement
 
-        if (viviCurrentPosition === 20) {
-          removeRidingBird(viviCurrentPosition)
-          viviCurrentPosition = birdStartPosition
-          removeRidingBird(viviCurrentPosition)
+        if (viviCurrentPosition === 20) { //if Vivi's position = 20
+          removeRidingBird(viviCurrentPosition) //remove the riding bird class and vivi's current position to prevent falling off the side
+          viviCurrentPosition = birdStartPosition //Set vivi position to the Bird's start to stay on the same row
+          removeRidingBird(viviCurrentPosition) //remove Riding class for movement
         }
-        viviCurrentPosition--
-        addRidingBird(viviCurrentPosition)
+        viviCurrentPosition-- //make Vivi's position go left
+        addRidingBird(viviCurrentPosition) //add Riding class to Vivi's position for movement
       }
-      if (birdCurrentPosition === 20) {
-        removeBird(birdCurrentPosition)
-        birdCurrentPosition = birdStartPosition
-        removeBird(birdCurrentPosition)
+      if (birdCurrentPosition === 20) { //if Bird position = 20
+        removeBird(birdCurrentPosition) //remove Bird class to prevent falling off the side
+        birdCurrentPosition = birdStartPosition //Set Bird position to the Bird start to stay on the same row
+        removeBird(birdCurrentPosition) //remove the Bird class for movement
       }
-      birdCurrentPosition--
-      addBird(birdCurrentPosition)
-    }, 1000);
+      birdCurrentPosition-- //make the Bird go left for movement
+      addBird(birdCurrentPosition)// add the Bird in the Birds current position for movment 
+    }, 1000); //Move Bird, Bird Riding and Vivi Classes left at a set interval of 1 seconds
 
 
   }
@@ -327,7 +328,6 @@ function init() {
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberryRight, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  //setInterval(moveBirdLeft, 1000) //Calling the function to move bird left at a set interval of 1 seconds
 }
 
 
