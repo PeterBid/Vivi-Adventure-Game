@@ -70,13 +70,15 @@ function init() {
   //removing Vivi from the grid
   function removeVivi(position) {
     cells[position].classList.remove(viviClass)
+    //console.log('position', position)
+    //console.log('current -->', viviCurrentPosition) 
   }
 
   //--Adding and Removing Obstacles From Grid--//
 
   //adding Cactus Obstacle to the grid
   function addCactus(position) {
-    console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
+    //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
     cells[position].classList.add(cactusClass)
   }
 
@@ -105,13 +107,13 @@ function init() {
     } else if (key === up && viviCurrentPosition >= width) { // if the up arrow is pressed and the Vivi is not on the top row
       viviCurrentPosition -= width // redefine Vivi’s position index to be previous position minus width - position goes down an entire width value on the Grid - moves Vivi up on the Grid
     } else if (key === down && viviCurrentPosition + width <= cellCount - 1) { // if the down arrow is pressed and Vivi is not on the bottom row
-      viviCurrentPosition += width // redefine Vivi’s position index to be previous position plus width - position goes up an entire width value on the Grid - moves Vivi down on the Grid
+      viviCurrentPosition += width  // redefine Vivi’s position index to be previous position plus width - position goes up an entire width value on the Grid - moves Vivi down on the Grid
     } else {
-      console.log('Invalid Key')
+      console.log('invalid key used')
     }
-    console.log('Position For Vivi After Redefining --->', viviCurrentPosition)
+    Collision()
     addVivi(viviCurrentPosition)
-  }
+    }
 
 
   //moving Cactus Obstacle left
@@ -128,6 +130,19 @@ function init() {
     }
     // console.log(‘Position For Cactus After Redefining —>’, cactusCurrentPosition)
     addCactus(cactusCurrentPosition) //adds Cactus to the new position in accordance with the if statement
+    Collision()
+  }
+  
+  function Collision() {
+    if (viviCurrentPosition === cactusCurrentPosition) {
+      console.log('Collision Is Triggered')
+      removeVivi(viviCurrentPosition)
+      console.log('Vivi Removed')
+      viviCurrentPosition = viviStartPosition
+      console.log('Vivi current position checked')
+      addVivi(viviCurrentPosition)
+      console.log('Vivi Added To Start')
+    }
   }
 
 
