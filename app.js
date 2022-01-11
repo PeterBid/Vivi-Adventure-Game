@@ -544,6 +544,15 @@ function init() {
     addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
     console.log('Vivi Added To Start')
 
+    if (cells[1].classList.contains(viviHomeClass)) {
+      removeViviHome(home1Postion) // remove the Vivihome picture in the home1 position
+      addHome(home1Postion) // add the home back into in the home1 position
+    }
+
+    if (cells[4].classList.contains(viviHomeClass)) {
+      removeViviHome(home2Position) // remove the Vivihome picture in the home2 position
+      addHome(home2Position) // add the home back into in the home2 position
+    }
 
   }
 
