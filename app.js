@@ -503,6 +503,13 @@ function init() {
       if (score < 0)
         score = 0
       selectScore.innerHTML = `Score: ${score}`
+      
+      removeVivi(viviCurrentPosition) //remove Vivi from his current position
+      console.log('Vivi Removed')
+      viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
+      console.log('Vivi current position checked')
+      addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
+      console.log('Vivi Added To Start')
     }
   }
 
