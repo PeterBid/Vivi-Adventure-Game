@@ -82,6 +82,13 @@ h1{
   cursor: pointer;
 }
 
+.grid div.orc {
+  background-image: url(assets/Orc1.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .grid div.bird {
   background-image: url(assets/Chocobo2.gif);
   background-repeat: no-repeat;

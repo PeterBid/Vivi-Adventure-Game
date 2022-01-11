@@ -10,31 +10,43 @@ function init() {
 
   //global variables for Vivi Character
   const viviClass = 'vivi'
+
   const viviStartPosition = 94 //this starting position refers to an index
   let viviCurrentPosition = 94 //vivi’s current position refers to an index
 
   //global variables for Cactus Obstacles
   const cactusClass = 'cactus'
+
   const cactusStartPosition = 89 //this starting position refers to an index
   let cactusCurrentPosition = 89 //cactus current position refers to an index
 
-  const cactus2Class = 'cactus'
   const cactus2StartPosition = 87 //this starting position refers to an index
   let cactus2CurrentPosition = 87 //cactus2 current position refers to an index
 
+  //global variables for Orc Obstacles
+  const orcClass = 'orc'
+
+  const orcStartPosition = 29 //this starting position refers to an index
+  let orcCurrentPosition = 29 //orc current position refers to an index
+
   //global variables for Tomberry Obstacles
   const tomberryClass = 'tomberry'
+
   const tomberryStartPosition = 71 //this starting position refers to an index
   let tomberryCurrentPosition = 71 //tomberry current position refers to an index
 
-  const tomberry2Class = 'tomberry'
   const tomberry2StartPosition = 73 //this starting position refers to an index
   let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
 
   //global variables for Bird Obstacles
   const birdClass = 'bird'
+
   const birdStartPosition = 30 //this starting position refers to an index
   let birdCurrentPosition = 30 //bird current position refers to an index
+  
+
+
+
 
   //global variables for Riding Obstacles
   let ridingBirdClass = 'riding'
@@ -78,13 +90,20 @@ function init() {
       cells.push(cell)
     }
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
+
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
+
+    addOrc(orcStartPosition) // call the function to add the Orc at the starting position
+
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
     addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
-    addBird(birdStartPosition) // call the function to add the Bird at the starting position
 
+    addBird(birdStartPosition) // call the function to add the Bird at the starting position
+    
+    //Move Birds here as calling the Set interval outside the function breaks them
     moveBird()
+    
   }
 
   //--Adding and Removing Vivi From Grid--//
@@ -111,9 +130,20 @@ function init() {
     cells[position].classList.add(cactusClass)
   }
 
-  //removing Cactuar Obstacles from the grid
+  //removing Cactus Obstacles from the grid
   function removeCactus(position) {
     cells[position].classList.remove(cactusClass)
+  }
+
+  //adding Orc Obstacles to the grid
+  function addOrc(position) {
+    //console.log('Cell Orc picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(orcClass)
+  }
+
+  //removing Orc Obstacles from the grid
+  function removeOrc(position) {
+    cells[position].classList.remove(orcClass)
   }
 
   //adding Tomberry Obstacles to the grid
@@ -127,7 +157,7 @@ function init() {
     cells[position].classList.remove(tomberryClass)
   }
 
-  //adding bird Obstacles to the grid
+  //adding Bird Obstacles to the grid
   function addBird(position) {
     //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
     cells[position].classList.add(birdClass)
@@ -217,6 +247,26 @@ function init() {
     Collision() //adds Collision Function to the Cactus2 - For When Cactus2 moves in Vivi
   }
 
+  //--Moving Orcs--//
+
+
+  //moving Orc Obstacles left
+  function moveOrcLeft() {
+    //console.log(‘Position For Orc Before Redefining —>’, orcCurrentPosition)
+    removeOrc(orcCurrentPosition) //remove Orc from current position
+
+    if ((orcCurrentPosition % width !== 0)) { // If Orc is not on the left edge
+      orcCurrentPosition-- //moves Orc left on the Grid
+    } else if (orcCurrentPosition = 20) { //if Orc position is 20
+      orcCurrentPosition = orcCurrentPosition + 9 //add 9 to Orc position to move it, to make it position of 29
+    } else {
+      //console.log(‘orc not working’)
+    }
+    // console.log(‘Position For Orc After Redefining —>’, orcCurrentPosition)
+    addOrc(orcCurrentPosition) //adds Cactus to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Cactus - For When Cactus moves in Vivi
+  }
+
 
   //--Moving Tomberrys--//
 
@@ -262,14 +312,16 @@ function init() {
   function moveBird() {
     addBird(birdStartPosition) //adding the bird in a start position
     setInterval(function () { //creating a Set Interval
+
       removeBird(birdCurrentPosition) //remove the bird for movement
+
       if (viviCurrentPosition !== birdCurrentPosition) {  //if Vivi's position is not the Same as the Bird's remove Riding class
         cells.forEach(cell => cell.classList.remove('riding')) //remove Riding Class at whatever point it is at, remove it from all cells
       }
-      if (viviCurrentPosition === birdCurrentPosition) { ///if Vivi's position  is the same as the Bird
+
+      if (viviCurrentPosition === birdCurrentPosition) { ///if Vivi's position is the same as the Bird
         //console.log('same position')
         removeBird(birdCurrentPosition) //remove the Bird class picture
-
         addRidingBird(birdCurrentPosition) //add the Riding class picture
         removeVivi(viviCurrentPosition) //remove Vivi class picture
         //console.log('add remove Vivi')
@@ -277,24 +329,23 @@ function init() {
 
         if (viviCurrentPosition === 20) { //if Vivi's position = 20
           removeRidingBird(viviCurrentPosition) //remove the riding bird class and vivi's current position to prevent falling off the side
-          viviCurrentPosition = birdStartPosition //Set vivi position to the Bird's start to stay on the same row
+          viviCurrentPosition = birdCurrentPosition + 10 //Set vivi position to the Bird's start to stay on the same row
           removeRidingBird(viviCurrentPosition) //remove Riding class for movement
         }
         viviCurrentPosition-- //make Vivi's position go left
         addRidingBird(viviCurrentPosition) //add Riding class to Vivi's position for movement
       }
+
       if (birdCurrentPosition === 20) { //if Bird position = 20
         removeBird(birdCurrentPosition) //remove Bird class to prevent falling off the side
-        birdCurrentPosition = birdStartPosition //Set Bird position to the Bird start to stay on the same row
+        birdCurrentPosition = birdCurrentPosition + 10 //Set Bird position to the Bird start to stay on the same row
         removeBird(birdCurrentPosition) //remove the Bird class for movement
       }
       birdCurrentPosition-- //make the Bird go left for movement
       addBird(birdCurrentPosition)// add the Bird in the Birds current position for movment 
+
     }, 1000); //Move Bird, Bird Riding and Vivi Classes left at a set interval of 1 seconds
-
-
   }
-
 
 
 
@@ -304,7 +355,8 @@ function init() {
 
   function Collision() {
     if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
-      viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition) {
+      viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
+      viviCurrentPosition === orcCurrentPosition) {
       console.log('Collision Is Triggered')
       removeVivi(viviCurrentPosition) //remove Vivi from his current position
       console.log('Vivi Removed')
@@ -324,10 +376,13 @@ function init() {
 
   //Calling Functions
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
+
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  setInterval(moveTomberryRight, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  setInterval(moveTomberry2Right, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
+
+  setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
+  setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
 }
 
 
