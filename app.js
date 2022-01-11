@@ -467,12 +467,17 @@ function init() {
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
       viviCurrentPosition === orcCurrentPosition || viviCurrentPosition === orc2CurrentPosition) {
       console.log('Collision Is Triggered')
+      //console.log('score = ', score)
       score = score - 200
+      //console.log('score = ', score)
       if (score < 0)
       score = 0
-      //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
-      //console.log('score = ', score)
+      
+      if (lives > 0) 
+      lives -= 1 
+      selectLives.innerHTML = `Lives: ${lives}`
+    
       removeVivi(viviCurrentPosition) //remove Vivi from his current position
       console.log('Vivi Removed')
       viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
