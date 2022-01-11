@@ -2,7 +2,7 @@ function init() {
 
   //---GlOBAL VARIABLES---//
 
-   //--Global Variables for Grid and Vivi--//
+  //--Global Variables for Grid and Vivi--//
 
   //global variables for grid
   const grid = document.querySelector('.grid')
@@ -16,12 +16,13 @@ function init() {
   const viviHomeClass = 'vivihome'
 
   const home1Postion = 1 //this home position refers to an index
-  //const home2Position = 4 //this home position refers to an index
+  const home2Position = 4 //this home position refers to an index
+  
   //const home3Position = 5 //this home position refers to an index
   //const home4Position = 8 //this home position refers to an index
 
 
-  
+
 
   //global variables for Vivi Character
   const viviClass = 'vivi'
@@ -73,7 +74,7 @@ function init() {
   let ridingBirdClass = 'riding'
 
 
- //--Global Variables for Topbar--//
+  //--Global Variables for Topbar--//
 
   //global variables for Scores
   let score = 0
@@ -114,7 +115,8 @@ function init() {
     }
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
 
-    addHome(home1Postion) // call the function to add the Home1 at its position 
+    addHome(home1Postion) // call the function to add the Home1 at its position
+    addHome(home2Position) // call the function to add the Home2 at its position 
 
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
@@ -148,15 +150,15 @@ function init() {
     //console.log('current -->', viviCurrentPosition) 
   }
 
-   //--Adding and Removing Home Positions From Grid--//
-  
+  //--Adding and Removing Home Positions From Grid--//
+
   //adding Home Position to the grid
   function addHome(position) {
     cells[position].classList.add(homeClass)
   }
 
   //removing Home position to the grid
-  
+
   function removeHome(position) {
     cells[position].classList.remove(homeClass)
   }
@@ -167,7 +169,7 @@ function init() {
   }
 
   //removing ViviHome position to the grid
-  
+
   function removeViviHome(position) {
     cells[position].classList.remove(viviHomeClass)
   }
@@ -257,19 +259,29 @@ function init() {
     } else {
       console.log('invalid key used')
     }
-    if (viviCurrentPosition === home1Postion) {
+    if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
       //score += 100
       //score.innerText = score
-      removeVivi(viviCurrentPosition)
-      removeHome(home1Postion)
-      addViviHome(home1Postion)
+      removeVivi(viviCurrentPosition) //remove Vivi for movement
+      removeHome(home1Postion) // remove the home picture in the home1 position
+      addViviHome(home1Postion) // add the Vivihome picture in the home2 position
       //alert('You made it Home')
 
-      viviCurrentPosition = viviStartPosition
+      viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
+
+    } 
+
+    if (viviCurrentPosition === home2Position) { //If Vivi's position is the same as Home2 position
+      removeVivi(viviCurrentPosition) //remove Vivi for movement
+      removeHome(home2Position) // remove the home picture in the home2 position
+      addViviHome(home2Position) // add the Vivihome picture in the home2 position
+
+      viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
     }
+    
 
     Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
-    //riding()
+    
     addVivi(viviCurrentPosition)
   }
 
