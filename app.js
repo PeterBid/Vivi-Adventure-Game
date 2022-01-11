@@ -10,6 +10,19 @@ function init() {
   const cellCount = width * width //this makes the total cells in the grid i.e width 10 = 100 cells
   const cells = []
 
+  //global variables for Home Positions
+
+  const homeClass = 'home'
+  const viviHomeClass = 'vivihome'
+
+  const home1Postion = 1 //this home position refers to an index
+  //const home2Position = 4 //this home position refers to an index
+  //const home3Position = 5 //this home position refers to an index
+  //const home4Position = 8 //this home position refers to an index
+
+
+  
+
   //global variables for Vivi Character
   const viviClass = 'vivi'
 
@@ -101,6 +114,8 @@ function init() {
     }
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
 
+    addHome(home1Postion) // call the function to add the Home1 at its position 
+
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
 
@@ -121,8 +136,8 @@ function init() {
 
   //adding Vivi to the grid
   function addVivi(position) { // this function is reusable for different positions
-    console.log('Position Being Passed In For Vivi —>', position)
-    console.log('Cell Vivi picked Using The Position Index Passed In —>', cells[position])
+    //console.log('Position Being Passed In For Vivi —>', position)
+    //console.log('Cell Vivi picked Using The Position Index Passed In —>', cells[position])
     cells[position].classList.add(viviClass)
   }
 
@@ -132,6 +147,31 @@ function init() {
     //console.log('position', position)
     //console.log('current -->', viviCurrentPosition) 
   }
+
+   //--Adding and Removing Home Positions From Grid--//
+  
+  //adding Home Position to the grid
+  function addHome(position) {
+    cells[position].classList.add(homeClass)
+  }
+
+  //removing Home position to the grid
+  
+  function removeHome(position) {
+    cells[position].classList.remove(homeClass)
+  }
+
+  //adding ViviHome Position to the grid
+  function addViviHome(position) {
+    cells[position].classList.add(viviHomeClass)
+  }
+
+  //removing ViviHome position to the grid
+  
+  function removeViviHome(position) {
+    cells[position].classList.remove(viviHomeClass)
+  }
+
 
   //--Adding and Removing Obstacles From Grid--//
 

@@ -89,6 +89,20 @@ h1{
   cursor: pointer;
 }
 
+.grid div.home {
+  background-image: url(assets/Home1.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.grid div.vivihome {
+  background-image: url(assets/Vivi2.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .grid div.bird {
   background-image: url(assets/Chocobo2.gif);
   background-repeat: no-repeat;
