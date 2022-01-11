@@ -1,14 +1,47 @@
 function init() {
 
   //---GlOBAL VARIABLES---//
-
-  //--Global Variables for Grid and Vivi--//
+  
+  //--Global Variables for Grid--//
 
   //global variables for grid
   const grid = document.querySelector('.grid')
   const width = 10
   const cellCount = width * width //this makes the total cells in the grid i.e width 10 = 100 cells
   const cells = []
+
+  //--Global Variables for Topbar--//
+
+  //global variables for Scores
+  let score = 0
+  let lives = 3
+  let highScore = 0
+  let level = 1
+
+  //--Global Variables for Timer--//
+
+
+
+  //--ELEMENT SELECTORS--//
+
+  //element selectors for Topbar
+  const selectStart = document.querySelector('#start')
+  const selectReset = document.querySelector('#reset')
+  const selectLives = document.querySelector('#lives')
+  const selectScore = document.querySelector('#score')
+  const selectHighScore = document.querySelector('#highscore')
+  const selectLevel = document.querySelector('#level')
+
+  //--UPDATING PARAMETERS--//
+
+  //updating the parameters in the Topbar
+  selectLives.innerHTML = `Lives: ${lives}`
+  selectScore.innerHTML = `Score: ${score}`
+  selectHighScore.innerHTML = `HighScore: ${highScore}`
+  selectLevel.innerHTML = `Level: ${level}`
+
+
+  //--Global Variables for Home and Vivi Character--//
 
   //global variables for Home Positions
 
@@ -17,10 +50,9 @@ function init() {
 
   const home1Postion = 1 //this home position refers to an index
   const home2Position = 4 //this home position refers to an index
-  
+
   //const home3Position = 5 //this home position refers to an index
   //const home4Position = 8 //this home position refers to an index
-
 
 
 
@@ -29,6 +61,9 @@ function init() {
 
   const viviStartPosition = 94 //this starting position refers to an index
   let viviCurrentPosition = 94 //vivi’s current position refers to an index
+
+
+
 
   //--Global Variables for Obstacles going Left--//
 
@@ -50,6 +85,8 @@ function init() {
   const orc2StartPosition = 21 //this starting position refers to an index
   let orc2CurrentPosition = 21 //orc current position refers to an index
 
+
+
   //--Global Variables for Obstacles going Right--//
 
   //global variables for Tomberry Obstacles
@@ -60,6 +97,8 @@ function init() {
 
   const tomberry2StartPosition = 73 //this starting position refers to an index
   let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
+
+
 
   //--Global Variables for Bird and Riding--//
 
@@ -73,35 +112,6 @@ function init() {
   //global variables for Riding Obstacles
   let ridingBirdClass = 'riding'
 
-
-  //--Global Variables for Topbar--//
-
-  //global variables for Scores
-  let score = 0
-  let lives = 3
-  let highScore = 0
-  let level = 1
-
-  //--Global Variables for Timer--//
-
-
-
-  //--ELEMENT SELECTORS--//
-
-  //element selectors for Topbar
-  const selectReset = document.querySelector('#reset')
-  const selectLives = document.querySelector('#lives')
-  const selectScore = document.querySelector('#score')
-  const selectHighScore = document.querySelector('#highscore')
-  const selectLevel = document.querySelector('#level')
-
-  //--UPDATING PARAMETERS--//
-
-  //updating the parameters in the Topbar
-  selectLives.innerHTML = `Lives: ${lives}`
-  selectScore.innerHTML = `Score: ${score}`
-  selectHighScore.innerHTML = `HighScore: ${highScore}`
-  selectLevel.innerHTML = `Level: ${level}`
 
   //--GRID--//  
 
@@ -260,8 +270,10 @@ function init() {
       console.log('invalid key used')
     }
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
-      //score += 100
-      //score.innerText = score
+      //console.log('score = ', score)
+      score = score + 1000
+      //console.log('score = ', score)
+      selectScore.innerHTML = `Score: ${score}`
       removeVivi(viviCurrentPosition) //remove Vivi for movement
       removeHome(home1Postion) // remove the home picture in the home1 position
       addViviHome(home1Postion) // add the Vivihome picture in the home2 position
@@ -269,19 +281,23 @@ function init() {
 
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
 
-    } 
+    }
 
     if (viviCurrentPosition === home2Position) { //If Vivi's position is the same as Home2 position
+      score = score + 1000
+      //console.log('score = ', score)
+      selectScore.innerHTML = `Score: ${score}`
+      //console.log('score = ', score)
       removeVivi(viviCurrentPosition) //remove Vivi for movement
       removeHome(home2Position) // remove the home picture in the home2 position
       addViviHome(home2Position) // add the Vivihome picture in the home2 position
 
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
     }
-    
+
 
     Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
-    
+
     addVivi(viviCurrentPosition)
   }
 
@@ -451,6 +467,12 @@ function init() {
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
       viviCurrentPosition === orcCurrentPosition || viviCurrentPosition === orc2CurrentPosition) {
       console.log('Collision Is Triggered')
+      score = score - 200
+      if (score < 0)
+      score = 0
+      //console.log('score = ', score)
+      selectScore.innerHTML = `Score: ${score}`
+      //console.log('score = ', score)
       removeVivi(viviCurrentPosition) //remove Vivi from his current position
       console.log('Vivi Removed')
       viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
@@ -459,6 +481,7 @@ function init() {
       console.log('Vivi Added To Start')
     }
   }
+
 
 
 
