@@ -285,6 +285,7 @@ function init() {
       //alert('You made it Home')
 
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
+      checkHouses()
 
     }
 
@@ -298,6 +299,7 @@ function init() {
       addViviHome(home2Position) // add the Vivihome picture in the home2 position
 
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
+      checkHouses()
     }
 
 
@@ -556,10 +558,25 @@ function init() {
     }
   }
 
+  //--Check Houses Function--//
+
+  function checkHouses() {
+    if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)) {
+      console.log('We Found Vivi')
+      gameOverWin()
+    } else {
+      console.log('you have not won yet')
+    }
+  }
+
   //--Game Over Function--//
 
   function gameOverLose() {
     window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset To Try Again`)
+  }
+
+  function gameOverWin() {
+    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`)
   }
 
 
