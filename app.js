@@ -16,7 +16,6 @@ function init() {
   let score = 0
   let lives = 3
   let highScore = 0
-  let level = 1
 
   //--Global Variables for Timer--//
 
@@ -26,12 +25,14 @@ function init() {
 
   //element selectors for Topbar
   const selectStart = document.querySelector('#start')
-  const selectReset = document.querySelector('#reset')
+  let selectReset = document.querySelector('#reset')
   const selectLives = document.querySelector('#lives')
   const selectScore = document.querySelector('#score')
   const selectTimeLeft = document.querySelector('#timeleft')
   const selectHighScore = document.querySelector('#highscore')
+
   
+
 
   //element selectors for TimeBar
   const bar = document.querySelector('.bar')
@@ -520,6 +521,28 @@ function init() {
     }
   }
 
+  //--Reset Game Function--//
+
+  function resetGame() {
+    console.log('reset button clicked')
+    score = 0
+    selectScore.innerHTML = `Score: ${score}`
+    lives = 3
+    selectLives.innerHTML = `Lives: ${lives}`
+    timeInGame = 0
+    selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
+
+
+    removeVivi(viviCurrentPosition) //remove Vivi from his current position
+    console.log('Vivi Removed')
+    viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
+    console.log('Vivi current position checked')
+    addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
+    console.log('Vivi Added To Start')
+
+
+  }
+
 
 
 
@@ -528,10 +551,11 @@ function init() {
 
   //Calling Event Listeners
   document.addEventListener('keydown', handleKeyDown)
+  selectReset.addEventListener('click', resetGame)
 
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
-  
+
   //--Calling Time Functions
   setInterval(timeBar, 1000)
 
@@ -540,7 +564,7 @@ function init() {
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
   setInterval(moveOrc2Left, 1000) //Calling the function to move orc left at a set interval of 1 seconds
-  
+
   //Calling Movement Right Functions
   setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
