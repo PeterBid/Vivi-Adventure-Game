@@ -31,7 +31,7 @@ function init() {
   const selectTimeLeft = document.querySelector('#timeleft')
   const selectHighScore = document.querySelector('#highscore')
 
-  
+
 
 
   //element selectors for TimeBar
@@ -260,7 +260,7 @@ function init() {
     const right = 39
     const up = 38
     const down = 40
-    console.log('Position For Vivi Before Redefining --->', viviCurrentPosition)
+    //console.log('Position For Vivi Before Redefining --->', viviCurrentPosition)
     removeVivi(viviCurrentPosition)
 
     if (key === right && viviCurrentPosition % width !== width - 1) { // if the right arrow key is pressed and the Vivi is not on the right edge
@@ -489,6 +489,7 @@ function init() {
       console.log('Vivi current position checked')
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
+      checkLives()
     }
   }
 
@@ -518,6 +519,7 @@ function init() {
       console.log('Vivi current position checked')
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
+      checkLives()
     }
   }
 
@@ -543,6 +545,29 @@ function init() {
 
   }
 
+  //--Check Lives Function--//
+
+  function checkLives() {
+    if (lives === 0) {
+      console.log('game over')
+      gameOverLose()
+    } else {
+      console.log(`you still have ${lives} left`)
+    }
+  }
+
+  //--Game Over Function--//
+
+  function gameOverLose() {
+    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset To Try Again`)
+  }
+
+
+  //window.alert('You Lost The Game')
+  //}
+  //resetGame()
+  //}
+
 
 
 
@@ -555,6 +580,7 @@ function init() {
 
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
+  //loseGame()
 
   //--Calling Time Functions
   setInterval(timeBar, 1000)
