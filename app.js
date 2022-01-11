@@ -498,6 +498,11 @@ function init() {
       if (lives < 0)
         lives = 0
       selectLives.innerHTML = `Lives: ${lives}`
+      score = score - 200
+      //console.log('score = ', score)
+      if (score < 0)
+        score = 0
+      selectScore.innerHTML = `Score: ${score}`
     }
   }
 
