@@ -1,7 +1,7 @@
 function init() {
 
   //---GlOBAL VARIABLES---//
-  
+
   //--Global Variables for Grid--//
 
   //global variables for grid
@@ -20,7 +20,7 @@ function init() {
 
   //--Global Variables for Timer--//
 
-
+  let timeInGame = 0
 
   //--ELEMENT SELECTORS--//
 
@@ -471,19 +471,33 @@ function init() {
       score = score - 200
       //console.log('score = ', score)
       if (score < 0)
-      score = 0
+        score = 0
       selectScore.innerHTML = `Score: ${score}`
-      
-      if (lives > 0) 
-      lives -= 1 
+
+      if (lives > 0)
+        lives -= 1
       selectLives.innerHTML = `Lives: ${lives}`
-    
+
       removeVivi(viviCurrentPosition) //remove Vivi from his current position
       console.log('Vivi Removed')
       viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
       console.log('Vivi current position checked')
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
+    }
+  }
+
+  //--Timebar Function--//
+
+  function timebar() {
+    timeInGame++
+    console.log(timeInGame)
+    if (timeInGame > 10) {
+      timeInGame = 0
+      lives -= 1
+      if (lives < 0)
+        lives = 0
+      selectLives.innerHTML = `Lives: ${lives}`
     }
   }
 
@@ -497,6 +511,8 @@ function init() {
 
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
+  //--Calling Time Functions
+  setInterval(timebar, 1000)
   //Calling Movement Left Functions 
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
