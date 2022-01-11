@@ -257,6 +257,17 @@ function init() {
     } else {
       console.log('invalid key used')
     }
+    if (viviCurrentPosition === home1Postion) {
+      //score += 100
+      //score.innerText = score
+      removeVivi(viviCurrentPosition)
+      removeHome(home1Postion)
+      addViviHome(home1Postion)
+      //alert('You made it Home')
+
+      viviCurrentPosition = viviStartPosition
+    }
+
     Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
     //riding()
     addVivi(viviCurrentPosition)
