@@ -29,8 +29,9 @@ function init() {
   const selectReset = document.querySelector('#reset')
   const selectLives = document.querySelector('#lives')
   const selectScore = document.querySelector('#score')
+  const selectTimeLeft = document.querySelector('#timeleft')
   const selectHighScore = document.querySelector('#highscore')
-  const selectLevel = document.querySelector('#level')
+  
 
   //element selectors for TimeBar
   const bar = document.querySelector('.bar')
@@ -40,8 +41,8 @@ function init() {
   //updating the parameters in the Topbar
   selectLives.innerHTML = `Lives: ${lives}`
   selectScore.innerHTML = `Score: ${score}`
+  selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
   selectHighScore.innerHTML = `HighScore: ${highScore}`
-  selectLevel.innerHTML = `Level: ${level}`
 
 
   //--Global Variables for Home and Vivi Character--//
@@ -496,8 +497,10 @@ function init() {
     timeInGame++
     bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr`
     console.log(timeInGame)
+    selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
     if (timeInGame > 20) {
       timeInGame = 0
+      selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
       lives -= 1
       if (lives < 0)
         lives = 0
