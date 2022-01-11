@@ -32,6 +32,9 @@ function init() {
   const selectHighScore = document.querySelector('#highscore')
   const selectLevel = document.querySelector('#level')
 
+  //element selectors for TimeBar
+  const bar = document.querySelector('.bar')
+
   //--UPDATING PARAMETERS--//
 
   //updating the parameters in the Topbar
@@ -489,10 +492,11 @@ function init() {
 
   //--Timebar Function--//
 
-  function timebar() {
+  function timeBar() {
     timeInGame++
+    bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr`
     console.log(timeInGame)
-    if (timeInGame > 10) {
+    if (timeInGame > 20) {
       timeInGame = 0
       lives -= 1
       if (lives < 0)
@@ -503,7 +507,7 @@ function init() {
       if (score < 0)
         score = 0
       selectScore.innerHTML = `Score: ${score}`
-      
+
       removeVivi(viviCurrentPosition) //remove Vivi from his current position
       console.log('Vivi Removed')
       viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
@@ -518,18 +522,22 @@ function init() {
 
 
 
+
   //Calling Event Listeners
   document.addEventListener('keydown', handleKeyDown)
 
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
+  
   //--Calling Time Functions
-  setInterval(timebar, 1000)
+  setInterval(timeBar, 1000)
+
   //Calling Movement Left Functions 
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
   setInterval(moveOrc2Left, 1000) //Calling the function to move orc left at a set interval of 1 seconds
+  
   //Calling Movement Right Functions
   setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
