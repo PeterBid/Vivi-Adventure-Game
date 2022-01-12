@@ -137,6 +137,9 @@ function init() {
   const fighter5StartPosition = 11 //this starting position refers to an index
   let fighter5CurrentPosition = 11 //orc current position refers to an index
 
+  const fighter6StartPosition = 12 //this starting position refers to an index
+  let fighter6CurrentPosition = 12 //orc current position refers to an index
+
 
 
   //--Global Variables for Obstacles going Right--//
@@ -196,9 +199,10 @@ function init() {
 
     addFighter(fighterStartPosition) // call the function to add the fighter at the starting position
     addFighter(fighter2StartPosition) // call the function to add the fighter at the starting position
-    //addFighter(fighter3StartPosition) // call the function to add the fighter at the starting position
-    //addFighter(fighter4StartPosition) // call the function to add the fighter at the starting position
-    //addFighter(fighter5StartPosition) // call the function to add the fighter at the starting position
+    addFighter(fighter3StartPosition) // call the function to add the fighter at the starting position
+    addFighter(fighter4StartPosition) // call the function to add the fighter at the starting position
+    addFighter(fighter5StartPosition) // call the function to add the fighter at the starting position
+    addFighter(fighter6StartPosition) // call the function to add the fighter at the starting position
 
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
     addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
@@ -644,6 +648,70 @@ function init() {
     Collision() //adds Collision Function to the Fighter2 - For When Fighter2 moves in Vivi
   }
 
+  function moveFighter3Left() {
+    //console.log(‘Position For Fighter3 Before Redefining —>’, fighter3CurrentPosition)
+    removeFighter(fighter3CurrentPosition) //remove Fighter3 from current position
+
+    if ((fighter3CurrentPosition % width !== 0)) { // If Fighter3 is not on the left edge
+      fighter3CurrentPosition-- //moves Fighter3 left on the Grid
+    } else if (fighter3CurrentPosition = 10) { //if Fighter3 position is 80
+      fighter3CurrentPosition = fighter3CurrentPosition + 9 //add 9 to Fighter3 position to move it, to make it position of 89
+    } else {
+      //console.log(‘fighternot working’)
+    }
+    // console.log(‘Position For Fighter3 After Redefining —>’, fighter3CurrentPosition)
+    addFighter(fighter3CurrentPosition) //adds fighter3 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Fighter3 - For When Fighter3 moves in Vivi
+  }
+
+  function moveFighter4Left() {
+    //console.log(‘Position For Fighter4 Before Redefining —>’, fighter4CurrentPosition)
+    removeFighter(fighter4CurrentPosition) //remove Fighter4 from current position
+
+    if ((fighter4CurrentPosition % width !== 0)) { // If Fighter4 is not on the left edge
+      fighter4CurrentPosition-- //moves Fighter4 left on the Grid
+    } else if (fighter4CurrentPosition = 10) { //if Fighter4 position is 80
+      fighter4CurrentPosition = fighter4CurrentPosition + 9 //add 9 to Fighter4 position to move it, to make it position of 89
+    } else {
+      //console.log(‘fighternot working’)
+    }
+    // console.log(‘Position For Fighter4 After Redefining —>’, fighter4CurrentPosition)
+    addFighter(fighter4CurrentPosition) //adds fighter4 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Fighter4 - For When Fighter4 moves in Vivi
+  }
+
+  function moveFighter5Left() {
+    //console.log(‘Position For Fighter5 Before Redefining —>’, fighter5CurrentPosition)
+    removeFighter(fighter5CurrentPosition) //remove Fighter5 from current position
+
+    if ((fighter5CurrentPosition % width !== 0)) { // If Fighter5 is not on the left edge
+      fighter5CurrentPosition-- //moves Fighter5 left on the Grid
+    } else if (fighter5CurrentPosition = 10) { //if Fighter5 position is 80
+      fighter5CurrentPosition = fighter5CurrentPosition + 9 //add 9 to Fighter5 position to move it, to make it position of 89
+    } else {
+      //console.log(‘fighternot working’)
+    }
+    // console.log(‘Position For Fighter5 After Redefining —>’, fighter5CurrentPosition)
+    addFighter(fighter5CurrentPosition) //adds fighter5 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Fighter5 - For When Fighter5 moves in Vivi
+  }
+
+  function moveFighter6Left() {
+    //console.log(‘Position For Fighter6 Before Redefining —>’, fighter6CurrentPosition)
+    removeFighter(fighter6CurrentPosition) //remove Fighter6 from current position
+
+    if ((fighter6CurrentPosition % width !== 0)) { // If Fighter6 is not on the left edge
+      fighter6CurrentPosition-- //moves Fighter6 left on the Grid
+    } else if (fighter6CurrentPosition = 10) { //if Fighter6 position is 80
+      fighter6CurrentPosition = fighter6CurrentPosition + 9 //add 9 to Fighter6 position to move it, to make it position of 89
+    } else {
+      //console.log(‘fighternot working’)
+    }
+    // console.log(‘Position For Fighter6 After Redefining —>’, fighter6CurrentPosition)
+    addFighter(fighter6CurrentPosition) //adds fighter6 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Fighter6 - For When Fighter5 moves in Vivi
+  }
+
   //--Moving Obstacles Right--//
 
   //--Moving Tomberrys--//
@@ -738,7 +806,8 @@ function init() {
     if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
       /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition || viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
-      || viviCurrentPosition === fighterCurrentPosition || viviCurrentPosition === fighter2CurrentPosition) {
+      || viviCurrentPosition === fighterCurrentPosition || viviCurrentPosition === fighter2CurrentPosition || viviCurrentPosition === fighter3CurrentPosition || viviCurrentPosition === fighter4CurrentPosition || viviCurrentPosition === fighter5CurrentPosition || viviCurrentPosition === fighter6CurrentPosition
+      ) {
       console.log('Collision Is Triggered')
       hitAudio.play()//Play Hit Music 
       //console.log('score = ', score)
@@ -939,8 +1008,12 @@ function init() {
   setInterval(moveOrc7Left, 1000) //Calling the function to move orc7 left at a set interval of 1 seconds
   setInterval(moveOrc8Left, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
   //Calling Fighter movement
-  setInterval(moveFighterLeft, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
-  setInterval(moveFighter2Left, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
+  setInterval(moveFighterLeft, 1000) //Calling the function to move fighter left at a set interval of 1 seconds
+  setInterval(moveFighter2Left, 1000) //Calling the function to move fighter2 left at a set interval of 1 seconds
+  setInterval(moveFighter3Left, 1000) //Calling the function to move fighter3 left at a set interval of 1 seconds
+  setInterval(moveFighter4Left, 1000) //Calling the function to move fighter4 left at a set interval of 1 seconds
+  setInterval(moveFighter5Left, 1000) //Calling the function to move fighter5 left at a set interval of 1 seconds
+  setInterval(moveFighter6Left, 1000) //Calling the function to move fighter5 left at a set interval of 1 seconds
 
 
   //Calling Movement Right Functions
