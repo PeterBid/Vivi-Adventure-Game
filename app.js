@@ -42,7 +42,7 @@ function init() {
   //updating the parameters in the Topbar
   selectLives.innerHTML = `Lives: ${lives}`
   selectScore.innerHTML = `Score: ${score}`
-  selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
+  selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
   selectHighScore.innerHTML = `HighScore: ${highScore}`
 
 
@@ -477,11 +477,11 @@ function init() {
       //console.log('score = ', score)
       score = score - 200
       //console.log('score = ', score)
-      if (score < 0)
-        score = 0
+      if (score < 0) //Caps score to not fall Below 0
+        score = 0 
       selectScore.innerHTML = `Score: ${score}`
 
-      if (lives > 0)
+      if (lives > 0) //If Lives is greater than 0 remove a life
         lives -= 1
       selectLives.innerHTML = `Lives: ${lives}`
 
@@ -491,28 +491,28 @@ function init() {
       console.log('Vivi current position checked')
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
-      checkLives()
+      checkLives() //Check How Many Lives Vivi Has
     }
   }
 
   //--Timebar Function--//
 
   function timeBar() {
-    timeInGame++
-    bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr`
+    timeInGame++ //Time in game increases by 1 incrementally
+    bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr` //Time in game changes the value of the fr in the Time Bar make sure to multply the value so it's proportional to 100 fr i.e if 20 is the total time, multply time in bar by 5
     console.log(timeInGame)
-    selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
-    if (timeInGame > 20) {
-      timeInGame = 0
+    selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
+    if (timeInGame > 20) { //This Value Sets you the time you have before triggering losing a life/losing score
+      timeInGame = 0 //Resets the Time Bar
       selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
-      lives -= 1
-      if (lives < 0)
-        lives = 0
+      lives -= 1 //lose a life
+      if (lives < 0) 
+        lives = 0 //Caps lives to not fall Below 0
       selectLives.innerHTML = `Lives: ${lives}`
       score = score - 200
       //console.log('score = ', score)
       if (score < 0)
-        score = 0
+        score = 0 //Caps score to not fall Below 0
       selectScore.innerHTML = `Score: ${score}`
 
       removeVivi(viviCurrentPosition) //remove Vivi from his current position
@@ -521,14 +521,15 @@ function init() {
       console.log('Vivi current position checked')
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
-      checkLives()
+      checkLives() //Check How Many Lives Vivi Has
     }
   }
 
   //--Reset Game Function--//
 
   function resetGame() {
-    console.log('reset button clicked')
+    console.log('reset button clicked') 
+    //Reseting the Top Bar variables
     score = 0
     selectScore.innerHTML = `Score: ${score}`
     lives = 3
@@ -536,15 +537,16 @@ function init() {
     timeInGame = 0
     selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
 
-
-    removeVivi(viviCurrentPosition) //remove Vivi from his current position
+    //Reseting Vivi's Position
+    removeVivi(viviCurrentPosition) //remove Vivi from his current position 
     console.log('Vivi Removed')
     viviCurrentPosition = viviStartPosition //Change Vivi's Current Position back to the Start position
     console.log('Vivi current position checked')
     addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
     console.log('Vivi Added To Start')
-
-    if (cells[1].classList.contains(viviHomeClass)) {
+    
+    //Reseting Home Pictures
+    if (cells[1].classList.contains(viviHomeClass)) { 
       removeViviHome(home1Postion) // remove the Vivihome picture in the home1 position
       addHome(home1Postion) // add the home back into in the home1 position
     }
@@ -558,10 +560,10 @@ function init() {
 
   //--Check Lives Function--//
 
-  function checkLives() {
-    if (lives === 0) {
+  function checkLives() { 
+    if (lives === 0) { //If Lives are 0 
       console.log('game over')
-      gameOverLose()
+      gameOverLose() //Trigger Game Over Function
     } else {
       console.log(`you still have ${lives} left`)
     }
@@ -570,9 +572,9 @@ function init() {
   //--Check Houses Function--//
 
   function checkHouses() {
-    if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)) {
+    if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
       console.log('We Found Vivi')
-      gameOverWin()
+      gameOverWin() //Trigger Game Win Function
     } else {
       console.log('you have not won yet')
     }
@@ -581,18 +583,15 @@ function init() {
   //--Game Over Function--//
 
   function gameOverLose() {
-    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset To Try Again`)
+    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset To Try Again`) // Losing Game Window Alert
   }
 
   function gameOverWin() {
-    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`)
+    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
   }
 
 
-  //window.alert('You Lost The Game')
-  //}
-  //resetGame()
-  //}
+  
 
 
 
@@ -602,7 +601,7 @@ function init() {
 
   //Calling Event Listeners
   document.addEventListener('keydown', handleKeyDown)
-  selectReset.addEventListener('click', resetGame)
+  selectReset.addEventListener('click', resetGame) //Calling Reset Function on Reset Button Click
 
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
