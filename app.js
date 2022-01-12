@@ -17,8 +17,8 @@ function init() {
   let lives = 3
   let highScore = 0
 
-  
-//Note - Type in the console localStorage.clear() to clear the console
+
+  //Note - Type in the console localStorage.clear() to clear the console
 
 
   //--Global Variables for Timer--//
@@ -30,6 +30,7 @@ function init() {
   //element selectors for Topbar
   const selectStart = document.querySelector('#start')
   let selectReset = document.querySelector('#reset')
+  let selectHighScoreReset = document.querySelector('#highscorereset')
   const selectLives = document.querySelector('#lives')
   const selectScore = document.querySelector('#score')
   const selectTimeLeft = document.querySelector('#timeleft')
@@ -572,6 +573,28 @@ function init() {
 
   }
 
+  //--High Score Functions--//
+
+  //Check High Score Function
+
+  window.onload = function highScoreCheck() { //function put into the browser window when it loads up
+    let highScoreFromBrowser = localStorage.getItem('highScore') // create a new variable which gets the value from the highScore stored the local storage 
+    if (highScoreFromBrowser != undefined) { //If it has a value so is Not Undefined
+      highScore = highScoreFromBrowser // set high score to the high score gotten from the local storage in the broswer
+      selectHighScore.innerHTML = `HighScore: ${highScore}` //display this visually
+    }
+  }
+
+  //Reset High Score When Button Is Clicked
+
+  function resetHighScore() {
+    console.log(localStorage.clear()) //Enter Command into Console to Clear the Local Storage
+    window.location.reload() //Refresh The Reload, to Reload the Game with the Local Storage Cleared
+  }
+
+
+  //--Win & Lose Game Functions--// 
+
   //--Check Lives Function--//
 
   function checkLives() {
@@ -594,7 +617,7 @@ function init() {
     }
   }
 
-  //--Game Over Function--//
+  //--Game Over Functions--//
 
   function gameOverLose() {
     window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset To Try Again`) // Losing Game Window Alert
@@ -604,15 +627,7 @@ function init() {
     window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
   }
 
-  //--High Score Check Function--//
 
-  window.onload = function highScoreCheck(){ //function put into the browser window when it loads up
-    let highScoreFromBrowser = localStorage.getItem('highScore') // create a new variable which gets the value from the highScore stored the local storage 
-    if (highScoreFromBrowser != undefined) { //If it has a value so is Not Undefined
-    highScore = highScoreFromBrowser // set high score to the high score gotten from the local storage in the broswer
-    selectHighScore.innerHTML = `HighScore: ${highScore}` //display this visually
-  }
-}
 
 
 
@@ -625,6 +640,7 @@ function init() {
   //Calling Event Listeners
   document.addEventListener('keydown', handleKeyDown)
   selectReset.addEventListener('click', resetGame) //Calling Reset Function on Reset Button Click
+  selectHighScoreReset.addEventListener('click', resetHighScore) //Calling ResetHighScore Function on Reset High Score Button Click
 
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
