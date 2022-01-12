@@ -17,6 +17,16 @@ function init() {
   let lives = 3
   let highScore = 0
 
+  window.onload = function(){
+    let highScoreFromBrowser = localStorage.getItem('highScore')
+    if (highScoreFromBrowser != undefined) { 
+    highScore = highScoreFromBrowser
+    selectHighScore.innerHTML = `HighScore: ${highScore}`
+  }
+}
+//Note - Type in the console localStorage.clear() to clear the console
+
+
   //--Global Variables for Timer--//
 
   let timeInGame = 0
@@ -279,6 +289,11 @@ function init() {
       score = score + 1000
       //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
+      if (score > highScore) {
+        highScore = score
+        localStorage.setItem('highScore', highScore)
+        selectHighScore.innerHTML = `HighScore: ${highScore}`
+      }
       removeVivi(viviCurrentPosition) //remove Vivi for movement
       removeHome(home1Postion) // remove the home picture in the home1 position
       addViviHome(home1Postion) // add the Vivihome picture in the home2 position
@@ -294,6 +309,10 @@ function init() {
       //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
       //console.log('score = ', score)
+      if (score > highScore) {
+        highScore = score
+        selectHighScore.innerHTML = `HighScore: ${highScore}`
+      }
       removeVivi(viviCurrentPosition) //remove Vivi for movement
       removeHome(home2Position) // remove the home picture in the home2 position
       addViviHome(home2Position) // add the Vivihome picture in the home2 position
@@ -478,7 +497,7 @@ function init() {
       score = score - 200
       //console.log('score = ', score)
       if (score < 0) //Caps score to not fall Below 0
-        score = 0 
+        score = 0
       selectScore.innerHTML = `Score: ${score}`
 
       if (lives > 0) //If Lives is greater than 0 remove a life
@@ -499,14 +518,14 @@ function init() {
 
   function timeBar() {
     timeInGame++ //Time in game increases by 1 incrementally
-    bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr` //Time in game changes the value of the fr in the Time Bar make sure to multply the value so it's proportional to 100 fr i.e if 20 is the total time, multply time in bar by 5
+    bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr` //Time in game changes the value of the CSS Grid fr in the Time Bar visually - make sure to multiply the value so it's proportional to 100 fr i.e if 20 is the total time, multply time in bar by 5
     console.log(timeInGame)
     selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
     if (timeInGame > 20) { //This Value Sets you the time you have before triggering losing a life/losing score
       timeInGame = 0 //Resets the Time Bar
       selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
       lives -= 1 //lose a life
-      if (lives < 0) 
+      if (lives < 0)
         lives = 0 //Caps lives to not fall Below 0
       selectLives.innerHTML = `Lives: ${lives}`
       score = score - 200
@@ -528,7 +547,7 @@ function init() {
   //--Reset Game Function--//
 
   function resetGame() {
-    console.log('reset button clicked') 
+    console.log('reset button clicked')
     //Reseting the Top Bar variables
     score = 0
     selectScore.innerHTML = `Score: ${score}`
@@ -544,9 +563,9 @@ function init() {
     console.log('Vivi current position checked')
     addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
     console.log('Vivi Added To Start')
-    
+
     //Reseting Home Pictures
-    if (cells[1].classList.contains(viviHomeClass)) { 
+    if (cells[1].classList.contains(viviHomeClass)) {
       removeViviHome(home1Postion) // remove the Vivihome picture in the home1 position
       addHome(home1Postion) // add the home back into in the home1 position
     }
@@ -560,7 +579,7 @@ function init() {
 
   //--Check Lives Function--//
 
-  function checkLives() { 
+  function checkLives() {
     if (lives === 0) { //If Lives are 0 
       console.log('game over')
       gameOverLose() //Trigger Game Over Function
@@ -590,8 +609,17 @@ function init() {
     window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
   }
 
+  /*function highScoreCheck() {
+    if (score > highScore) {
+      highScore = score
+      selectHighScore.innerHTML = `High Score: ${highScore}`
+      
+    }
+  }
 
-  
+  highScoreCheck()*/
+
+
 
 
 
