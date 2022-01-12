@@ -35,12 +35,12 @@ function init() {
   const selectTimeLeft = document.querySelector('#timeleft')
   const selectHighScore = document.querySelector('#highscore')
 
-  //Global Variables for Music
+  //element selectors for Music
   const shuffleAudio = document.querySelector('#target-audio')
+  const hitAudio = document.querySelector('#hit-audio')
 
 
   
-
 
 
 
@@ -286,6 +286,7 @@ function init() {
     } else {
       console.log('invalid key used')
     }
+    shuffleAudio.play()
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
       //console.log('score = ', score)
       score = score + 1000
@@ -496,6 +497,7 @@ function init() {
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
       viviCurrentPosition === orcCurrentPosition || viviCurrentPosition === orc2CurrentPosition) {
       console.log('Collision Is Triggered')
+      hitAudio.play()
       //console.log('score = ', score)
       score = score - 200
       //console.log('score = ', score)
@@ -514,6 +516,7 @@ function init() {
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
       checkLives() //Check How Many Lives Vivi Has
+      
     }
   }
 
@@ -578,6 +581,8 @@ function init() {
       addHome(home2Position) // add the home back into in the home2 position
     }
 
+    window.location.reload() //Refresh The Reload, to Reload the Game
+
   }
 
   //--High Score Functions--//
@@ -634,9 +639,9 @@ function init() {
     window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
   }
 
-  function playMusic() {
-    shuffleAudio.play()
-  }
+  //function playMusic() {
+    //shuffleAudio.play()
+  //}
 
 
   
@@ -655,7 +660,7 @@ function init() {
   document.addEventListener('keydown', handleKeyDown)
   selectReset.addEventListener('click', resetGame) //Calling Reset Function on Reset Button Click
   selectHighScoreReset.addEventListener('click', resetHighScore) //Calling ResetHighScore Function on Reset High Score Button Click
-  selectStart.addEventListener('click', playMusic)
+  //selectStart.addEventListener('click', playMusic)
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
   //loseGame()
