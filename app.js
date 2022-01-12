@@ -39,6 +39,8 @@ function init() {
   const shuffleAudio = document.querySelector('#target-audio')
   const hitAudio = document.querySelector('#hit-audio')
   const timeOutAudio = document.querySelector('#timeout-audio')
+  const gameOverLoseAudio = document.querySelector('#gameoverlose-audio')
+  const gameOverWinAudio = document.querySelector('#gameoverwin-audio')
 
 
   
@@ -614,6 +616,8 @@ function init() {
   function checkLives() {
     if (lives === 0) { //If Lives are 0 
       console.log('game over')
+      shuffleAudio.pause()
+      gameOverLoseAudio.play()
       gameOverLose() //Trigger Game Over Function
     } else {
       console.log(`you still have ${lives} left`)
@@ -625,6 +629,8 @@ function init() {
   function checkHouses() {
     if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
       console.log('We Found Vivi')
+      shuffleAudio.pause()
+      gameOverWinAudio.play()
       gameOverWin() //Trigger Game Win Function
     } else {
       console.log('you have not won yet')
