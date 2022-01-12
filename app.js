@@ -17,7 +17,7 @@ function init() {
   let lives = 3
   let highScore = 0
 
-  
+
 
 
   //--Global Variables for Timer--//
@@ -41,10 +41,8 @@ function init() {
   const timeOutAudio = document.querySelector('#timeout-audio')
   const gameOverLoseAudio = document.querySelector('#gameoverlose-audio')
   const gameOverWinAudio = document.querySelector('#gameoverwin-audio')
-
-
-  
-
+  const homeReachedAudio = document.querySelector('#homereached-audio')
+  const birdRidingAudio = document.querySelector('#birdriding-audio')
 
 
   //element selectors for TimeBar
@@ -160,7 +158,7 @@ function init() {
     //Move Birds here as calling the Set interval outside the function breaks them
     moveBird()
 
-    
+
 
   }
 
@@ -289,8 +287,9 @@ function init() {
     } else {
       console.log('invalid key used')
     }
-    shuffleAudio.play()
+    shuffleAudio.play()//Play Background Music When Player First Moves
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
+      homeReachedAudio.play()//Play HomeReached Music if Home is Filled 
       //console.log('score = ', score)
       score = score + 1000
       //console.log('score = ', score)
@@ -306,11 +305,12 @@ function init() {
       //alert('You made it Home')
 
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
-      checkHouses()
+      checkHouses()//Check if All Houses are filled
 
     }
 
     if (viviCurrentPosition === home2Position) { //If Vivi's position is the same as Home2 position
+      homeReachedAudio.play()//Play HomeReached Music if Home is Filled
       score = score + 1000
       //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
@@ -325,7 +325,7 @@ function init() {
       addViviHome(home2Position) // add the Vivihome picture in the home2 position
 
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
-      checkHouses()
+      checkHouses()//Check if All Houses are filled
     }
 
 
@@ -459,9 +459,12 @@ function init() {
 
       if (viviCurrentPosition !== birdCurrentPosition) {  //if Vivi's position is not the Same as the Bird's remove Riding class
         cells.forEach(cell => cell.classList.remove('riding')) //remove Riding Class at whatever point it is at, remove it from all cells
+        birdRidingAudio.pause()//pause the bird riding music
       }
 
       if (viviCurrentPosition === birdCurrentPosition) { ///if Vivi's position is the same as the Bird
+        shuffleAudio.pause()//pause the background music
+        birdRidingAudio.play()//play the bird riding music
         //console.log('same position')
         removeBird(birdCurrentPosition) //remove the Bird class picture
         addRidingBird(birdCurrentPosition) //add the Riding class picture
@@ -500,7 +503,7 @@ function init() {
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
       viviCurrentPosition === orcCurrentPosition || viviCurrentPosition === orc2CurrentPosition) {
       console.log('Collision Is Triggered')
-      hitAudio.play()
+      hitAudio.play()//Play Hit Music 
       //console.log('score = ', score)
       score = score - 200
       //console.log('score = ', score)
@@ -519,7 +522,7 @@ function init() {
       addVivi(viviCurrentPosition) // Add Vivi in again in his Start position
       console.log('Vivi Added To Start')
       checkLives() //Check How Many Lives Vivi Has
-      
+
     }
   }
 
@@ -531,7 +534,7 @@ function init() {
     console.log(timeInGame)
     selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
     if (timeInGame > 20) { //This Value Sets you the time you have before triggering losing a life/losing score
-      timeOutAudio.play()
+      timeOutAudio.play()//Play Timeout Music 
       timeInGame = 0 //Resets the Time Bar
       selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
       lives -= 1 //lose a life
@@ -616,8 +619,8 @@ function init() {
   function checkLives() {
     if (lives === 0) { //If Lives are 0 
       console.log('game over')
-      shuffleAudio.pause()
-      gameOverLoseAudio.play()
+      shuffleAudio.pause()//Pause the Background Music
+      gameOverLoseAudio.play()//Play Game Over Lose Music 
       gameOverLose() //Trigger Game Over Function
     } else {
       console.log(`you still have ${lives} left`)
@@ -629,8 +632,8 @@ function init() {
   function checkHouses() {
     if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
       console.log('We Found Vivi')
-      shuffleAudio.pause()
-      gameOverWinAudio.play()
+      shuffleAudio.pause()//Pause the Background Music
+      gameOverWinAudio.play()//Play Game Over Lose Music
       gameOverWin() //Trigger Game Win Function
     } else {
       console.log('you have not won yet')
@@ -640,26 +643,23 @@ function init() {
   //--Game Over Functions--//
 
   function gameOverLose() {
-    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset To Try Again`) // Losing Game Window Alert
+    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Reset Game To Try Again`) // Losing Game Window Alert
   }
 
   function gameOverWin() {
-    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
+    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset Game To Try Again`) // Winning Game Window Alert
   }
 
-  //function playMusic() {
-    //shuffleAudio.play()
-  //}
 
 
-  
-    
-  
-  
 
 
-  
-  
+
+
+
+
+
+
 
 
 
@@ -669,9 +669,10 @@ function init() {
   selectReset.addEventListener('click', resetGame) //Calling Reset Function on Reset Button Click
   selectHighScoreReset.addEventListener('click', resetHighScore) //Calling ResetHighScore Function on Reset High Score Button Click
   //selectStart.addEventListener('click', playMusic)
+
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
-  //loseGame()
+
 
   //--Calling Time Functions
   setInterval(timeBar, 1000)
