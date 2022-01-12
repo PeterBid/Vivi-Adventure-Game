@@ -38,6 +38,7 @@ function init() {
   //element selectors for Music
   const shuffleAudio = document.querySelector('#target-audio')
   const hitAudio = document.querySelector('#hit-audio')
+  const timeOutAudio = document.querySelector('#timeout-audio')
 
 
   
@@ -528,6 +529,7 @@ function init() {
     console.log(timeInGame)
     selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
     if (timeInGame > 20) { //This Value Sets you the time you have before triggering losing a life/losing score
+      timeOutAudio.play()
       timeInGame = 0 //Resets the Time Bar
       selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
       lives -= 1 //lose a life
