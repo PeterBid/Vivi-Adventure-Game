@@ -17,8 +17,7 @@ function init() {
   let lives = 3
   let highScore = 0
 
-
-  //Note - Type in the console localStorage.clear() to clear the console
+  
 
 
   //--Global Variables for Timer--//
@@ -35,6 +34,12 @@ function init() {
   const selectScore = document.querySelector('#score')
   const selectTimeLeft = document.querySelector('#timeleft')
   const selectHighScore = document.querySelector('#highscore')
+
+  //Global Variables for Music
+  const shuffleAudio = document.querySelector('#target-audio')
+
+
+  
 
 
 
@@ -151,6 +156,8 @@ function init() {
 
     //Move Birds here as calling the Set interval outside the function breaks them
     moveBird()
+
+    
 
   }
 
@@ -627,12 +634,19 @@ function init() {
     window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
   }
 
+  function playMusic() {
+    shuffleAudio.play()
+  }
 
 
+  
+    
+  
+  
 
 
-
-
+  
+  
 
 
 
@@ -641,7 +655,7 @@ function init() {
   document.addEventListener('keydown', handleKeyDown)
   selectReset.addEventListener('click', resetGame) //Calling Reset Function on Reset Button Click
   selectHighScoreReset.addEventListener('click', resetHighScore) //Calling ResetHighScore Function on Reset High Score Button Click
-
+  selectStart.addEventListener('click', playMusic)
   //--Calling Functions--//
   createGrid(viviStartPosition) // Creating the grid with Vivi in the starting position
   //loseGame()

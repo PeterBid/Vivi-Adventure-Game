@@ -32,7 +32,7 @@ h1{
   display: flex;
   flex-wrap: wrap; 
   border: solid 1px purple;
-  width: 600px;
+  width: 700px;
 }
 
 .grid-wrapper {
