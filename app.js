@@ -17,13 +17,7 @@ function init() {
   let lives = 3
   let highScore = 0
 
-  window.onload = function(){
-    let highScoreFromBrowser = localStorage.getItem('highScore')
-    if (highScoreFromBrowser != undefined) { 
-    highScore = highScoreFromBrowser
-    selectHighScore.innerHTML = `HighScore: ${highScore}`
-  }
-}
+  
 //Note - Type in the console localStorage.clear() to clear the console
 
 
@@ -289,10 +283,10 @@ function init() {
       score = score + 1000
       //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
-      if (score > highScore) {
-        highScore = score
-        localStorage.setItem('highScore', highScore)
-        selectHighScore.innerHTML = `HighScore: ${highScore}`
+      if (score > highScore) { //if score is greater than highScore
+        highScore = score //Make highScore equal score
+        localStorage.setItem('highScore', highScore) //put this highscore as an item in the local storage
+        selectHighScore.innerHTML = `HighScore: ${highScore}` //update the visual
       }
       removeVivi(viviCurrentPosition) //remove Vivi for movement
       removeHome(home1Postion) // remove the home picture in the home1 position
@@ -309,9 +303,10 @@ function init() {
       //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
       //console.log('score = ', score)
-      if (score > highScore) {
-        highScore = score
-        selectHighScore.innerHTML = `HighScore: ${highScore}`
+      if (score > highScore) { //if score is greater than highScore
+        highScore = score //Make highScore equal score
+        localStorage.setItem('highScore', highScore) //put this highscore as an item in the local storage
+        selectHighScore.innerHTML = `HighScore: ${highScore}` //update the visual
       }
       removeVivi(viviCurrentPosition) //remove Vivi for movement
       removeHome(home2Position) // remove the home picture in the home2 position
@@ -609,15 +604,15 @@ function init() {
     window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Reset To Try Again`) // Winning Game Window Alert
   }
 
-  /*function highScoreCheck() {
-    if (score > highScore) {
-      highScore = score
-      selectHighScore.innerHTML = `High Score: ${highScore}`
-      
-    }
-  }
+  //--High Score Check Function--//
 
-  highScoreCheck()*/
+  window.onload = function highScoreCheck(){ //function put into the browser window when it loads up
+    let highScoreFromBrowser = localStorage.getItem('highScore') // create a new variable which gets the value from the highScore stored the local storage 
+    if (highScoreFromBrowser != undefined) { //If it has a value so is Not Undefined
+    highScore = highScoreFromBrowser // set high score to the high score gotten from the local storage in the broswer
+    selectHighScore.innerHTML = `HighScore: ${highScore}` //display this visually
+  }
+}
 
 
 
