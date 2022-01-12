@@ -89,6 +89,13 @@ h1{
   cursor: pointer;
 }
 
+.grid div.fighter {
+  background-image: url(assets/cloud3.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .grid div.home {
   background-image: url(assets/Home1.gif);
   background-repeat: no-repeat;

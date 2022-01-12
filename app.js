@@ -118,6 +118,25 @@ function init() {
   const orc8StartPosition = 27 //this starting position refers to an index
   let orc8CurrentPosition = 27 //orc current position refers to an index
 
+  //global variables for Fighter Obstacles
+  const fighterClass = 'fighter'
+
+
+  const fighterStartPosition = 18 //this starting position refers to an index
+  let fighterCurrentPosition = 18 //orc current position refers to an index
+
+  const fighter2StartPosition = 19 //this starting position refers to an index
+  let fighter2CurrentPosition = 19 //orc current position refers to an index
+
+  const fighter3StartPosition = 14 //this starting position refers to an index
+  let fighter3CurrentPosition = 14 //orc current position refers to an index
+
+  const fighter4StartPosition = 15 //this starting position refers to an index
+  let fighter4CurrentPosition = 15 //orc current position refers to an index
+
+  const fighter5StartPosition = 11 //this starting position refers to an index
+  let fighter5CurrentPosition = 11 //orc current position refers to an index
+
 
 
   //--Global Variables for Obstacles going Right--//
@@ -174,6 +193,12 @@ function init() {
     addOrc(orc6StartPosition) // call the function to add the Orc6 at the starting position
     addOrc(orc7StartPosition) // call the function to add the Orc7 at the starting position
     addOrc(orc8StartPosition) // call the function to add the Orc8 at the starting position
+
+    addFighter(fighterStartPosition) // call the function to add the fighter at the starting position
+    addFighter(fighter2StartPosition) // call the function to add the fighter at the starting position
+    //addFighter(fighter3StartPosition) // call the function to add the fighter at the starting position
+    //addFighter(fighter4StartPosition) // call the function to add the fighter at the starting position
+    //addFighter(fighter5StartPosition) // call the function to add the fighter at the starting position
 
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
     addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
@@ -250,6 +275,17 @@ function init() {
   //removing Orc Obstacles from the grid
   function removeOrc(position) {
     cells[position].classList.remove(orcClass)
+  }
+
+  //adding Orc Obstacles to the grid
+  function addFighter(position) {
+    //console.log('Cell Orc picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(fighterClass)
+  }
+
+  //removing Orc Obstacles from the grid
+  function removeFighter(position) {
+    cells[position].classList.remove(fighterClass)
   }
 
   //adding Tomberry Obstacles to the grid
@@ -572,6 +608,42 @@ function init() {
     Collision() //adds Collision Function to the Orc8 - For When Orc8 moves in Vivi
   }
 
+  //--Moving Fighter--//
+
+
+  //moving Fighter Obstacles left
+  function moveFighterLeft() {
+    //console.log(‘Position For Fighter Before Redefining —>’, fighterCurrentPosition)
+    removeFighter(fighterCurrentPosition) //remove Fighter from current position
+
+    if ((fighterCurrentPosition % width !== 0)) { // If Fighter is not on the left edge
+      fighterCurrentPosition-- //moves Fighter left on the Grid
+    } else if (fighterCurrentPosition = 10) { //if Fighter position is 80
+      fighterCurrentPosition = fighterCurrentPosition + 9 //add 9 to Fighter position to move it, to make it position of 89
+    } else {
+      //console.log(‘fighternot working’)
+    }
+    // console.log(‘Position For Fighter After Redefining —>’, fighterCurrentPosition)
+    addFighter(fighterCurrentPosition) //adds fighter to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Fighter - For When Fighter moves in Vivi
+  }
+
+  function moveFighter2Left() {
+    //console.log(‘Position For Fighter2 Before Redefining —>’, fighter2CurrentPosition)
+    removeFighter(fighter2CurrentPosition) //remove Fighter2 from current position
+
+    if ((fighter2CurrentPosition % width !== 0)) { // If Fighter2 is not on the left edge
+      fighter2CurrentPosition-- //moves Fighter2 left on the Grid
+    } else if (fighter2CurrentPosition = 10) { //if Fighter2 position is 80
+      fighter2CurrentPosition = fighter2CurrentPosition + 9 //add 9 to Fighter2 position to move it, to make it position of 89
+    } else {
+      //console.log(‘fighternot working’)
+    }
+    // console.log(‘Position For Fighter2 After Redefining —>’, fighter2CurrentPosition)
+    addFighter(fighter2CurrentPosition) //adds fighter2 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Fighter2 - For When Fighter2 moves in Vivi
+  }
+
   //--Moving Obstacles Right--//
 
   //--Moving Tomberrys--//
@@ -665,8 +737,8 @@ function init() {
   function Collision() {
     if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
-      /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition|| viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
-      ) {
+      /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition || viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
+      || viviCurrentPosition === fighterCurrentPosition || viviCurrentPosition === fighter2CurrentPosition) {
       console.log('Collision Is Triggered')
       hitAudio.play()//Play Hit Music 
       //console.log('score = ', score)
@@ -701,7 +773,7 @@ function init() {
     if (timeInGame > 40) { //This Value Sets you the time you have before triggering losing a life/losing score
       timeOutAudio.play()//Play Timeout Music 
       timeInGame = 0 //Resets the Time Bar
-      selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}` 
+      selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}`
       lives -= 1 //lose a life
       if (lives < 0)
         lives = 0 //Caps lives to not fall Below 0
@@ -806,7 +878,7 @@ function init() {
 
   function checkHouses() {
     if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)
-    && cells[5].classList.contains(viviHomeClass) && cells[8].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
+      && cells[5].classList.contains(viviHomeClass) && cells[8].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
       console.log('We Found Vivi')
       shuffleAudio.pause()//Pause the Background Music
       gameOverWinAudio.play()//Play Game Over Lose Music
@@ -857,7 +929,7 @@ function init() {
   //Calling Cactus Movement
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  //Callin Orc Movement
+  //Calling Orc Movement
   //setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
   setInterval(moveOrc2Left, 1000) //Calling the function to move orc2 left at a set interval of 1 seconds
   setInterval(moveOrc3Left, 1000) //Calling the function to move orc3 left at a set interval of 1 seconds
@@ -866,6 +938,9 @@ function init() {
   setInterval(moveOrc6Left, 1000) //Calling the function to move orc6 left at a set interval of 1 seconds
   setInterval(moveOrc7Left, 1000) //Calling the function to move orc7 left at a set interval of 1 seconds
   setInterval(moveOrc8Left, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
+  //Calling Fighter movement
+  setInterval(moveFighterLeft, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
+  setInterval(moveFighter2Left, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
 
 
   //Calling Movement Right Functions
