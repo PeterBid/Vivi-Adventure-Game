@@ -53,7 +53,7 @@ function init() {
   //updating the parameters in the Topbar
   selectLives.innerHTML = `Lives: ${lives}`
   selectScore.innerHTML = `Score: ${score}`
-  selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
+  selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
   selectHighScore.innerHTML = `HighScore: ${highScore}`
 
 
@@ -66,9 +66,8 @@ function init() {
 
   const home1Postion = 1 //this home position refers to an index
   const home2Position = 4 //this home position refers to an index
-
-  //const home3Position = 5 //this home position refers to an index
-  //const home4Position = 8 //this home position refers to an index
+  const home3Position = 5 //this home position refers to an index
+  const home4Position = 8 //this home position refers to an index
 
 
 
@@ -142,7 +141,9 @@ function init() {
     addVivi(viviStartPosition) // call the function to add the Vivi at the starting position
 
     addHome(home1Postion) // call the function to add the Home1 at its position
-    addHome(home2Position) // call the function to add the Home2 at its position 
+    addHome(home2Position) // call the function to add the Home2 at its position
+    addHome(home3Position) // call the function to add the Home3 at its position
+    addHome(home4Position) // call the function to add the Home4 at its position  
 
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
@@ -287,7 +288,7 @@ function init() {
     } else {
       console.log('invalid key used')
     }
-    shuffleAudio.play()//Play Background Music When Player First Moves
+    //shuffleAudio.play()//Play Background Music When Player First Moves
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
       homeReachedAudio.play()//Play HomeReached Music if Home is Filled 
       timeInGame = 0//timebar resets
@@ -329,6 +330,47 @@ function init() {
       viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
       checkHouses()//Check if All Houses are filled
     }
+
+    if (viviCurrentPosition === home3Position) { //If Vivi's position is the same as Home3 position
+      homeReachedAudio.play()//Play HomeReached Music if Home is Filled
+      timeInGame = 0//timebar resets
+      score = score + 1000
+      //console.log('score = ', score)
+      selectScore.innerHTML = `Score: ${score}`
+      //console.log('score = ', score)
+      if (score > highScore) { //if score is greater than highScore
+        highScore = score //Make highScore equal score
+        localStorage.setItem('highScore', highScore) //put this highscore as an item in the local storage
+        selectHighScore.innerHTML = `HighScore: ${highScore}` //update the visual
+      }
+      removeVivi(viviCurrentPosition) //remove Vivi for movement
+      removeHome(home3Position) // remove the home picture in the home3 position
+      addViviHome(home3Position) // add the Vivihome picture in the home3 position
+
+      viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
+      checkHouses()//Check if All Houses are filled
+    }
+
+    if (viviCurrentPosition === home4Position) { //If Vivi's position is the same as Home4 position
+      homeReachedAudio.play()//Play HomeReached Music if Home is Filled
+      timeInGame = 0//timebar resets
+      score = score + 1000
+      //console.log('score = ', score)
+      selectScore.innerHTML = `Score: ${score}`
+      //console.log('score = ', score)
+      if (score > highScore) { //if score is greater than highScore
+        highScore = score //Make highScore equal score
+        localStorage.setItem('highScore', highScore) //put this highscore as an item in the local storage
+        selectHighScore.innerHTML = `HighScore: ${highScore}` //update the visual
+      }
+      removeVivi(viviCurrentPosition) //remove Vivi for movement
+      removeHome(home4Position) // remove the home picture in the home4 position
+      addViviHome(home4Position) // add the Vivihome picture in the home4 position
+
+      viviCurrentPosition = viviStartPosition //reassign Vivi's position to the start position
+      checkHouses()//Check if All Houses are filled
+    }
+
 
 
     Collision() //adds the Collision Functions For When Vivi moves into and Obstacle
@@ -532,13 +574,13 @@ function init() {
 
   function timeBar() {
     timeInGame++ //Time in game increases by 1 incrementally
-    bar.style.gridTemplateColumns = `${timeInGame * 5}fr ${100 - timeInGame * 5}fr` //Time in game changes the value of the CSS Grid fr in the Time Bar visually - make sure to multiply the value so it's proportional to 100 fr i.e if 20 is the total time, multply time in bar by 5
+    bar.style.gridTemplateColumns = `${timeInGame * 2.5}fr ${100 - timeInGame * 2.5}fr` //Time in game changes the value of the CSS Grid fr in the Time Bar visually - make sure to multiply the value so it's proportional to 100 fr i.e if 20 is the total time, multply time in bar by 5
     console.log(timeInGame)
-    selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
-    if (timeInGame > 20) { //This Value Sets you the time you have before triggering losing a life/losing score
+    selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
+    if (timeInGame > 40) { //This Value Sets you the time you have before triggering losing a life/losing score
       timeOutAudio.play()//Play Timeout Music 
       timeInGame = 0 //Resets the Time Bar
-      selectTimeLeft.innerHTML = `Time Left: ${20 - timeInGame}`
+      selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}` 
       lives -= 1 //lose a life
       if (lives < 0)
         lives = 0 //Caps lives to not fall Below 0
@@ -590,6 +632,16 @@ function init() {
       addHome(home2Position) // add the home back into in the home2 position
     }
 
+    if (cells[5].classList.contains(viviHomeClass)) {
+      removeViviHome(home3Position) // remove the Vivihome picture in the home3 position
+      addHome(home3Position) // add the home back into in the home3 position
+    }
+
+    if (cells[8].classList.contains(viviHomeClass)) {
+      removeViviHome(home4Position) // remove the Vivihome picture in the home3 position
+      addHome(home4Position) // add the home back into in the home3 position
+    }
+
     window.location.reload() //Refresh The Reload, to Reload the Game
 
   }
@@ -632,7 +684,8 @@ function init() {
   //--Check Houses Function--//
 
   function checkHouses() {
-    if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
+    if (cells[1].classList.contains(viviHomeClass) && cells[4].classList.contains(viviHomeClass)
+    && cells[5].classList.contains(viviHomeClass) && cells[8].classList.contains(viviHomeClass)) { //If All These Cell Position Indexes Contain ViviHome Picture Class 
       console.log('We Found Vivi')
       shuffleAudio.pause()//Pause the Background Music
       gameOverWinAudio.play()//Play Game Over Lose Music
