@@ -290,6 +290,7 @@ function init() {
     shuffleAudio.play()//Play Background Music When Player First Moves
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
       homeReachedAudio.play()//Play HomeReached Music if Home is Filled 
+      timeInGame = 0//timebar resets
       //console.log('score = ', score)
       score = score + 1000
       //console.log('score = ', score)
@@ -311,6 +312,7 @@ function init() {
 
     if (viviCurrentPosition === home2Position) { //If Vivi's position is the same as Home2 position
       homeReachedAudio.play()//Play HomeReached Music if Home is Filled
+      timeInGame = 0//timebar resets
       score = score + 1000
       //console.log('score = ', score)
       selectScore.innerHTML = `Score: ${score}`
