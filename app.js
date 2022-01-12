@@ -94,8 +94,8 @@ function init() {
   //global variables for Orc Obstacles
   const orcClass = 'orc'
 
-  const orcStartPosition = 28 //this starting position refers to an index
-  let orcCurrentPosition = 28 //orc current position refers to an index
+  //const orcStartPosition = 28 //this starting position refers to an index
+  //let orcCurrentPosition = 28 //orc current position refers to an index
 
   const orc2StartPosition = 21 //this starting position refers to an index
   let orc2CurrentPosition = 21 //orc current position refers to an index
@@ -166,14 +166,14 @@ function init() {
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
 
-    addOrc(orcStartPosition) // call the function to add the Orc at the starting position
+    //addOrc(orcStartPosition) // call the function to add the Orc at the starting position
     addOrc(orc2StartPosition) // call the function to add the Orc2 at the starting position
     addOrc(orc3StartPosition) // call the function to add the Orc3 at the starting position
     addOrc(orc4StartPosition) // call the function to add the Orc4 at the starting position
-    //addOrc(orc5StartPosition) // call the function to add the Orc5 at the starting position
-    //addOrc(orc6StartPosition) // call the function to add the Orc6 at the starting position
-    //addOrc(orc7StartPosition) // call the function to add the Orc7 at the starting position
-    //addOrc(orc8StartPosition) // call the function to add the Orc8 at the starting position
+    addOrc(orc5StartPosition) // call the function to add the Orc5 at the starting position
+    addOrc(orc6StartPosition) // call the function to add the Orc6 at the starting position
+    addOrc(orc7StartPosition) // call the function to add the Orc7 at the starting position
+    addOrc(orc8StartPosition) // call the function to add the Orc8 at the starting position
 
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
     addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
@@ -444,7 +444,7 @@ function init() {
 
 
   //moving Orc Obstacles left
-  function moveOrcLeft() {
+  /*function moveOrcLeft() {
     //console.log(‘Position For Orc Before Redefining —>’, orcCurrentPosition)
     removeOrc(orcCurrentPosition) //remove Orc from current position
 
@@ -458,10 +458,10 @@ function init() {
     // console.log(‘Position For Orc After Redefining —>’, orcCurrentPosition)
     addOrc(orcCurrentPosition) //adds Orc to the new position in accordance with the if statement
     Collision() //adds Collision Function to the Orc - For When Orc moves in Vivi
-  }
+  }*/
 
   function moveOrc2Left() {
-    //console.log(‘Position For Orc2 Before Redefining —>’, orcCurrentPosition)
+    //console.log(‘Position For Orc2 Before Redefining —>’, orc2CurrentPosition)
     removeOrc(orc2CurrentPosition) //remove Orc2 from current position
 
     if ((orc2CurrentPosition % width !== 0)) { // If Orc2 is not on the left edge
@@ -477,7 +477,7 @@ function init() {
   }
 
   function moveOrc3Left() {
-    //console.log(‘Position For Orc3 Before Redefining —>’, orcCurrentPosition)
+    //console.log(‘Position For Orc3 Before Redefining —>’, orc3CurrentPosition)
     removeOrc(orc3CurrentPosition) //remove Orc3 from current position
 
     if ((orc3CurrentPosition % width !== 0)) { // If Orc3 is not on the left edge
@@ -493,7 +493,7 @@ function init() {
   }
 
   function moveOrc4Left() {
-    //console.log(‘Position For Orc4 Before Redefining —>’, orcCurrentPosition)
+    //console.log(‘Position For Orc4 Before Redefining —>’, orc4CurrentPosition)
     removeOrc(orc4CurrentPosition) //remove Orc4 from current position
 
     if ((orc4CurrentPosition % width !== 0)) { // If Orc4 is not on the left edge
@@ -506,6 +506,70 @@ function init() {
     // console.log(‘Position For Orc4 After Redefining —>’, orc4CurrentPosition)
     addOrc(orc4CurrentPosition) //adds Orc4 to the new position in accordance with the if statement
     Collision() //adds Collision Function to the Orc4 - For When Orc4 moves in Vivi
+  }
+
+  function moveOrc5Left() {
+    //console.log(‘Position For Orc5 Before Redefining —>’, orc5CurrentPosition)
+    removeOrc(orc5CurrentPosition) //remove Orc5 from current position
+
+    if ((orc5CurrentPosition % width !== 0)) { // If Orc5 is not on the left edge
+      orc5CurrentPosition-- //moves Orc5 left on the Grid
+    } else if (orc5CurrentPosition = 20) { //if Orc5 position is 20
+      orc5CurrentPosition = orc5CurrentPosition + 9 //add 9 to Orc5 position to move it, to make it position of 29
+    } else {
+      //console.log(‘orc not working’)
+    }
+    // console.log(‘Position For Orc5 After Redefining —>’, orc5CurrentPosition)
+    addOrc(orc5CurrentPosition) //adds Orc5 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Orc5 - For When Orc5 moves in Vivi
+  }
+
+  function moveOrc6Left() {
+    //console.log(‘Position For Orc6 Before Redefining —>’, orc6CurrentPosition)
+    removeOrc(orc6CurrentPosition) //remove Orc6 from current position
+
+    if ((orc6CurrentPosition % width !== 0)) { // If Orc6 is not on the left edge
+      orc6CurrentPosition-- //moves Orc6 left on the Grid
+    } else if (orc6CurrentPosition = 20) { //if Orc6 position is 20
+      orc6CurrentPosition = orc6CurrentPosition + 9 //add 9 to Orc6 position to move it, to make it position of 29
+    } else {
+      //console.log(‘orc not working’)
+    }
+    // console.log(‘Position For Orc6 After Redefining —>’, orc6CurrentPosition)
+    addOrc(orc6CurrentPosition) //adds Orc6 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Orc6 - For When Orc6 moves in Vivi
+  }
+
+  function moveOrc7Left() {
+    //console.log(‘Position For Orc7 Before Redefining —>’, orc7CurrentPosition)
+    removeOrc(orc7CurrentPosition) //remove Orc7 from current position
+
+    if ((orc7CurrentPosition % width !== 0)) { // If Orc7 is not on the left edge
+      orc7CurrentPosition-- //moves Orc7 left on the Grid
+    } else if (orc7CurrentPosition = 20) { //if Orc7 position is 20
+      orc7CurrentPosition = orc7CurrentPosition + 9 //add 9 to Orc7 position to move it, to make it position of 29
+    } else {
+      //console.log(‘orc not working’)
+    }
+    // console.log(‘Position For Orc7 After Redefining —>’, orc7CurrentPosition)
+    addOrc(orc7CurrentPosition) //adds Orc7 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Orc7 - For When Orc7 moves in Vivi
+  }
+
+  function moveOrc8Left() {
+    //console.log(‘Position For Orc8 Before Redefining —>’, orc8CurrentPosition)
+    removeOrc(orc8CurrentPosition) //remove Orc8 from current position
+
+    if ((orc8CurrentPosition % width !== 0)) { // If Orc8 is not on the left edge
+      orc8CurrentPosition-- //moves Orc8 left on the Grid
+    } else if (orc8CurrentPosition = 20) { //if Orc8 position is 20
+      orc8CurrentPosition = orc8CurrentPosition + 9 //add 9 to Orc8 position to move it, to make it position of 29
+    } else {
+      //console.log(‘orc not working’)
+    }
+    // console.log(‘Position For Orc8 After Redefining —>’, orc8CurrentPosition)
+    addOrc(orc8CurrentPosition) //adds Orc8 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Orc8 - For When Orc8 moves in Vivi
   }
 
   //--Moving Obstacles Right--//
@@ -601,7 +665,8 @@ function init() {
   function Collision() {
     if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
-      viviCurrentPosition === orcCurrentPosition || viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition) {
+      /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition|| viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
+      ) {
       console.log('Collision Is Triggered')
       hitAudio.play()//Play Hit Music 
       //console.log('score = ', score)
@@ -789,14 +854,22 @@ function init() {
   setInterval(timeBar, 1000)
 
   //Calling Movement Left Functions 
+  //Calling Cactus Movement
   setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
   setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
+  //Callin Orc Movement
+  //setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
   setInterval(moveOrc2Left, 1000) //Calling the function to move orc2 left at a set interval of 1 seconds
   setInterval(moveOrc3Left, 1000) //Calling the function to move orc3 left at a set interval of 1 seconds
-  setInterval(moveOrc4Left, 1000) //Calling the function to move orc3 left at a set interval of 1 seconds
+  setInterval(moveOrc4Left, 1000) //Calling the function to move orc4 left at a set interval of 1 seconds
+  setInterval(moveOrc5Left, 1000) //Calling the function to move orc5 left at a set interval of 1 seconds
+  setInterval(moveOrc6Left, 1000) //Calling the function to move orc6 left at a set interval of 1 seconds
+  setInterval(moveOrc7Left, 1000) //Calling the function to move orc7 left at a set interval of 1 seconds
+  setInterval(moveOrc8Left, 1000) //Calling the function to move orc8 left at a set interval of 1 seconds
+
 
   //Calling Movement Right Functions
+  //Calling Tomberry Movement
   setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
 }
