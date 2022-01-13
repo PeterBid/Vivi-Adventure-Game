@@ -15,10 +15,12 @@ header{
   align-items: center;
 }
 
-h1{
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+#logo{
+    /* align-items: center; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    max-height: 288px;
 }
 
 .topbar-wrapper{
@@ -33,8 +35,27 @@ h1{
   justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap; 
-  border: solid 1px purple;
+  border-radius: 16px;
   width: 640px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: whitesmoke;
+}
+
+.topbar-items{
+  
+}
+
+.top-bar-button{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 16px;
+  position: relative;
+  min-width: 192px;
+  max-width: 300px;
+  cursor: pointer;
+  margin: 10px;
 }
 
 .sides {
@@ -43,6 +64,7 @@ h1{
     background-color: #2cff96;
     background-image: linear-gradient(225deg, #2cff96 23%, #7dffe6 72%);
     margin: 60px;
+    border-radius: 16px;
 }
 
 .grid-wrapper {
