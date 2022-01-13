@@ -35,7 +35,6 @@ h1{
   display: flex;
   justify-content: space-evenly;
   align-items: center; 
-  border: solid 1px red ;
   height: 38px;
 }
 
@@ -68,6 +67,10 @@ h1{
   margin-left: 47px;
 }
 
+#highscorereset{
+  margin-bottom: -9px;
+}
+
 .sides {
   width: 288px;
     height: 600px;
@@ -76,6 +79,24 @@ background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
 
     margin: 60px;
     border-radius: 16px;
+}
+
+#instructions-header{
+  margin: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  
+  color: #FEBE10;
+  text-shadow: black 1px 1px 2px;
+  font-style: italic;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.side-left-text{
+  margin: 5px;
+  color: #FEBE10;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-shadow: black 1px 1px 2px;
 }
 
 .grid-wrapper {
@@ -205,7 +226,7 @@ background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
   grid-template-rows: 1fr 1fr;
   grid-column-start: 1;
   grid-column-end: 3;
-  border: 4px blue solid;
+  /* border: 4px blue solid; */
 }
 .bar{
   display: grid;
