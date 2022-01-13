@@ -35,6 +35,12 @@ h1{
   width: 640px;
 }
 
+.hello {
+  width: 200px;
+  height: 400px;
+  background-color: chartreuse;
+}
+
 .grid-wrapper {
   height: 610px;
   display: flex;
@@ -51,11 +57,14 @@ h1{
   justify-content: center;
   height: 600px;
   width: 600px;
-  background: lightcyan;
+  /* background: lightcyan; */
+  background-image: url(assets/mountains1.jpg);
+  
+
 }
 
 .grid div {
-  border: 1px solid lightgrey;
+  border: 1px solid lightgrey; 
   flex-grow: 1;
   height: 10%;
   width: 10%;
