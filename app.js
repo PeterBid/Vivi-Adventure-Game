@@ -98,47 +98,47 @@ function init() {
   //let orcCurrentPosition = 28 //orc current position refers to an index
 
   const orc2StartPosition = 21 //this starting position refers to an index
-  let orc2CurrentPosition = 21 //orc current position refers to an index
+  let orc2CurrentPosition = 21 //orc2 current position refers to an index
 
   const orc3StartPosition = 22 //this starting position refers to an index
-  let orc3CurrentPosition = 22 //orc current position refers to an index
+  let orc3CurrentPosition = 22 //orc3 current position refers to an index
 
   const orc4StartPosition = 23 //this starting position refers to an index
-  let orc4CurrentPosition = 23 //orc current position refers to an index
+  let orc4CurrentPosition = 23 //orc4 current position refers to an index
 
   const orc5StartPosition = 24 //this starting position refers to an index
-  let orc5CurrentPosition = 24 //orc current position refers to an index
+  let orc5CurrentPosition = 24 //orc5 current position refers to an index
 
   const orc6StartPosition = 25 //this starting position refers to an index
-  let orc6CurrentPosition = 25 //orc current position refers to an index
+  let orc6CurrentPosition = 25 //orc6 current position refers to an index
 
   const orc7StartPosition = 26 //this starting position refers to an index
-  let orc7CurrentPosition = 26 //orc current position refers to an index
+  let orc7CurrentPosition = 26 //orc7 current position refers to an index
 
   const orc8StartPosition = 27 //this starting position refers to an index
-  let orc8CurrentPosition = 27 //orc current position refers to an index
+  let orc8CurrentPosition = 27 //orc8 current position refers to an index
 
   //global variables for Fighter Obstacles
   const fighterClass = 'fighter'
 
 
   const fighterStartPosition = 18 //this starting position refers to an index
-  let fighterCurrentPosition = 18 //orc current position refers to an index
+  let fighterCurrentPosition = 18 //fighter current position refers to an index
 
   const fighter2StartPosition = 19 //this starting position refers to an index
-  let fighter2CurrentPosition = 19 //orc current position refers to an index
+  let fighter2CurrentPosition = 19 //fighter2 current position refers to an index
 
   const fighter3StartPosition = 14 //this starting position refers to an index
-  let fighter3CurrentPosition = 14 //orc current position refers to an index
+  let fighter3CurrentPosition = 14 //fighter3 current position refers to an index
 
   const fighter4StartPosition = 15 //this starting position refers to an index
-  let fighter4CurrentPosition = 15 //orc current position refers to an index
+  let fighter4CurrentPosition = 15 //fighter4 current position refers to an index
 
   const fighter5StartPosition = 11 //this starting position refers to an index
-  let fighter5CurrentPosition = 11 //orc current position refers to an index
+  let fighter5CurrentPosition = 11 //fighter5 current position refers to an index
 
   const fighter6StartPosition = 12 //this starting position refers to an index
-  let fighter6CurrentPosition = 12 //orc current position refers to an index
+  let fighter6CurrentPosition = 12 //fighter6 current position refers to an index
 
 
 
@@ -152,6 +152,15 @@ function init() {
 
   const tomberry2StartPosition = 73 //this starting position refers to an index
   let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
+
+  //global variables for bard Obstacles
+  const bardClass = 'bard'
+
+  const bardStartPosition = 32 //this starting position refers to an index
+  let bardCurrentPosition = 32 //bard current position refers to an index
+
+  const bard2StartPosition = 37 //this starting position refers to an index
+  let bard2CurrentPosition = 37 //bard2 current position refers to an index
 
 
 
@@ -206,6 +215,9 @@ function init() {
 
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
     addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
+
+    addBard(bardStartPosition) // call the function to add the bard at the starting position
+    addBard(bard2StartPosition) // call the function to add the bard2 at the starting position
 
     addBird(birdStartPosition) // call the function to add the Bird at the starting position
 
@@ -301,6 +313,17 @@ function init() {
   //removing Tomberry Obstacles from the grid
   function removeTomberry(position) {
     cells[position].classList.remove(tomberryClass)
+  }
+
+  //adding Bard Obstacles to the grid
+  function addBard(position) {
+    //console.log('Cell Cactus picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(bardClass)
+  }
+
+  //removing Tomberry Obstacles from the grid
+  function removeBard(position) {
+    cells[position].classList.remove(bardClass)
   }
 
   //adding Bird Obstacles to the grid
@@ -622,8 +645,8 @@ function init() {
 
     if ((fighterCurrentPosition % width !== 0)) { // If Fighter is not on the left edge
       fighterCurrentPosition-- //moves Fighter left on the Grid
-    } else if (fighterCurrentPosition = 10) { //if Fighter position is 80
-      fighterCurrentPosition = fighterCurrentPosition + 9 //add 9 to Fighter position to move it, to make it position of 89
+    } else if (fighterCurrentPosition = 10) { //if Fighter position is 10
+      fighterCurrentPosition = fighterCurrentPosition + 9 //add 9 to Fighter position to move it, to make it position of 19
     } else {
       //console.log(‘fighternot working’)
     }
@@ -638,8 +661,8 @@ function init() {
 
     if ((fighter2CurrentPosition % width !== 0)) { // If Fighter2 is not on the left edge
       fighter2CurrentPosition-- //moves Fighter2 left on the Grid
-    } else if (fighter2CurrentPosition = 10) { //if Fighter2 position is 80
-      fighter2CurrentPosition = fighter2CurrentPosition + 9 //add 9 to Fighter2 position to move it, to make it position of 89
+    } else if (fighter2CurrentPosition = 10) { //if Fighter2 position is 10
+      fighter2CurrentPosition = fighter2CurrentPosition + 9 //add 9 to Fighter2 position to move it, to make it position of 19
     } else {
       //console.log(‘fighternot working’)
     }
@@ -654,8 +677,8 @@ function init() {
 
     if ((fighter3CurrentPosition % width !== 0)) { // If Fighter3 is not on the left edge
       fighter3CurrentPosition-- //moves Fighter3 left on the Grid
-    } else if (fighter3CurrentPosition = 10) { //if Fighter3 position is 80
-      fighter3CurrentPosition = fighter3CurrentPosition + 9 //add 9 to Fighter3 position to move it, to make it position of 89
+    } else if (fighter3CurrentPosition = 10) { //if Fighter3 position is 10
+      fighter3CurrentPosition = fighter3CurrentPosition + 9 //add 9 to Fighter3 position to move it, to make it position of 19
     } else {
       //console.log(‘fighternot working’)
     }
@@ -670,8 +693,8 @@ function init() {
 
     if ((fighter4CurrentPosition % width !== 0)) { // If Fighter4 is not on the left edge
       fighter4CurrentPosition-- //moves Fighter4 left on the Grid
-    } else if (fighter4CurrentPosition = 10) { //if Fighter4 position is 80
-      fighter4CurrentPosition = fighter4CurrentPosition + 9 //add 9 to Fighter4 position to move it, to make it position of 89
+    } else if (fighter4CurrentPosition = 10) { //if Fighter4 position is 10
+      fighter4CurrentPosition = fighter4CurrentPosition + 9 //add 9 to Fighter4 position to move it, to make it position of 19
     } else {
       //console.log(‘fighternot working’)
     }
@@ -686,8 +709,8 @@ function init() {
 
     if ((fighter5CurrentPosition % width !== 0)) { // If Fighter5 is not on the left edge
       fighter5CurrentPosition-- //moves Fighter5 left on the Grid
-    } else if (fighter5CurrentPosition = 10) { //if Fighter5 position is 80
-      fighter5CurrentPosition = fighter5CurrentPosition + 9 //add 9 to Fighter5 position to move it, to make it position of 89
+    } else if (fighter5CurrentPosition = 10) { //if Fighter5 position is 10
+      fighter5CurrentPosition = fighter5CurrentPosition + 9 //add 9 to Fighter5 position to move it, to make it position of 19
     } else {
       //console.log(‘fighternot working’)
     }
@@ -702,8 +725,8 @@ function init() {
 
     if ((fighter6CurrentPosition % width !== 0)) { // If Fighter6 is not on the left edge
       fighter6CurrentPosition-- //moves Fighter6 left on the Grid
-    } else if (fighter6CurrentPosition = 10) { //if Fighter6 position is 80
-      fighter6CurrentPosition = fighter6CurrentPosition + 9 //add 9 to Fighter6 position to move it, to make it position of 89
+    } else if (fighter6CurrentPosition = 10) { //if Fighter6 position is 10
+      fighter6CurrentPosition = fighter6CurrentPosition + 9 //add 9 to Fighter6 position to move it, to make it position of 19
     } else {
       //console.log(‘fighternot working’)
     }
@@ -747,6 +770,42 @@ function init() {
 
     addTomberry(tomberry2CurrentPosition) //adds Tomberry to the new position in accordance with the if statement
     Collision() //adds Collision Function to the Tomberry - For When Tomberry moves in Vivi
+  }
+
+  //--Moving Bards--//
+
+  //moving Bards Obstacles Right
+
+  function moveBardRight() {
+    //console.log(‘Position For Bard Before Redefining —>’, bardCurrentPosition)
+    removeBard(bardCurrentPosition) //remove Bard from current position
+
+    if ((bardCurrentPosition % width !== width - 1)) { // If Bard is not on the right edge
+      bardCurrentPosition++ //moves Bard right on the Grid
+    } else if (bardCurrentPosition = 39) { //if bard position is 39
+      bardCurrentPosition = bardCurrentPosition - 9 // -9 to bard position to move it, to make it position of 30
+    } else {
+      //console.log(‘tomberry not working’)
+    }
+
+    addBard(bardCurrentPosition) //adds Bard to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Bard - For When Bard moves in Vivi
+  }
+
+  function moveBard2Right() {
+    //console.log(‘Position For Bard2 Before Redefining —>’, bard2CurrentPosition)
+    removeBard(bard2CurrentPosition) //remove Bard2 from current position
+
+    if ((bard2CurrentPosition % width !== width - 1)) { // If Bard2 is not on the right edge
+      bard2CurrentPosition++ //moves Bard2 right on the Grid
+    } else if (bard2CurrentPosition = 39) { //if bard2 position is 39
+      bard2CurrentPosition = bard2CurrentPosition - 9 // -9 to bard2 position to move it, to make it position of 30
+    } else {
+      //console.log(‘tomberry not working’)
+    }
+
+    addBard(bard2CurrentPosition) //adds Bard2 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Bard2 - For When Bard moves in Vivi
   }
 
   //--Moving Bird + Riding--//
@@ -807,9 +866,11 @@ function init() {
       viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
       /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition || viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
       || viviCurrentPosition === fighterCurrentPosition || viviCurrentPosition === fighter2CurrentPosition || viviCurrentPosition === fighter3CurrentPosition || viviCurrentPosition === fighter4CurrentPosition || viviCurrentPosition === fighter5CurrentPosition || viviCurrentPosition === fighter6CurrentPosition
+      || viviCurrentPosition === bardCurrentPosition || viviCurrentPosition === bard2CurrentPosition
       ) {
       console.log('Collision Is Triggered')
       hitAudio.play()//Play Hit Music 
+      timeInGame = 0//timebar resets
       //console.log('score = ', score)
       score = score - 200
       //console.log('score = ', score)
@@ -1020,6 +1081,9 @@ function init() {
   //Calling Tomberry Movement
   setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
+  //Calling Bard Movement
+  setInterval(moveBardRight, 3000) //Calling the function to move bard right at a set interval of 3 seconds
+  setInterval(moveBard2Right, 3000) //Calling the function to move bard2 right at a set interval of 3 seconds
 }
 
 
