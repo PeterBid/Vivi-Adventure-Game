@@ -54,7 +54,7 @@ h1{
   
 }
 
-.top-bar-button{
+.side-bar-button{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 900;
   padding: 10px;
@@ -65,13 +65,15 @@ h1{
   max-width: 300px;
   cursor: pointer;
   margin: 10px;
+  margin-left: 47px;
 }
 
 .sides {
   width: 288px;
     height: 600px;
-    background-color: #2cff96;
-    background-image: linear-gradient(225deg, #2cff96 23%, #7dffe6 72%);
+    background-color: #FA8BFF;
+background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
     margin: 60px;
     border-radius: 16px;
 }
