@@ -215,7 +215,7 @@ function init() {
   function createGrid(viviStartPosition) {
     for (let I = 0; I < cellCount; I++) {
       const cell = document.createElement('div')
-      cell.innerText = I
+      //cell.innerText = I
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -1260,9 +1260,9 @@ function init() {
 
   //Calling Movement Left Functions 
   //Calling Cactus Movement
-  setInterval(moveCactusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
-  setInterval(moveCactus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
-  setInterval(moveCactus3Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveCactusLeft, 2000) //Calling the function to move cactus left at a set interval of 2 seconds
+  setInterval(moveCactus2Left, 2000) //Calling the function to move cactus2 left at a set interval of 2 seconds
+  setInterval(moveCactus3Left, 2000) //Calling the function to move cactus2 left at a set interval of 2 seconds
   //Calling Orc Movement
   //setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
   setInterval(moveOrc2Left, 1000) //Calling the function to move orc2 left at a set interval of 1 seconds
@@ -1290,9 +1290,9 @@ function init() {
 
   //Calling Movement Right Functions
   //Calling Tomberry Movement
-  setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
-  setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
-  setInterval(moveTomberry3Right, 1000) //Calling the function to move tomberry3 right at a set interval of 1 seconds
+  setInterval(moveTomberryRight, 2000) //Calling the function to move tomberry right at a set interval of 2 seconds
+  setInterval(moveTomberry2Right, 2000) //Calling the function to move tomberry2 right at a set interval of 2 seconds
+  setInterval(moveTomberry3Right, 2000) //Calling the function to move tomberry3 right at a set interval of 2 seconds
   //Calling Bard Movement
   setInterval(moveBardRight, 3000) //Calling the function to move bard right at a set interval of 3 seconds
   setInterval(moveBard2Right, 3000) //Calling the function to move bard2 right at a set interval of 3 seconds
