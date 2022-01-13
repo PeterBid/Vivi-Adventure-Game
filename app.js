@@ -91,6 +91,9 @@ function init() {
   const cactus2StartPosition = 87 //this starting position refers to an index
   let cactus2CurrentPosition = 87 //cactus2 current position refers to an index
 
+  const cactus3StartPosition = 85 //this starting position refers to an index
+  let cactus3CurrentPosition = 85 //cactus3 current position refers to an index
+
   //global variables for Orc Obstacles
   const orcClass = 'orc'
 
@@ -171,6 +174,9 @@ function init() {
   const tomberry2StartPosition = 73 //this starting position refers to an index
   let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
 
+  const tomberry3StartPosition = 75 //this starting position refers to an index
+  let tomberry3CurrentPosition = 75 //tomberry3 current position refers to an index
+
   //global variables for Bard Obstacles
   const bardClass = 'bard'
 
@@ -222,6 +228,7 @@ function init() {
 
     addCactus(cactusStartPosition) // call the function to add the Cactus at the starting position
     addCactus(cactus2StartPosition) // call the function to add the 2nd Cactus at the starting position
+    addCactus(cactus3StartPosition) // call the function to add the 2nd Cactus at the starting position
 
     //addOrc(orcStartPosition) // call the function to add the Orc at the starting position
     addOrc(orc2StartPosition) // call the function to add the Orc2 at the starting position
@@ -240,7 +247,8 @@ function init() {
     addFighter(fighter6StartPosition) // call the function to add the fighter at the starting position
 
     addTomberry(tomberryStartPosition) // call the function to add the Tomberry at the starting position
-    addTomberry(tomberry2StartPosition) // call the function to add the 2nd Tomberry at the starting position
+    addTomberry(tomberry2StartPosition) // call the function to add the Tomberry2 at the starting position
+    addTomberry(tomberry3StartPosition) // call the function to add the Tomberry3 at the starting position
 
     addBard(bardStartPosition) // call the function to add the bard at the starting position
     addBard(bard2StartPosition) // call the function to add the bard2 at the starting position
@@ -442,7 +450,7 @@ function init() {
     } else {
       console.log('invalid key used')
     }
-    //shuffleAudio.play()//Play Background Music When Player First Moves
+    shuffleAudio.play()//Play Background Music When Player First Moves
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
       homeReachedAudio.play()//Play HomeReached Music if Home is Filled 
       timeInGame = 0//timebar resets
@@ -538,7 +546,7 @@ function init() {
 
 
   //moving Cactus Obstacles left
-  function moveCatusLeft() {
+  function moveCactusLeft() {
     //console.log(‘Position For Cactus Before Redefining —>’, cactusCurrentPosition)
     removeCactus(cactusCurrentPosition) //remove Cactus from current position
 
@@ -554,7 +562,7 @@ function init() {
     Collision() //adds Collision Function to the Cactus - For When Cactus moves in Vivi
   }
 
-  function moveCatus2Left() {
+  function moveCactus2Left() {
     //console.log(‘Position For Cactus2 Before Redefining —>’, cactusCurrentPosition)
     removeCactus(cactus2CurrentPosition) //remove Cactus2 from current position
 
@@ -565,9 +573,25 @@ function init() {
     } else {
       //console.log(‘cactus2 not working’)
     }
-    // console.log(‘Position For Cactus2 After Redefining —>’, cactusCurrentPosition)
+    // console.log(‘Position For Cactus2 After Redefining —>’, cactus2CurrentPosition)
     addCactus(cactus2CurrentPosition) //adds Cactus2 to the new position in accordance with the if statement
     Collision() //adds Collision Function to the Cactus2 - For When Cactus2 moves in Vivi
+  }
+
+  function moveCactus3Left() {
+    //console.log(‘Position For Cactus3 Before Redefining —>’, cactus3CurrentPosition)
+    removeCactus(cactus3CurrentPosition) //remove Cactus3 from current position
+
+    if ((cactus3CurrentPosition % width !== 0)) { // If Cactus3 is not on the left edge
+      cactus3CurrentPosition-- //moves Cactus3 left on the Grid
+    } else if (cactus3CurrentPosition = 80) { //if Cactus3 position is 80
+      cactus3CurrentPosition = cactus3CurrentPosition + 9 //add 9 to Catcus3 position to move it, to make it position of 89
+    } else {
+      //console.log(‘cactus3 not working’)
+    }
+    // console.log(‘Position For Cactus3 After Redefining —>’, cactus3CurrentPosition)
+    addCactus(cactus3CurrentPosition) //adds Cactus3 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Cactus3 - For When Cactus3 moves in Vivi
   }
 
   //--Moving Orcs--//
@@ -897,19 +921,35 @@ function init() {
   }
 
   function moveTomberry2Right() {
-    //console.log(‘Position For Tomberry Before Redefining —>’, tomberryCurrentPosition)
-    removeTomberry(tomberry2CurrentPosition) //remove Tomberry from current position
+    //console.log(‘Position For Tomberry2 Before Redefining —>’, tomberry2CurrentPosition)
+    removeTomberry(tomberry2CurrentPosition) //remove Tomberry2 from current position
 
-    if ((tomberry2CurrentPosition % width !== width - 1)) { // If Tomberry is not on the right edge
-      tomberry2CurrentPosition++ //moves Tomberry right on the Grid
-    } else if (tomberry2CurrentPosition = 79) { //if Tomberry position is 79
-      tomberry2CurrentPosition = tomberry2CurrentPosition - 9 // -9 to Tomberry position to move it, to make it position of 70
+    if ((tomberry2CurrentPosition % width !== width - 1)) { // If Tomberry2 is not on the right edge
+      tomberry2CurrentPosition++ //moves Tomberry2 right on the Grid
+    } else if (tomberry2CurrentPosition = 79) { //if Tomberry2 position is 79
+      tomberry2CurrentPosition = tomberry2CurrentPosition - 9 // -9 to Tomberry2 position to move it, to make it position of 70
+    } else {
+      //console.log(‘tomberry2 not working’)
+    }
+
+    addTomberry(tomberry2CurrentPosition) //adds Tomberry2 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Tomberry2 - For When Tomberry2 moves in Vivi
+  }
+
+  function moveTomberry3Right() {
+    //console.log(‘Position For Tomberry3 Before Redefining —>’, tomberry3CurrentPosition)
+    removeTomberry(tomberry3CurrentPosition) //remove Tomberry3 from current position
+
+    if ((tomberry3CurrentPosition % width !== width - 1)) { // If Tomberry3 is not on the right edge
+      tomberry3CurrentPosition++ //moves Tomberry3 right on the Grid
+    } else if (tomberry3CurrentPosition = 79) { //if Tomberry3 position is 79
+      tomberry3CurrentPosition = tomberry3CurrentPosition - 9 // -9 to Tomberry3 position to move it, to make it position of 70
     } else {
       //console.log(‘tomberry not working’)
     }
 
-    addTomberry(tomberry2CurrentPosition) //adds Tomberry to the new position in accordance with the if statement
-    Collision() //adds Collision Function to the Tomberry - For When Tomberry moves in Vivi
+    addTomberry(tomberry3CurrentPosition) //adds Tomberry3 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Tomberry3 - For When Tomberry3 moves in Vivi
   }
 
   //--Moving Bards--//
@@ -1023,9 +1063,9 @@ function init() {
   //Adding Or || onto the the if Statement with everything Vivi Collides with.
 
   function Collision() {
-    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition ||
-      viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition ||
-      /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition || viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
+    if (viviCurrentPosition === cactusCurrentPosition || viviCurrentPosition === cactus2CurrentPosition || viviCurrentPosition === cactus3CurrentPosition 
+      || viviCurrentPosition === tomberryCurrentPosition || viviCurrentPosition === tomberry2CurrentPosition || viviCurrentPosition === tomberry3CurrentPosition
+      /*viviCurrentPosition === orcCurrentPosition ||*/ || viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition || viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
       || viviCurrentPosition === fighterCurrentPosition || viviCurrentPosition === fighter2CurrentPosition || viviCurrentPosition === fighter3CurrentPosition || viviCurrentPosition === fighter4CurrentPosition || viviCurrentPosition === fighter5CurrentPosition || viviCurrentPosition === fighter6CurrentPosition
       || viviCurrentPosition === bardCurrentPosition || viviCurrentPosition === bard2CurrentPosition
       || viviCurrentPosition === mageCurrentPosition
@@ -1220,8 +1260,9 @@ function init() {
 
   //Calling Movement Left Functions 
   //Calling Cactus Movement
-  setInterval(moveCatusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
-  setInterval(moveCatus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveCactusLeft, 1000) //Calling the function to move cactus left at a set interval of 1 seconds
+  setInterval(moveCactus2Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
+  setInterval(moveCactus3Left, 1000) //Calling the function to move cactus2 left at a set interval of 1 seconds
   //Calling Orc Movement
   //setInterval(moveOrcLeft, 1000) //Calling the function to move orc left at a set interval of 1 seconds
   setInterval(moveOrc2Left, 1000) //Calling the function to move orc2 left at a set interval of 1 seconds
@@ -1251,6 +1292,7 @@ function init() {
   //Calling Tomberry Movement
   setInterval(moveTomberryRight, 1000) //Calling the function to move tomberry right at a set interval of 1 seconds
   setInterval(moveTomberry2Right, 1000) //Calling the function to move tomberry2 right at a set interval of 1 seconds
+  setInterval(moveTomberry3Right, 1000) //Calling the function to move tomberry3 right at a set interval of 1 seconds
   //Calling Bard Movement
   setInterval(moveBardRight, 3000) //Calling the function to move bard right at a set interval of 3 seconds
   setInterval(moveBard2Right, 3000) //Calling the function to move bard2 right at a set interval of 3 seconds
