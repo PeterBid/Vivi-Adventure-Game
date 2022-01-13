@@ -75,8 +75,7 @@ h1{
   width: 288px;
     height: 600px;
     background-color: #FA8BFF;
-background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
-
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
     margin: 60px;
     border-radius: 16px;
 }
@@ -85,7 +84,25 @@ background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
   margin: 5px;
   font-size: 20px;
   margin-top: 20px;
-  
+  color: #FEBE10;
+  text-shadow: black 1px 1px 2px;
+  font-style: italic;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+#hints-header{
+  margin: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #FEBE10;
+  text-shadow: black 1px 1px 2px;
+  font-style: italic;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+#storyline-header{
+  margin: 5px;
+  font-size: 40px;
   color: #FEBE10;
   text-shadow: black 1px 1px 2px;
   font-style: italic;
