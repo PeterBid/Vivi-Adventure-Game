@@ -35,10 +35,11 @@ h1{
   width: 640px;
 }
 
-.hello {
-  width: 200px;
-  height: 400px;
-  background-color: chartreuse;
+.sides {
+  width: 288px;
+    height: 600px;
+    background-color: chartreuse; 
+    margin: 60px;
 }
 
 .grid-wrapper {
@@ -58,13 +59,13 @@ h1{
   height: 600px;
   width: 600px;
   /* background: lightcyan; */
-  background-image: url(assets/mountains1.jpg);
+  background-image: url(assets/Valley1.jpg);
+  background-size: cover;
   
-
 }
 
 .grid div {
-  border: 1px solid lightgrey; 
+  /* border: 1px solid lightgrey;  */
   flex-grow: 1;
   height: 10%;
   width: 10%;
@@ -134,7 +135,7 @@ h1{
 }
 
 .grid div.home {
-  background-image: url(assets/Home1.gif);
+  background-image: url(assets/airship1.gif);
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
