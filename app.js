@@ -153,7 +153,7 @@ function init() {
   const tomberry2StartPosition = 73 //this starting position refers to an index
   let tomberry2CurrentPosition = 73 //tomberry2 current position refers to an index
 
-  //global variables for bard Obstacles
+  //global variables for Bard Obstacles
   const bardClass = 'bard'
 
   const bardStartPosition = 32 //this starting position refers to an index
@@ -161,6 +161,19 @@ function init() {
 
   const bard2StartPosition = 37 //this starting position refers to an index
   let bard2CurrentPosition = 37 //bard2 current position refers to an index
+
+  //global variables for Mage Obstacles
+  const mageClass = 'mage'
+
+  const mageStartPosition = 49 //this starting position refers to an index
+  let mageCurrentPosition = 49 //mage current position refers to an index
+
+  //global variables for Samurai Obstacles
+  const samuraiClass = 'samurai'
+
+  const samuraiStartPosition = 50 //this starting position refers to an index
+  let samuraiCurrentPosition = 50 //samurai current position refers to an index
+
 
 
 
@@ -218,6 +231,10 @@ function init() {
 
     addBard(bardStartPosition) // call the function to add the bard at the starting position
     addBard(bard2StartPosition) // call the function to add the bard2 at the starting position
+
+    addMage(mageStartPosition) // call the function to add the mage at the starting position
+
+    //addSamurai(samuraiStartPosition) // call the function to add the samurai at the starting position
 
     addBird(birdStartPosition) // call the function to add the Bird at the starting position
 
@@ -321,9 +338,31 @@ function init() {
     cells[position].classList.add(bardClass)
   }
 
-  //removing Tomberry Obstacles from the grid
+  //removing Bard Obstacles from the grid
   function removeBard(position) {
     cells[position].classList.remove(bardClass)
+  }
+
+  //adding Mage Obstacles to the grid
+  function addMage(position) {
+    //console.log('Cell Mage picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(mageClass)
+  }
+
+  //removing Mage Obstacles from the grid
+  function removeMage(position) {
+    cells[position].classList.remove(mageClass)
+  }
+
+  //adding Samurai Obstacles to the grid
+  function addSamurai(position) {
+    //console.log('Cell Samurai picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(samuraiClass)
+  }
+
+  //removing Samurai Obstacles from the grid
+  function removeSamurai(position) {
+    cells[position].classList.remove(samuraiClass)
   }
 
   //adding Bird Obstacles to the grid
@@ -735,6 +774,28 @@ function init() {
     Collision() //adds Collision Function to the Fighter6 - For When Fighter5 moves in Vivi
   }
 
+  //--Moving Mage--//
+
+  //moving Mage Obstacles left
+  function moveMageLeft() {
+    //console.log(‘Position For Mage Before Redefining —>’, mageCurrentPosition)
+    removeMage(mageCurrentPosition) //remove mage from current position
+
+    if ((mageCurrentPosition % width !== 0)) { // If mage is not on the left edge
+      mageCurrentPosition-- //moves mage left on the Grid
+    } else if (mageCurrentPosition = 40) { //if mage position is 40
+      mageCurrentPosition = mageCurrentPosition + 9 //add 9 to mage position to move it, to make it position of 49
+    } else {
+      //console.log(‘mage not working’)
+    }
+    // console.log(‘Position For mage After Redefining —>’, mageCurrentPosition)
+    addMage(mageCurrentPosition) //adds mage to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the mage - For When mage moves in Vivi
+  }
+
+
+
+
   //--Moving Obstacles Right--//
 
   //--Moving Tomberrys--//
@@ -808,6 +869,27 @@ function init() {
     Collision() //adds Collision Function to the Bard2 - For When Bard moves in Vivi
   }
 
+  //--Moving Samurai--//
+
+  //moving Samurai Obstacles Right
+  function moveSamuraiRight() {
+    //console.log(‘Position For Samurai Before Redefining —>’, SamuraiCurrentPosition)
+    removeSamurai(samuraiCurrentPosition) //remove Samurai from current position
+
+    if ((samuraiCurrentPosition % width !== width - 1)) { // If Samurai is not on the right edge
+      samuraiCurrentPosition++ //moves Samurai right on the Grid
+    } else if (samuraiCurrentPosition = 59) { //if Samurai position is 59
+      samuraiCurrentPosition = samuraiCurrentPosition - 9 // -9 to Samurai position to move it, to make it position of 50
+    } else {
+      //console.log(‘samurai not working’)
+    }
+
+    addSamurai(samuraiCurrentPosition) //adds Samurai to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Samurai - For When Tomberry moves in Vivi
+  }
+
+
+
   //--Moving Bird + Riding--//
 
 
@@ -867,7 +949,9 @@ function init() {
       /*viviCurrentPosition === orcCurrentPosition ||*/ viviCurrentPosition === orc2CurrentPosition || viviCurrentPosition === orc3CurrentPosition || viviCurrentPosition === orc4CurrentPosition || viviCurrentPosition === orc5CurrentPosition || viviCurrentPosition === orc6CurrentPosition || viviCurrentPosition === orc7CurrentPosition || viviCurrentPosition === orc8CurrentPosition
       || viviCurrentPosition === fighterCurrentPosition || viviCurrentPosition === fighter2CurrentPosition || viviCurrentPosition === fighter3CurrentPosition || viviCurrentPosition === fighter4CurrentPosition || viviCurrentPosition === fighter5CurrentPosition || viviCurrentPosition === fighter6CurrentPosition
       || viviCurrentPosition === bardCurrentPosition || viviCurrentPosition === bard2CurrentPosition
-      ) {
+      || viviCurrentPosition === mageCurrentPosition
+      || viviCurrentPosition === samuraiCurrentPosition
+    ) {
       console.log('Collision Is Triggered')
       hitAudio.play()//Play Hit Music 
       timeInGame = 0//timebar resets
@@ -1075,6 +1159,8 @@ function init() {
   setInterval(moveFighter4Left, 1000) //Calling the function to move fighter4 left at a set interval of 1 seconds
   setInterval(moveFighter5Left, 1000) //Calling the function to move fighter5 left at a set interval of 1 seconds
   setInterval(moveFighter6Left, 1000) //Calling the function to move fighter5 left at a set interval of 1 seconds
+  //Calling Mage movement
+  setInterval(moveMageLeft, 0500) //Calling the function to move mage left at a set interval of 0.5 seconds
 
 
   //Calling Movement Right Functions
@@ -1084,6 +1170,9 @@ function init() {
   //Calling Bard Movement
   setInterval(moveBardRight, 3000) //Calling the function to move bard right at a set interval of 3 seconds
   setInterval(moveBard2Right, 3000) //Calling the function to move bard2 right at a set interval of 3 seconds
+  //Calling Samurai Movement
+  setInterval(moveSamuraiRight, 0500) //Calling the function to move tomberry right at a set interval of 0.5 seconds
+
 }
 
 
