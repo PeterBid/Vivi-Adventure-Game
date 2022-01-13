@@ -140,6 +140,24 @@ function init() {
   const fighter6StartPosition = 12 //this starting position refers to an index
   let fighter6CurrentPosition = 12 //fighter6 current position refers to an index
 
+  //global variables for Mage Obstacles
+  const starClass = 'star'
+
+  const starStartPosition = 66 //this starting position refers to an index
+  let starCurrentPosition = 66 //star current position refers to an index
+
+  const star2StartPosition = 64 //this starting position refers to an index
+  let star2CurrentPosition = 64 //star2 current position refers to an index
+
+  const star3StartPosition = 62 //this starting position refers to an index
+  let star3CurrentPosition = 62 //star3 current position refers to an index
+
+  //global variables for Mage Obstacles
+  const mageClass = 'mage'
+
+  const mageStartPosition = 49 //this starting position refers to an index
+  let mageCurrentPosition = 49 //mage current position refers to an index
+
 
 
   //--Global Variables for Obstacles going Right--//
@@ -162,11 +180,6 @@ function init() {
   const bard2StartPosition = 37 //this starting position refers to an index
   let bard2CurrentPosition = 37 //bard2 current position refers to an index
 
-  //global variables for Mage Obstacles
-  const mageClass = 'mage'
-
-  const mageStartPosition = 49 //this starting position refers to an index
-  let mageCurrentPosition = 49 //mage current position refers to an index
 
   //global variables for Samurai Obstacles
   const samuraiClass = 'samurai'
@@ -234,7 +247,11 @@ function init() {
 
     addMage(mageStartPosition) // call the function to add the mage at the starting position
 
-    //addSamurai(samuraiStartPosition) // call the function to add the samurai at the starting position
+    addSamurai(samuraiStartPosition) // call the function to add the samurai at the starting position
+
+    addStar(starStartPosition) // call the function to add the star at the starting position
+    addStar(star2StartPosition) // call the function to add the star2 at the starting position
+    addStar(star3StartPosition) // call the function to add the star2 at the starting position
 
     addBird(birdStartPosition) // call the function to add the Bird at the starting position
 
@@ -363,6 +380,17 @@ function init() {
   //removing Samurai Obstacles from the grid
   function removeSamurai(position) {
     cells[position].classList.remove(samuraiClass)
+  }
+
+  //adding Star Obstacles to the grid
+  function addStar(position) {
+    //console.log('Cell Star picked Using The Position Index Passed In —>', cells[position])
+    cells[position].classList.add(starClass)
+  }
+
+  //removing Star Obstacles from the grid
+  function removeStar(position) {
+    cells[position].classList.remove(starClass)
   }
 
   //adding Bird Obstacles to the grid
@@ -793,6 +821,57 @@ function init() {
     Collision() //adds Collision Function to the mage - For When mage moves in Vivi
   }
 
+  //--Moving Stars--//
+
+  //moving Star Obstacles left
+  function moveStarLeft() {
+    //console.log(‘Position For Star Before Redefining —>’, starCurrentPosition)
+    removeStar(starCurrentPosition) //remove Star from current position
+
+    if ((starCurrentPosition % width !== 0)) { // If Star is not on the left edge
+      starCurrentPosition-- //moves Star left on the Grid
+    } else if (starCurrentPosition = 60) { //if Star position is 60
+      starCurrentPosition = starCurrentPosition + 9 //add 9 to Star position to move it, to make it position of 69
+    } else {
+      //console.log(‘star not working’)
+    }
+    // console.log(‘Position For Star After Redefining —>’, starCurrentPosition)
+    addStar(starCurrentPosition) //adds Star to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Star - For When Star moves in Vivi
+  }
+
+  function moveStar2Left() {
+    //console.log(‘Position For Star2 Before Redefining —>’, star2CurrentPosition)
+    removeStar(star2CurrentPosition) //remove Star2 from current position
+
+    if ((star2CurrentPosition % width !== 0)) { // If Star2 is not on the left edge
+      star2CurrentPosition-- //moves Star2 left on the Grid
+    } else if (star2CurrentPosition = 60) { //if Star2 position is 60
+      star2CurrentPosition = star2CurrentPosition + 9 //add 9 to Star2 position to move it, to make it position of 69
+    } else {
+      //console.log(‘star2 not working’)
+    }
+    // console.log(‘Position For Star2 After Redefining —>’, star2CurrentPosition)
+    addStar(star2CurrentPosition) //adds Star2 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Star2 - For When Star2 moves in Vivi
+  }
+
+  function moveStar3Left() {
+    //console.log(‘Position For Star3 Before Redefining —>’, star3CurrentPosition)
+    removeStar(star3CurrentPosition) //remove Star3 from current position
+
+    if ((star3CurrentPosition % width !== 0)) { // If Star3 is not on the left edge
+      star3CurrentPosition-- //moves Star3 left on the Grid
+    } else if (star3CurrentPosition = 60) { //if Star3 position is 60
+      star3CurrentPosition = star3CurrentPosition + 9 //add 9 to Star3 position to move it, to make it position of 69
+    } else {
+      //console.log(‘star3 not working’)
+    }
+    // console.log(‘Position For Star3 After Redefining —>’, star3CurrentPosition)
+    addStar(star3CurrentPosition) //adds Star3 to the new position in accordance with the if statement
+    Collision() //adds Collision Function to the Star3 - For When Star3 moves in Vivi
+  }
+
 
 
 
@@ -951,7 +1030,7 @@ function init() {
       || viviCurrentPosition === bardCurrentPosition || viviCurrentPosition === bard2CurrentPosition
       || viviCurrentPosition === mageCurrentPosition
       || viviCurrentPosition === samuraiCurrentPosition
-    ) {
+      || viviCurrentPosition === starCurrentPosition || viviCurrentPosition === star2CurrentPosition || viviCurrentPosition === star3CurrentPosition) {
       console.log('Collision Is Triggered')
       hitAudio.play()//Play Hit Music 
       timeInGame = 0//timebar resets
@@ -1161,6 +1240,11 @@ function init() {
   setInterval(moveFighter6Left, 1000) //Calling the function to move fighter5 left at a set interval of 1 seconds
   //Calling Mage movement
   setInterval(moveMageLeft, 0500) //Calling the function to move mage left at a set interval of 0.5 seconds
+  //Calling Star movement
+  setInterval(moveStarLeft, 1000) //Calling the function to move fighter left at a set interval of 1 seconds
+  setInterval(moveStar2Left, 1000) //Calling the function to move fighter left at a set interval of 1 seconds
+  setInterval(moveStar3Left, 1000) //Calling the function to move fighter left at a set interval of 1 seconds
+
 
 
   //Calling Movement Right Functions
