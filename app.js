@@ -450,7 +450,7 @@ function init() {
     } else {
       console.log('invalid key used')
     }
-    //shuffleAudio.play()//Play Background Music When Player First Moves
+    shuffleAudio.play()//Play Background Music When Player First Moves
     if (viviCurrentPosition === home1Postion) { //If Vivi's position is the same as Home1 position
       homeReachedAudio.play()//Play HomeReached Music if Home is Filled 
       timeInGame = 0//timebar resets
@@ -1104,7 +1104,7 @@ function init() {
     console.log(timeInGame)
     selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}` //Make This Whatever Time You Set - Time in Game so Time Left Decreases
     if (timeInGame > 40) { //This Value Sets you the time you have before triggering losing a life/losing score
-      //timeOutAudio.play()//Play Timeout Music 
+      timeOutAudio.play()//Play Timeout Music 
       timeInGame = 0 //Resets the Time Bar
       selectTimeLeft.innerHTML = `Time Left: ${40 - timeInGame}`
       lives -= 1 //lose a life
