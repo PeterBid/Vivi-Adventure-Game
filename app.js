@@ -1224,11 +1224,11 @@ function init() {
   //--Game Over Functions--//
 
   function gameOverLose() {
-    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Restart Game To Try Again`) // Losing Game Window Alert
+    window.alert(`Oh No Vivi! You Lost the Game! Your Score was ${score} Press Restart Game To Try Again with All Lives Back`) // Losing Game Window Alert
   }
 
   function gameOverWin() {
-    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Restart Game To Play Again`) // Winning Game Window Alert
+    window.alert(`Well Done Vivi! You Won the Game! Your Score was ${score} Press Restart Game To Play Again with All Lives Back`) // Winning Game Window Alert
   }
 
 
