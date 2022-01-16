@@ -16,4 +16,4 @@ Timeframe: 1 week.
 
 Please follow this link to play my game: https://peterbid.github.io/Vivi-Adventure-Game/
 
-Repository link:
+Repository link: https://github.com/PeterBid/Vivi-Adventure-Game
