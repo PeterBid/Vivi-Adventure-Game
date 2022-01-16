@@ -17,3 +17,11 @@ Timeframe: 1 week.
 Please follow this link to play my game: https://peterbid.github.io/Vivi-Adventure-Game/
 
 Repository link: https://github.com/PeterBid/Vivi-Adventure-Game
+
+## Motivation
+
+I chose to create a theme based around the Final Fantasy series and the character "Vivi" from Final Fantasy 9 specifically. I made this decision as I believed that I could embrace my creativity, constructing a new scenario that both reflected similarities to the 'frogger' storyline while also embracing Final Fantasy. 
+
+This is shown with the focus on adventures, overcoming various obstacles and an attempt to make it back home within a time limit.
+
+With Vivi and his Allies under threat from numerous enemies, the aim of the game is to make them pass different bandits and monsters safely within a time limit and without losing all three lives. Along the way, they can ride a bird to aid their journey home.
