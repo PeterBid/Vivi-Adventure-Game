@@ -25,3 +25,14 @@ I chose to create a theme based around the Final Fantasy series and the characte
 This is shown with the focus on adventures, overcoming various obstacles and an attempt to make it back home within a time limit.
 
 With Vivi and his Allies under threat from numerous enemies, the aim of the game is to make them pass different bandits and monsters safely within a time limit and without losing all three lives. Along the way, they can ride a bird to aid their journey home.
+
+## Frameworks
+
+* Languages
+* JavaScript
+* CSS3
+* HTML5
+* VS Code
+* Chrome
+* Browser
+* Git and GitHub           
