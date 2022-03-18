@@ -27,11 +27,20 @@ This is shown with the focus on adventures, overcoming various obstacles and an 
 With Vivi and his Allies under threat from numerous enemies, the aim of the game is to make them pass different bandits and monsters safely within a time limit and without losing all three lives. Along the way, they can ride a bird to aid their journey home.
 
 ## Frameworks Used 🛠
-* Languages
+#### Languages
 * JavaScript
 * CSS3
 * HTML5
-* VS Code
-* Chrome
+
+####
+* Visual Studio Code
+* Google Chrome Development Tools
+* Google Fonts
 * Browser
-* Git and GitHub           
+* Git and GitHub
+* GitHub pages (for deployment)
+* Canva (for gifs and images)
+
+
+
+           
