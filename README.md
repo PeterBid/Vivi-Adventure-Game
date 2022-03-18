@@ -28,9 +28,9 @@ With Vivi and his Allies under threat from numerous enemies, the aim of the game
 
 ## Frameworks Used 🛠
 * Languages
- - JavaScript
- - CSS3
- - HTML5
+* JavaScript
+* CSS3
+* HTML5
 * VS Code
 * Chrome
 * Browser
