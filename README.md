@@ -26,7 +26,18 @@ This is shown with the focus on adventures, overcoming various obstacles and an 
 
 With Vivi and his Allies under threat from numerous enemies, the aim of the game is to make them pass different bandits and monsters safely within a time limit and without losing all three lives. Along the way, they can ride a bird to aid their journey home.
 
-## Technologies Used 
+## Controls
+
+Press Restart button to restart the game
+Press Reset HighScore button to reset the highscore
+
+↑ to move up
+↓ to move down
+<- to move left 
+-> to move right
+
+## Technologies Used
+
 #### Languages
 * JavaScript
 * CSS3
@@ -40,6 +51,12 @@ With Vivi and his Allies under threat from numerous enemies, the aim of the game
 * Git and GitHub
 * GitHub pages (for deployment)
 * Canva (for gifs and images)
+
+## Process
+
+### Planning
+
+Wire Frame
 
 
 
