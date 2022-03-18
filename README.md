@@ -56,8 +56,6 @@ Press Reset HighScore button to reset the highscore
 
 ### Planning
 
-#### Planning (day 1)
-
 First, I started with a wire frame, a pseudo-code, and also wrote down steps I wished to achive each day in order to achieve as many functionalities as possible for my game.
 
 #### Wire Frame
