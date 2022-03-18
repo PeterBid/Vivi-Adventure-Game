@@ -63,4 +63,3 @@ Wire Frame
 Sudo Code and Ideas
 
 <img width="555" alt="Screen Shot 2022-01-08 at 14 16 57" src="https://user-images.githubusercontent.com/91087641/159047336-106cdce1-193f-4e38-a4b4-b3bdf1460264.png">           
-<img width="1044" alt="Screen Shot 2022-01-08 at 14 16 50" src="https://user-images.githubusercontent.com/91087641/159046938-7857dbbe-c134-4699-8b0b-61f03d0495fa.png">
