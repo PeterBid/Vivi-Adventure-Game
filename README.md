@@ -1,6 +1,6 @@
 # Vivi-Adventure-Game
 
-### GA Project 1
+### General Assembly Project 1
 
 <img width="1423" alt="Screen Shot 2022-01-16 at 17 42 05" src="https://user-images.githubusercontent.com/91087641/149671413-a81ef818-e488-4bb4-99a6-76c1effff1c7.png">
 
