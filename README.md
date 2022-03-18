@@ -56,10 +56,33 @@ Press Reset HighScore button to reset the highscore
 
 ### Planning
 
+Planning (day 1)
+
+First, I started with a wire frame, a pseudo-code, and also wrote down steps I wished to achive each day in order to achieve as many functionalities as possible for my game.
+
 Wire Frame
 
 <img width="1044" alt="Screen Shot 2022-01-08 at 14 16 50" src="https://user-images.githubusercontent.com/91087641/159046938-7857dbbe-c134-4699-8b0b-61f03d0495fa.png">
 
-Sudo Code and Ideas
+Sudo Code + Steps to achieve 
 
 <img width="555" alt="Screen Shot 2022-01-08 at 14 16 57" src="https://user-images.githubusercontent.com/91087641/159047336-106cdce1-193f-4e38-a4b4-b3bdf1460264.png">           
+
+Day 1 
+
+<img width="575" alt="Screen Shot 2022-01-08 at 14 18 04" src="https://user-images.githubusercontent.com/91087641/159049981-c4b91fe0-797f-4e99-8f89-7cc1d0996f57.png">
+
+<img width="588" alt="Screen Shot 2022-01-08 at 14 20 33" src="https://user-images.githubusercontent.com/91087641/159050506-5c94f7ee-58e8-4c66-a559-590680f51982.png">
+
+
+![Screen Shot 2022-01-08 at 14 18 31](https://user-images.githubusercontent.com/91087641/159050179-02b1c7dc-3a68-411c-83b3-d7ad9b5ea93a.png)
+
+<img width="738" alt="Screen Shot 2022-01-08 at 14 19 03" src="https://user-images.githubusercontent.com/91087641/159050246-dda96f8b-9b9f-4e80-a5f3-9926538945ea.png">
+
+<img width="729" alt="Screen Shot 2022-01-08 at 14 20 08" src="https://user-images.githubusercontent.com/91087641/159050316-b68bf1c7-ca93-4825-b2ed-dae3ca3a3a0c.png">
+
+<img width="743" alt="Screen Shot 2022-01-08 at 14 20 13" src="https://user-images.githubusercontent.com/91087641/159050384-bf85f814-6c9e-46c0-830f-8ce1d650ca1a.png">
+
+<img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
+
+<img width="800" alt="Screen Shot 2022-01-08 at 14 20 24" src="https://user-images.githubusercontent.com/91087641/159050450-3158c914-3c6f-4185-a854-084f55a78c59.png">
