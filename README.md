@@ -92,12 +92,40 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 #### Objectives
 
-[image:BDD9FFEA-91DA-4CE2-A42C-9847E23E349A-341-00000AA009F8A14D/Screen Shot 2022-01-08 at 15.22.41.png]
+<img width="442" alt="Screen Shot 2022-01-08 at 15 22 41" src="https://user-images.githubusercontent.com/91087641/159055434-936d0a8b-d9c1-4967-800a-585f6aab665d.png">
 
-[image:95D165FF-B9C9-4C06-8EB7-387A4DCB12F0-341-00001265EE7FDF12/Screen Shot 2022-01-08 at 17.42.25.png]
+<img width="859" alt="Screen Shot 2022-01-08 at 17 42 25" src="https://user-images.githubusercontent.com/91087641/159055524-7c6039ef-653c-4652-afaa-ffe9ec36d541.png">
 
-[image:B8263523-59F5-42DF-94F3-D39523B2BC7B-341-00001265EF17553E/Screen Shot 2022-01-08 at 17.42.36.png]
+<img width="871" alt="Screen Shot 2022-01-08 at 17 42 36" src="https://user-images.githubusercontent.com/91087641/159055577-c2c9f8b7-804c-4be8-95ac-07404796337d.png">
 
-[image:0B19301C-9128-4A71-9042-B423FDB1E665-341-00001265EF82AB26/Screen Shot 2022-01-08 at 17.42.44.png]
+<img width="442" alt="Screen Shot 2022-01-08 at 15 22 41" src="https://user-images.githubusercontent.com/91087641/159055434-936d0a8b-d9c1-4967-800a-585f6aab665d.png">
 
-[image:04CA65CB-B231-4BDF-8F4D-3AF68B67F020-341-00001265EFF35639/Screen Shot 2022-01-08 at 17.42.50.png]
+![Screen Shot 2022-01-08 at 17 42 44](https://user-images.githubusercontent.com/91087641/159055626-4f4c882f-b5ec-41e2-b0f5-4dba446f1510.png)
+
+![Screen Shot 2022-01-08 at 17 42 50](https://user-images.githubusercontent.com/91087641/159055674-8545da1e-0bbf-4101-8825-62b5ec27814b.png)
+
+### Day 3 
+
+#### Overcoming Collision Problem
+
+![Screen Shot 2022-01-09 at 18 27 12](https://user-images.githubusercontent.com/91087641/159055824-3bea9bb4-797d-4ae6-ae7f-a3ec34ba8cf7.png)
+
+![Screen Shot 2022-01-09 at 18 28 35](https://user-images.githubusercontent.com/91087641/159055901-7b795c96-e154-4a0e-8d29-a4bc220356be.png)
+
+Overcoming Collision Problem
+
+Vivi’s current position on Movement was not being reassigned 
+
+<img width="559" alt="Screen Shot 2022-01-10 at 10 53 56" src="https://user-images.githubusercontent.com/91087641/159057222-f85c4abf-abb5-463d-bcd5-4b7aa4de589c.png">
+
+<img width="970" alt="Screen Shot 2022-01-10 at 10 54 06" src="https://user-images.githubusercontent.com/91087641/159057354-8a5365a4-19e6-4ef6-a9d2-9654cc35bdfb.png">
+
+<img width="740" alt="Screen Shot 2022-01-10 at 10 58 55" src="https://user-images.githubusercontent.com/91087641/159057441-97afd00f-4a8f-45cb-97d3-aacb50621c4c.png">
+
+### Day 4 - 5 
+
+#### Objectives
+
+<img width="553" alt="Screen Shot 2022-01-10 at 12 15 18" src="https://user-images.githubusercontent.com/91087641/159057613-8c3a58ad-1b3f-493f-ac7d-4e733affd368.png">
+
+<img width="651" alt="Screen Shot 2022-01-11 at 21 15 04" src="https://user-images.githubusercontent.com/91087641/159057999-da032f7e-48d6-49f3-b491-49e66af40616.png">
