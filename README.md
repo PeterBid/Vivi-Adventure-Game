@@ -87,3 +87,17 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 <img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
 
 <img width="800" alt="Screen Shot 2022-01-08 at 14 20 24" src="https://user-images.githubusercontent.com/91087641/159050450-3158c914-3c6f-4185-a854-084f55a78c59.png">
+
+### Day 2 
+
+#### Objectives
+
+[image:BDD9FFEA-91DA-4CE2-A42C-9847E23E349A-341-00000AA009F8A14D/Screen Shot 2022-01-08 at 15.22.41.png]
+
+[image:95D165FF-B9C9-4C06-8EB7-387A4DCB12F0-341-00001265EE7FDF12/Screen Shot 2022-01-08 at 17.42.25.png]
+
+[image:B8263523-59F5-42DF-94F3-D39523B2BC7B-341-00001265EF17553E/Screen Shot 2022-01-08 at 17.42.36.png]
+
+[image:0B19301C-9128-4A71-9042-B423FDB1E665-341-00001265EF82AB26/Screen Shot 2022-01-08 at 17.42.44.png]
+
+[image:04CA65CB-B231-4BDF-8F4D-3AF68B67F020-341-00001265EFF35639/Screen Shot 2022-01-08 at 17.42.50.png]
