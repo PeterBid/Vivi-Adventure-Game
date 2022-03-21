@@ -56,13 +56,13 @@ Press Reset HighScore button to reset the highscore
 
 ### Planning
 
-First, I started with a wire frame, a pseudo-code, and also wrote down steps I wished to achive each day in order to achieve as many functionalities as possible for my game.
+First, I started with a wire frame, a pseudo-code, and also wrote down steps I wished to achieve each day in order to achieve as many functionalities as possible for my game.
 
 #### Wire Frame
 
 <img width="1044" alt="Screen Shot 2022-01-08 at 14 16 50" src="https://user-images.githubusercontent.com/91087641/159046938-7857dbbe-c134-4699-8b0b-61f03d0495fa.png">
 
-#### Sudo Code
+#### Pseudo Code
 
 <img width="555" alt="Screen Shot 2022-01-08 at 14 16 57" src="https://user-images.githubusercontent.com/91087641/159047336-106cdce1-193f-4e38-a4b4-b3bdf1460264.png">           
 
@@ -74,7 +74,7 @@ After learning about DOM before starting the project, I decided to build the gri
 
 I created a div in the HTML with a class name of `'grid'`. The `'grid'` class was then called in the app.js with querySelector. I then used an empty array called `cells` which for the divs, created with DOM. I decided my grid would have 100 cells/divs. 
 
-I created a function using a for-loop that repeated 100 times and created a new `cell` child div every time. They were stored inside the array `cells` using `push` and `appendChild`. I then called the function for the grid to be displayed in the browser. I also creating a starting positon varible for Vivi and and an addVivi function to ensure the Vivi character was added to the grid upon its creation. 
+I created a function using a for-loop that repeated 100 times and created a new `cell` child div every time. They were stored inside the array `cells` using `push` and `appendChild`. I then called the function for the grid to be displayed in the browser. I also created a starting position variable for Vivi and an addVivi function to ensure the Vivi character was added to the grid upon its creation. 
 
 
 
@@ -94,7 +94,7 @@ I wished for the player to move Vivi using the keys on a keyboard, for the brows
 
 In my case, I only needed codes for the arrow keys (←, →, ↑, ↓). These were 37 for left arrow, 39 for right arrow, 38 for up arrow and 40 for down arrow.
 
-Using the `handleKeyDown` function, I added an if-else statement to determine which key was pressed, and I wrote a logic for Viv's movement change the current position of Vivi after the being removed and added back into the grid depending on the direction he was moving. 
+Using the `handleKeyDown` function, I added an if-else statement to determine which key was pressed, and I wrote a logic for Viv's movement to change the current position of Vivi after being removed and added back into the grid depending on the direction he was moving. 
 
 There are also additional conditions within the main conditions. This was to ensure that Vivi would remain on the grid if the player attempted to move the character beyond the confines of the grid.
 
@@ -106,7 +106,7 @@ There are also additional conditions within the main conditions. This was to ens
 
 Much in the same way I added the Vivi to the grid upon it's creation, I also added the enemies with a start position variable. I then created movement with an add and remove function for the enemy, I used an `if statement` with conditions to determine the current position the enemy would be added back in at.
 
-The `if statements` also created a "looping" effect ensuring the enemey would go back to the start of the row once thet reached the end. I called the function at a `setInterval` this automated the movement and I could manually configure the enemy speed in accordance to the difficulty I wished to make the game.
+The `if statements` also created a "looping" effect ensuring the enemy would go back to the start of the row once they reached the end. I called the function at a `setInterval` that automated the movement and I could manually configure the enemy speed in accordance to the difficulty I wished to make the game.
 
 <img width="760" alt="Screen Shot 2022-01-08 at 15 11 59" src="https://user-images.githubusercontent.com/91087641/159259691-9d67de3d-3af4-43c1-91db-65ad7761fee2.png">
 
@@ -116,9 +116,9 @@ The `if statements` also created a "looping" effect ensuring the enemey would go
 
 #### The Collision Function
 
-Ensuring collisions between Vivi and the enemies worked correctly was the most challenging aspect of the project. When creating the fucntion I encountered a glitch where Vivi would duplicate upon moving after a collision. 
+Ensuring collisions between Vivi and the enemies worked correctly was the most challenging aspect of the project. When creating the function I encountered a glitch where Vivi would duplicate upon moving after a collision. 
 
-After much error handling and problem solving, this problem was overcome by ensuring that `viviCurrentPosition` variable was properly ressaigned upon `Collision` by calling it in the `addVivi` function before any subsequent movement. 
+After much error handling and problem solving, this problem was overcome by ensuring that `viviCurrentPosition` variable was properly reassigned upon `Collision` by calling it in the `addVivi` function before any subsequent movement. 
 
 This was a very beneficial learning experience, which helped me quickly solve future glitches while working on the project.
 
@@ -132,9 +132,9 @@ This was a very beneficial learning experience, which helped me quickly solve fu
 
 #### Vivi Riding the Bird
 
-While there are many aspects of the game I can say I am proud of, I am particually proud of creating the function for Vivi to ride on the Bird. 
+While there are many aspects of the game I can say I am proud of, I am particularly proud of creating the function for Vivi to ride on the Bird. 
 
-This function combined everything I had previously learnt and ultilised when creating grid, creating Vivi's movement, creating Enemies, using automated movement and creating the Collision function. 
+This function combined everything I had previously learnt and utilised when creating grid, creating Vivi's movement, creating Enemies, using automated movement and creating the Collision function. 
 
 ```javascript
  //--Moving Bird + Riding--//
@@ -190,11 +190,11 @@ This function combined everything I had previously learnt and ultilised when cre
 
 After creating the core functionality for Vivi, the Bird and the various Enemies to move across the grid and impact each other, I moved on to creating the variables such as `score` and `lives` alongside functions to `win` and `lose` the game and attaching them as conditionals to be activated upon certain functions triggering across the game, such as increasing the score upon Vivi reaching a home at the top of the grid or a collision causing the player to lose a life etc. The game would result in a  
 
-Related to these global variables I created a Time Bar function which changed variables to fill a `CSS grid` with diferring style properties incrementing at a `Set Interval`. Once the `timeInGame` variable reached a certain number, Vivi's position would be reset and the player would lose a life.
+Related to these global variables I created a Time Bar function which changed variables to fill a `CSS grid` with differing style properties incrementing at a `Set Interval`. Once the `timeInGame` variable reached a certain number, Vivi's position would be reset and the player would lose a life.
 
 I also created a Reset game function which reset the value of the global variables and placed Vivi back to the starting position. I then attached this to a button using an `EventListener`.
 
-Afterwards I learn how to use `Local Storage` to implement a high score variable which was remain constant even when the game was reset.
+Afterwards I learned how to use `Local Storage` to implement a high score variable which remained constant even when the game was reset.
 
 <img width="359" alt="Screen Shot 2022-01-12 at 13 44 58" src="https://user-images.githubusercontent.com/91087641/159293564-fc18f251-1a26-41f3-908b-f711259740c1.png">
 
@@ -212,9 +212,9 @@ Afterwards I learn how to use `Local Storage` to implement a high score variable
 
 Throughout the week, in addition to building JavaScript functions, I also worked on building `CSS`. From the beginning, I had an idea what my page was supposed to look like, but changed the gifs I used for enemies. I chose to use gifs instead of images to increase the sense of dynamic movement throughout the game. 
 
-I wanted to create a homage to the Final Fantasy series I used a colour scheme and sound effects which evoked a fantasy/anime style setting. I used background music background music from the Final Fantasy series and chose to use the Chocobo riding theme when Riding the Bird. This different music upon riding the Bird helped to create a feeling a dynamic movement to the player.
+As I wanted to create a homage to the Final Fantasy series, I used a colour scheme and sound effects which evoked a fantasy/anime style setting. I used background music from the Final Fantasy series and chose to use the Chocobo riding theme when Riding the Bird. This different music upon riding the Bird helped to create a feeling of dynamic movement to the player.
 
-Although based on the Final Fantasy series, I also included orignal aspects. The Logo for the game was custom created by combining various images and gifs using `Canva`. I also wrote an original storyline to help players feel greater immersion.
+Although based on the Final Fantasy series, I also included original aspects. The Logo for the game was custom created by combining various images and gifs using `Canva`. I also wrote an original storyline to help players feel greater immersion.
 
 Overall I am very happy with the project and I think I managed to create a distinct and unique online game.
 
@@ -226,29 +226,30 @@ When a player loses the game they have to manually Reset the game by clinking th
 
 #### Challenges
 
-Error handling with for the collision function was the biggest challenge. This was because this issue was time consuming relatively early in the project and a key aspect which needed to be fixed for the game to function overall. 
+Error handling for the collision function was the biggest challenge. This was because this issue was time consuming relatively early in the project and a key aspect which needed to be fixed for the game to function overall.
 
-While it initally put me behind the schedule I wished to progress at, encotuering and fixing this problem early in the project ended up benefiting me overall. This was beacuse the experiance of fixing this issue allowed to to fix future problems quickly, allowing me to get back on schedule.   
-
+While it initially put me behind the schedule I wished to progress at, encountering and fixing this problem early in the project ended up benefiting me overall. This was because the experience of fixing this issue allowed me to fix future problems quickly, allowing me to get back on schedule.
+   
 #### Wins
 
-Planning. Having an effective and well thought out outline and plan of how to reach my minimum viable project really helped me. It made the whole process go smoothly and feel considerably less stressful. This was because I had clear objectives to aim towards each day, breaking the overall project down into much managable bite-sized chunks.
+Planning. Having an effective and well thought out outline and plan of how to reach my minimum viable project really helped me. It made the whole process go smoothly and feel considerably less stressful. This was because I had clear objectives to aim towards each day, breaking the overall project down into much manageable bite-sized chunks.
 
-Working with the classes and understanding how they behave in certain situations. This understanding allowed me to combine various aspects together culmilating in the function to make Vivi ride the Bird.
+Working with the classes and understanding how they behave in certain situations. This understanding allowed me to combine various aspects together culminating in the function to make Vivi ride the Bird.
 
-Getting the global variables to work in conjuction with a wide range of interelated functions across the whole project was very satisfying, as the was the process of seeing each part the game build upon each other.
+Getting the global variables to work in conjunction with a wide range of interrelated functions across the whole project was very satisfying, as was the process of seeing each part of the game building upon each other.
 
 CSS styling and Audio files. I managed to give my personal and unique touch to the game making it very distinct from conventional Frogger.
 
 
 ## Key Learnings
 
-As this was my first ever coding project alongside being the first on the course, I am very pleased on the work that I achieved in the 7 days. 
+As this was my first ever coding project alongside being the first on the course, I am very pleased with the work that I achieved in the 7 days.
 
-Doing this project helped build up by confidence as a developer considerably, it allowed me to overcome feelings of imposter syndrome and really enjoy the act of building from scratch with code. 
+Doing this project helped build up my confidence as a developer considerably, it allowed me to overcome feelings of imposter syndrome and really enjoy the act of building from scratch with code.
 
-It also helped me understand the importance of planning towards a minimum viable product effectively and how doing this at the beggining can save alot of time when doing the project overall. 
+It also helped me understand the importance of planning towards a minimum viable product effectively and how doing this at the beginning can save a lot of time when doing the project overall.
 
-The project strongly cemented my knowledge of JavaScript. It transformed my understanding from the theorectical to the practical. I was able to reinforce my understanding of EventListeners, for loops and setIntervals. This while also pushing myself learn about new things I had not previously encountered such as Local Storage.
+The project strongly cemented my knowledge of JavaScript. It transformed my understanding from the theoretical to the practical. I was able to reinforce my understanding of EventListeners, for loops and setIntervals. This while also pushing myself to learn about new things I had not previously encountered such as Local Storage.
 
 Overall I was able to apply what I had learnt and also learned much more. It was a real big confidence boost and made me excited to do future projects. It is a project I will look back fondly on.
+
