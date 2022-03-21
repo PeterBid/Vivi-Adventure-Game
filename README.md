@@ -66,9 +66,9 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 <img width="555" alt="Screen Shot 2022-01-08 at 14 16 57" src="https://user-images.githubusercontent.com/91087641/159047336-106cdce1-193f-4e38-a4b4-b3bdf1460264.png">           
 
-### Day 1 
+### Creating the Games Functionality with JavaScript  
 
-#### Objectives
+#### Making the Grid
 
 <img width="575" alt="Screen Shot 2022-01-08 at 14 18 04" src="https://user-images.githubusercontent.com/91087641/159049981-c4b91fe0-797f-4e99-8f89-7cc1d0996f57.png">
 
