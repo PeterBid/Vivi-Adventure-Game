@@ -132,7 +132,7 @@ This was a very beneficial learning experience, which helped me quickly solve fu
 
 #### Vivi Riding the Bird
 
-While there are many aspects of the game I can say I am proud of, I am particually proud of creating the function for Vivi to ride one the bird. 
+While there are many aspects of the game I can say I am proud of, I am particually proud of creating the function for Vivi to ride on the bird. 
 
 This function combined everything I had previously learnt and ultilised when creating grid, creating Vivi's movement, creating Enemies, using automated movement and creating the Collision function. 
 
