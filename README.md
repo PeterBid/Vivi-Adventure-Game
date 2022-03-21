@@ -185,3 +185,5 @@ This function combined everything I had previously learnt and ultilised when cre
   }
 
 ```
+
+#### The Time Bar + Winning and Losing the Game
