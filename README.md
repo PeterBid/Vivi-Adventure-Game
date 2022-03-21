@@ -129,3 +129,57 @@ This was a very beneficial learning experience, which helped me quickly solve fu
 <img width="559" alt="Screen Shot 2022-01-10 at 10 53 56" src="https://user-images.githubusercontent.com/91087641/159285429-3b2d5259-8fb0-4260-8342-7a68207f9d8c.png">
 
 <img width="970" alt="Screen Shot 2022-01-10 at 10 54 06" src="https://user-images.githubusercontent.com/91087641/159285559-8974ee0a-09a3-46ce-b2c4-b30891eb8271.png">
+
+#### Vivi Riding the Bird
+
+While there are many aspects of the game I can say I am proud of, I am particually proud of creating the function for Vivi to ride one the bird. This function combined everything I had previously learnt and ultilised when creating grid, creating Vivi's movement, creating Enemies and the Collision function. 
+
+```javascript
+ //--Moving Bird + Riding--//
+
+
+  //moving Bird Obstacles 
+
+  //This function combines moving the Bird Left with Vivi riding the bird
+  function moveBird() {
+    addBird(birdStartPosition) //adding the bird in a start position
+    setInterval(function () { //creating a Set Interval
+
+      removeBird(birdCurrentPosition) //remove the bird for movement
+
+      if (viviCurrentPosition !== birdCurrentPosition) {  //if Vivi's position is not the Same as the Bird's remove Riding class
+        cells.forEach(cell => cell.classList.remove('riding')) //remove Riding Class at whatever point it is at, remove it from all cells
+        birdRidingAudio.pause()//pause the bird riding music
+      }
+
+      if (viviCurrentPosition === birdCurrentPosition) { ///if Vivi's position is the same as the Bird
+        shuffleAudio.pause()//pause the background music
+        birdRidingAudio.play()//play the bird riding music
+        //console.log('same position')
+        removeBird(birdCurrentPosition) //remove the Bird class picture
+        addRidingBird(birdCurrentPosition) //add the Riding class picture
+        removeVivi(viviCurrentPosition) //remove Vivi class picture
+        //console.log('add remove Vivi')
+        removeRidingBird(birdCurrentPosition) //Remove the Riding Class for movement
+
+        if (viviCurrentPosition === 20) { //if Vivi's position = 20
+          removeRidingBird(viviCurrentPosition) //remove the riding bird class and vivi's current position to prevent falling off the side
+          viviCurrentPosition = birdCurrentPosition + 10 //Set vivi position to the Bird's start to stay on the same row
+          removeRidingBird(viviCurrentPosition) //remove Riding class for movement
+        }
+        viviCurrentPosition-- //make Vivi's position go left
+        addRidingBird(viviCurrentPosition) //add Riding class to Vivi's position for movement
+      }
+
+      if (birdCurrentPosition === 20) { //if Bird position = 20
+        removeBird(birdCurrentPosition) //remove Bird class to prevent falling off the side
+        birdCurrentPosition = birdCurrentPosition + 10 //Set Bird position to the Bird start to stay on the same row
+        removeBird(birdCurrentPosition) //remove the Bird class for movement
+      }
+      birdCurrentPosition-- //make the Bird go left for movement
+      addBird(birdCurrentPosition)// add the Bird in the Birds current position for movment 
+
+    }, 1000); //Move Bird, Bird Riding and Vivi Classes left at a set interval of 1 seconds
+  }
+
+```
