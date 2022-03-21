@@ -102,6 +102,17 @@ There are also additional conditions within the main conditions. This was to ens
 
 <img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
 
+#### Adding Enemies with Automated Movement
+
+<img width="688" alt="Screen Shot 2022-01-08 at 14 56 03" src="https://user-images.githubusercontent.com/91087641/159259605-aca6fa90-4075-427a-9516-6f61e3eb682f.png">
+
+<img width="766" alt="Screen Shot 2022-01-08 at 15 11 50" src="https://user-images.githubusercontent.com/91087641/159259636-584503a2-dc63-42c1-b3cc-771a5d672077.png">
+
+<img width="760" alt="Screen Shot 2022-01-08 at 15 11 59" src="https://user-images.githubusercontent.com/91087641/159259691-9d67de3d-3af4-43c1-91db-65ad7761fee2.png">
+
+<img width="859" alt="Screen Shot 2022-01-08 at 17 42 25" src="https://user-images.githubusercontent.com/91087641/159259748-9d9c9ef5-2408-47cc-b84a-8d4c6f56ad27.png">
+
+<img width="871" alt="Screen Shot 2022-01-08 at 17 42 36" src="https://user-images.githubusercontent.com/91087641/159259829-609b263a-3857-4a7c-9fdd-4649e4091265.png">
 
 
 
