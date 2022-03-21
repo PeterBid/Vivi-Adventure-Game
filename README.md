@@ -70,6 +70,8 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 #### Making the Grid
 
+<img width="903" alt="Screen Shot 2022-03-21 at 10 49 25" src="https://user-images.githubusercontent.com/91087641/159246716-d5e8b31c-dfef-400d-ab07-4d9a6e9e2f8f.png">
+
 <img width="729" alt="Screen Shot 2022-01-08 at 14 20 08" src="https://user-images.githubusercontent.com/91087641/159050316-b68bf1c7-ca93-4825-b2ed-dae3ca3a3a0c.png">
 
 <img width="800" alt="Screen Shot 2022-01-08 at 14 20 24" src="https://user-images.githubusercontent.com/91087641/159050450-3158c914-3c6f-4185-a854-084f55a78c59.png">
