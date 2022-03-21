@@ -222,19 +222,33 @@ Overall I am very happy with the project and I think I managed to create a disti
 
 #### Bugs
 
-When a player loses the game they have to manually Reset the game by clinking the Reset game button. If the choose to keep playing on 0 lives they will trigger a game over whenever they lose a life.
+When a player loses the game they have to manually Reset the game by clinking the Reset game button. If the player chooses to keep playing on 0 lives they will trigger a game over whenever they lose a life.
 
 #### Challenges
 
-Error handling with the collision  
+Error handling with for the collision function was the biggest challenge. This was because this issue was time consuming relatively early in the project and a key aspect which needed to be fixed for the game to function overall. 
+
+While it initally put me behind the schedule I wished to progress at, encotuering and fixing this problem early in the project ended up benefiting me overall. This was beacuse the experiance of fixing this issue allowed to to fix future problems quickly, allowing me to get back on schedule.   
 
 #### Wins
 
+Planning. Having an effective and well thought out outline and plan of how to reach my minimum viable project really helped me. It made the whole process go smoothly and feel considerably less stressful. This was because I had clear objectives to aim towards each day, breaking the overall project down into much managable bite-sized chunks.
+
 Working with the classes and understanding how they behave in certain situations. This understanding allowed me to combine various aspects together culmilating in the function to make Vivi ride the Bird.
 
+Getting the global variables to work in conjuction with a wide range of interelated functions across the whole project was very satisfying, as the was the process of seeing each part the game build upon each other.
 
-
-CSS styling and Audio files. I managed to give my personal and unique touch to the classical game of Frogger.
+CSS styling and Audio files. I managed to give my personal and unique touch to the game making it very distinct from conventional Frogger.
 
 
 ## Key Learnings
+
+As this was my first ever coding project alongside being the first on the course, I am very pleased on the work that I achieved in the 7 days. 
+
+Doing this project helped build up by confidence as a developer considerably, it allowed me to overcome feelings of imposter syndrome and really enjoy the act of building from scratch with code. 
+
+It also helped me understand the importance of planning towards a minimum viable product effectively and how doing this at the beggining can save alot of time when doing the project overall. 
+
+The project strongly cemented my knowledge of JavaScript. It transformed my understanding from the theorectical to the practical. I was able to reinforce my understanding of EventListeners, for loops and setIntervals. This while also pushing myself learn about new things I had not previously encountered such as Local Storage.
+
+Overall I was able to apply what I had learnt and also learned much more. It was a real big confidence boost and made me excited to do future projects. It is a project I will look back fondly on.
