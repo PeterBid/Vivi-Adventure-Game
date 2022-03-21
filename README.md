@@ -214,6 +214,25 @@ Throughout the week, in addition to building JavaScript functions, I also worked
 
 I wanted to create a homage to the Final Fantasy series I used a colour scheme and sound effects which evoked a fantasy/anime style setting. I used background music background music from the Final Fantasy series and chose to use the Chocobo riding theme when Riding the Bird. This different music upon riding the Bird helped to create a feeling a dynamic movement to the player.
 
- Although based on the Final Fantasy series, I also included orignal aspects. The Logo for the game was custom created by combining various images and gifs using `Canva`. 
+Although based on the Final Fantasy series, I also included orignal aspects. The Logo for the game was custom created by combining various images and gifs using `Canva`. I also wrote an original storyline to help players feel greater immersion.
 
 Overall I am very happy with the project and I think I managed to create a distinct and unique online game.
+
+## Bugs, Challenges and Wins
+
+#### Bugs
+
+When a player loses the game they have to manually Reset the game by clinking the Reset game button. If the choose to keep playing on 0 lives they will trigger a game over whenever they lose a life.
+
+#### Challenges
+
+#### Wins
+
+Working with the classes and understanding how they behave in certain situations. This understanding allowed me to combine various aspects together culmilating in the function to make Vivi ride the Bird.
+
+
+
+CSS styling and Audio files. I managed to give my personal and unique touch to the classical game of Frogger.
+
+
+## Key Learnings
