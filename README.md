@@ -70,6 +70,10 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 #### Making the Grid
 
+<img width="800" alt="Screen Shot 2022-01-08 at 14 20 24" src="https://user-images.githubusercontent.com/91087641/159050450-3158c914-3c6f-4185-a854-084f55a78c59.png">
+
+<img width="743" alt="Screen Shot 2022-01-08 at 14 20 13" src="https://user-images.githubusercontent.com/91087641/159050384-bf85f814-6c9e-46c0-830f-8ce1d650ca1a.png">
+
 <img width="575" alt="Screen Shot 2022-01-08 at 14 18 04" src="https://user-images.githubusercontent.com/91087641/159049981-c4b91fe0-797f-4e99-8f89-7cc1d0996f57.png">
 
 
@@ -82,11 +86,10 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 <img width="729" alt="Screen Shot 2022-01-08 at 14 20 08" src="https://user-images.githubusercontent.com/91087641/159050316-b68bf1c7-ca93-4825-b2ed-dae3ca3a3a0c.png">
 
-<img width="743" alt="Screen Shot 2022-01-08 at 14 20 13" src="https://user-images.githubusercontent.com/91087641/159050384-bf85f814-6c9e-46c0-830f-8ce1d650ca1a.png">
 
 <img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
 
-<img width="800" alt="Screen Shot 2022-01-08 at 14 20 24" src="https://user-images.githubusercontent.com/91087641/159050450-3158c914-3c6f-4185-a854-084f55a78c59.png">
+
 
 ### Day 2 
 
