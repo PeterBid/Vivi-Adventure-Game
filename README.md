@@ -76,9 +76,6 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 <img width="743" alt="Screen Shot 2022-01-08 at 14 20 13" src="https://user-images.githubusercontent.com/91087641/159050384-bf85f814-6c9e-46c0-830f-8ce1d650ca1a.png">
 
-<img width="575" alt="Screen Shot 2022-01-08 at 14 18 04" src="https://user-images.githubusercontent.com/91087641/159049981-c4b91fe0-797f-4e99-8f89-7cc1d0996f57.png">
-
-
 ![Screen Shot 2022-01-08 at 14 18 31](https://user-images.githubusercontent.com/91087641/159050179-02b1c7dc-3a68-411c-83b3-d7ad9b5ea93a.png)
 
 <img width="738" alt="Screen Shot 2022-01-08 at 14 19 03" src="https://user-images.githubusercontent.com/91087641/159050246-dda96f8b-9b9f-4e80-a5f3-9926538945ea.png">
