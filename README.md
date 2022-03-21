@@ -97,7 +97,7 @@ I wished for the player to move Vivi using the keys on a keyboard, for the brows
 38 – up arrow,
 40 – down arrow.
 
-Using the `handleKeyDown` function, I added an if-else statement to determine which key was pressed, and I wrote a logic for Viv's movement change the position Vivi should be removed and added back in depending on the direction he was moving. There are also additional conditions within the main conditions. I used a `modulus` calculation to ensure that Vivi would remain on the grid if the player attempted to move the character beyond the confines of the grid.
+Using the `handleKeyDown` function, I added an if-else statement to determine which key was pressed, and I wrote a logic for Viv's movement change the current position of Vivi after the being removed and added back into the grid depending on the direction he was moving. There are also additional conditions within the main conditions. This was to ensure that Vivi would remain on the grid if the player attempted to move the character beyond the confines of the grid.
 
 <img width="552" alt="Screen Shot 2022-03-21 at 11 38 45" src="https://user-images.githubusercontent.com/91087641/159253998-285ec0c5-8b17-416c-a9f4-bc6cff145d9c.png">
 
