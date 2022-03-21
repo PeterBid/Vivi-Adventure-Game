@@ -90,7 +90,9 @@ I created a function using a for-loop that repeated 100 times and created a new 
 
 #### Character Movement for Vivi
 
-I wished for the player to move Vivi using the keys on a keyboard, for the browser to recognize that the player is pressing keys, I added an eventListener to app.js.
+I wished for the player to move Vivi using the keys on a keyboard, for the browser to recognize that the player is pressing keys, I added an eventListener to app.js. 
+
+<img width="552" alt="Screen Shot 2022-03-21 at 11 38 45" src="https://user-images.githubusercontent.com/91087641/159253998-285ec0c5-8b17-416c-a9f4-bc6cff145d9c.png">
 
 <img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
 
