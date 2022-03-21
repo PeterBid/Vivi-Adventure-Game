@@ -114,5 +114,18 @@ The `if statements` also created a "looping" effect ensuring the enemey would go
 
 <img width="871" alt="Screen Shot 2022-01-08 at 17 42 36" src="https://user-images.githubusercontent.com/91087641/159259829-609b263a-3857-4a7c-9fdd-4649e4091265.png">
 
+#### The Collision Function
 
+Ensuring collisions between Vivi and the enemies worked correctly was the most challenging aspect of the project. When creating the fucntion I encountered a glitch where Vivi would duplicate upon moving after a collision. 
 
+After much error handling and problem solving, this problem was overcome by ensuring that `viviCurrentPosition` variable was properly ressaigned upon `Collision` by calling it in the `addVivi` function before any subsequent movement. 
+
+This was a very beneficial learning experience, which helped me quickly solve future glitches while working on the project.
+
+![Screen Shot 2022-01-09 at 18 28 35](https://user-images.githubusercontent.com/91087641/159284986-a0957c94-31cc-4578-b498-900394200dc7.png)
+
+![Screen Shot 2022-01-09 at 18 29 23](https://user-images.githubusercontent.com/91087641/159285074-f0366003-211b-4159-b689-159a736c3222.png)
+
+<img width="559" alt="Screen Shot 2022-01-10 at 10 53 56" src="https://user-images.githubusercontent.com/91087641/159285429-3b2d5259-8fb0-4260-8342-7a68207f9d8c.png">
+
+<img width="970" alt="Screen Shot 2022-01-10 at 10 54 06" src="https://user-images.githubusercontent.com/91087641/159285559-8974ee0a-09a3-46ce-b2c4-b30891eb8271.png">
