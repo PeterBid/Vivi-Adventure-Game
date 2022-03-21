@@ -186,4 +186,34 @@ This function combined everything I had previously learnt and ultilised when cre
 
 ```
 
-#### The Time Bar + Winning and Losing the Game
+#### Global Variables, The Time Bar, Winning and Losing the Game and High Scores.
+
+After creating the core functionality for Vivi, the Bird and the various Enemies to move across the grid and impact each other, I moved on to creating the variables such as `score` and `lives` alongside functions to `win` and `lose` the game and attaching them as conditionals to be activated upon certain functions triggering across the game, such as increasing the score upon Vivi reaching a home at the top of the grid or a collision causing the player to lose a life etc. The game would result in a  
+
+Related to these global variables I created a Time Bar function which changed variables to fill a `CSS grid` with diferring style properties incrementing at a `Set Interval`. Once the `timeInGame` variable reached a certain number, Vivi's position would be reset and the player would lose a life.
+
+I also created a Reset game function which reset the value of the global variables and placed Vivi back to the starting position. I then attached this to a button using an `EventListener`.
+
+Afterwards I learn how to use `Local Storage` to implement a high score variable which was remain constant even when the game was reset.
+
+<img width="359" alt="Screen Shot 2022-01-12 at 13 44 58" src="https://user-images.githubusercontent.com/91087641/159293564-fc18f251-1a26-41f3-908b-f711259740c1.png">
+
+<img width="896" alt="Screen Shot 2022-01-11 at 18 07 48" src="https://user-images.githubusercontent.com/91087641/159293785-e783dc9f-8b9d-4177-9a3d-8c577995d8b5.png">
+
+<img width="696" alt="Screen Shot 2022-01-11 at 20 40 10" src="https://user-images.githubusercontent.com/91087641/159293890-bea0ff31-30e8-4dc0-b981-6a91004aa2fc.png">
+
+<img width="787" alt="Screen Shot 2022-01-12 at 13 45 08" src="https://user-images.githubusercontent.com/91087641/159294550-481317ee-c004-474c-8e2e-1ba9373ef539.png">
+
+<img width="1184" alt="Screen Shot 2022-01-12 at 13 45 38" src="https://user-images.githubusercontent.com/91087641/159294634-e7c4d056-8ec1-45d9-995b-b7855dfdc7da.png">
+
+![Screen Shot 2022-01-12 at 13 47 44](https://user-images.githubusercontent.com/91087641/159294772-f00982e6-625e-45cb-9be2-063b130887f3.png)
+
+#### Styling and Audio
+
+Throughout the week, in addition to building JavaScript functions, I also worked on building `CSS`. From the beginning, I had an idea what my page was supposed to look like, but changed the gifs I used for enemies. I chose to use gifs instead of images to increase the sense of dynamic movement throughout the game. 
+
+I wanted to create a homage to the Final Fantasy series I used a colour scheme and sound effects which evoked a fantasy/anime style setting. I used background music background music from the Final Fantasy series and chose to use the Chocobo riding theme when Riding the Bird. This different music upon riding the Bird helped to create a feeling a dynamic movement to the player.
+
+ Although based on the Final Fantasy series, I also included orignal aspects. The Logo for the game was custom created by combining various images and gifs using `Canva`. 
+
+Overall I am very happy with the project and I think I managed to create a distinct and unique online game.
