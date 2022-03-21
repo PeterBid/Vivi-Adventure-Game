@@ -74,7 +74,7 @@ After learning about DOM before starting the project, I decided to build the gri
 
 I created a div in the HTML with a class name of `'grid'`. The `'grid'` class was then called in the app.js with querySelector. I then used an empty array called `cells` which for the divs, created with DOM. I decided my grid would have 100 cells/divs. 
 
-I created a function using a for-loop that repeated 100 times and created a new `cell` child div every time. They were stored inside the array `cells` using `push` and `appendChild`. I then called the function for the grid to be displayed in the browser. I also creating a starting positon varible for Vivi and and an addVivi fucntion to ensure the Vivi character was added to the grid upon its creation. 
+I created a function using a for-loop that repeated 100 times and created a new `cell` child div every time. They were stored inside the array `cells` using `push` and `appendChild`. I then called the function for the grid to be displayed in the browser. I also creating a starting positon varible for Vivi and and an addVivi function to ensure the Vivi character was added to the grid upon its creation. 
 
 
 
