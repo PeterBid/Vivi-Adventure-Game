@@ -72,6 +72,8 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 After learning about DOM before starting the project, I decided to build the grid with JavaScript. Due to this, I didn't need to hard code the grid inside the HTML file with different divs. 
 
+I created a div in the HTML with a class name of ='grid':
+
 <img width="903" alt="Screen Shot 2022-03-21 at 10 49 25" src="https://user-images.githubusercontent.com/91087641/159246716-d5e8b31c-dfef-400d-ab07-4d9a6e9e2f8f.png">
 
 <img width="729" alt="Screen Shot 2022-01-08 at 14 20 08" src="https://user-images.githubusercontent.com/91087641/159050316-b68bf1c7-ca93-4825-b2ed-dae3ca3a3a0c.png">
