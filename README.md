@@ -226,6 +226,8 @@ When a player loses the game they have to manually Reset the game by clinking th
 
 #### Challenges
 
+Error handling with the collision  
+
 #### Wins
 
 Working with the classes and understanding how they behave in certain situations. This understanding allowed me to combine various aspects together culmilating in the function to make Vivi ride the Bird.
