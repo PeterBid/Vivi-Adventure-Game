@@ -72,7 +72,11 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 After learning about DOM before starting the project, I decided to build the grid with JavaScript. Due to this, I didn't need to hard code the grid inside the HTML file with different divs. 
 
-I created a div in the HTML with a class name of ='grid':
+I created a div in the HTML with a class name of `'grid'`. The `'grid'` class was then called in the app.js with querySelector. I then used an empty array called `cells` which for the divs, created with DOM. I decided my grid would have 100 cells/divs. 
+
+I created a function using a for-loop that repeated 100 times and created a new `cell` child div every time. They were stored inside the array `cells` using `appendChild`. I then called the function for the grid to be displayed in the browser.
+
+
 
 <img width="903" alt="Screen Shot 2022-03-21 at 10 49 25" src="https://user-images.githubusercontent.com/91087641/159246716-d5e8b31c-dfef-400d-ab07-4d9a6e9e2f8f.png">
 
