@@ -97,11 +97,5 @@ I wished for the player to move Vivi using the keys on a keyboard, for the brows
 <img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
 
 
-<img width="738" alt="Screen Shot 2022-01-08 at 14 19 03" src="https://user-images.githubusercontent.com/91087641/159050246-dda96f8b-9b9f-4e80-a5f3-9926538945ea.png">
-
-
-<img width="588" alt="Screen Shot 2022-01-08 at 14 20 33" src="https://user-images.githubusercontent.com/91087641/159050506-5c94f7ee-58e8-4c66-a559-590680f51982.png">
-
-
 
 
