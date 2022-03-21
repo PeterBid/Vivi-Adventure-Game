@@ -104,9 +104,7 @@ There are also additional conditions within the main conditions. This was to ens
 
 #### Adding Enemies with Automated Movement
 
-<img width="688" alt="Screen Shot 2022-01-08 at 14 56 03" src="https://user-images.githubusercontent.com/91087641/159259605-aca6fa90-4075-427a-9516-6f61e3eb682f.png">
-
-<img width="766" alt="Screen Shot 2022-01-08 at 15 11 50" src="https://user-images.githubusercontent.com/91087641/159259636-584503a2-dc63-42c1-b3cc-771a5d672077.png">
+Much in the same way I added the Vivi to the grid upon it's creation, I also added the enemies with a start position variable. I then created movement with an add and remove function for the enemy .
 
 <img width="760" alt="Screen Shot 2022-01-08 at 15 11 59" src="https://user-images.githubusercontent.com/91087641/159259691-9d67de3d-3af4-43c1-91db-65ad7761fee2.png">
 
