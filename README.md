@@ -33,8 +33,8 @@ Press Reset HighScore button to reset the highscore
 
 ↑ to move up
 ↓ to move down
-<- to move left 
--> to move right
+← to move left 
+→ to move right
 
 ## Technologies Used
 
@@ -90,7 +90,14 @@ I created a function using a for-loop that repeated 100 times and created a new 
 
 #### Character Movement for Vivi
 
-I wished for the player to move Vivi using the keys on a keyboard, for the browser to recognize that the player is pressing keys, I added an eventListener to app.js. 
+I wished for the player to move Vivi using the keys on a keyboard, for the browser to recognize that the player is pressing keys, I added an EventListener to app.js. JavaScript also has a unique code for each key on the keyboard. In my case, I only needed codes for the arrow keys (←, →, ↑, ↓):
+
+37 – left arrow,
+39 – right arrow,
+38 – up arrow,
+40 – down arrow.
+
+Using the `handleKeyDown` function, I added an if-else statement to determine which key was pressed, and I wrote a logic for Viv's movement change the position Vivi should be removed and added back in depending on the direction he was moving. There are also additional conditions within the main conditions. I used a `modulus` calculation to ensure that Vivi would remain on the grid if the player attempted to move the character beyond the confines of the grid.
 
 <img width="552" alt="Screen Shot 2022-03-21 at 11 38 45" src="https://user-images.githubusercontent.com/91087641/159253998-285ec0c5-8b17-416c-a9f4-bc6cff145d9c.png">
 
