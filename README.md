@@ -78,6 +78,9 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 ![Screen Shot 2022-01-08 at 14 18 31](https://user-images.githubusercontent.com/91087641/159050179-02b1c7dc-3a68-411c-83b3-d7ad9b5ea93a.png)
 
+<img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
+
+
 <img width="738" alt="Screen Shot 2022-01-08 at 14 19 03" src="https://user-images.githubusercontent.com/91087641/159050246-dda96f8b-9b9f-4e80-a5f3-9926538945ea.png">
 
 
@@ -86,7 +89,6 @@ First, I started with a wire frame, a pseudo-code, and also wrote down steps I w
 
 
 
-<img width="694" alt="Screen Shot 2022-01-08 at 14 20 20" src="https://user-images.githubusercontent.com/91087641/159050428-6affab02-7493-49ee-b36a-182fa5c0f287.png">
 
 
 
