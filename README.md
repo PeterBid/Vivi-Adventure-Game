@@ -253,3 +253,8 @@ The project strongly cemented my knowledge of JavaScript. It transformed my unde
 
 Overall I was able to apply what I had learnt and also learned much more. It was a real big confidence boost and made me excited to do future projects. It is a project I will look back fondly on.
 
+## Contact
+
+Social - www.linkedin.com/in/peter-bid
+
+Email - peterbid21@gmail.com
