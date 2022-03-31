@@ -43,7 +43,7 @@ With Vivi and his Allies under threat from numerous enemies, the aim of the game
 ## Controls
 
 Press Restart button to restart the game
-Press Reset HighScore button to reset the highscore
+Press Reset HighScore button to reset the high score
 
 ↑ to move up
 ↓ to move down
@@ -118,7 +118,7 @@ There are also additional conditions within the main conditions. This was to ens
 
 #### Adding Enemies with Automated Movement
 
-Much in the same way I added the Vivi to the grid upon it's creation, I also added the enemies with a start position variable. I then created movement with an add and remove function for the enemy, I used an `if statement` with conditions to determine the current position the enemy would be added back in at.
+Much in the same way I added the Vivi to the grid upon its creation, I also added the enemies with a start position variable. I then created movement with an add and remove function for the enemy, I used an `if statement` with conditions to determine the current position the enemy would be added back in at.
 
 The `if statements` also created a "looping" effect ensuring the enemy would go back to the start of the row once they reached the end. I called the function at a `setInterval` that automated the movement and I could manually configure the enemy speed in accordance to the difficulty I wished to make the game.
 
@@ -193,7 +193,7 @@ This function combined everything I had previously learnt and utilised when crea
         removeBird(birdCurrentPosition) //remove the Bird class for movement
       }
       birdCurrentPosition-- //make the Bird go left for movement
-      addBird(birdCurrentPosition)// add the Bird in the Birds current position for movment 
+      addBird(birdCurrentPosition)// add the Bird in the Birds current position for movement 
 
     }, 1000); //Move Bird, Bird Riding and Vivi Classes left at a set interval of 1 seconds
   }
@@ -236,7 +236,7 @@ Overall I am very happy with the project and I think I managed to create a disti
 
 #### Bugs
 
-When a player loses the game they have to manually Reset the game by clinking the Reset game button. If the player chooses to keep playing on 0 lives they will trigger a game over whenever they lose a life.
+When a player loses the game they have to manually Reset the game by clicking the Reset game button. If the player chooses to keep playing on 0 lives they will trigger a game over whenever they lose a life.
 
 #### Challenges
 
